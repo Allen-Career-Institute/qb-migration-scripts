@@ -20,8 +20,8 @@ import (
 
 // MySQL and MongoDB Configurations
 const (
-	mysqlDSN    = ""
-	mongoURI    = ""
+	mysqlDSN    = "root:allen#sql$2021@tcp(temp-qb-staging.cnmuhqh4flax.ap-south-1.rds.amazonaws.com:3306)/question_pool"
+	mongoURI    = "mongodb+srv://qb:1xWqW4GP2AzB6IEP@allen-staging-staging-cluster-pl-0.xklzc.mongodb.net"
 	batchSize   = 1000
 	workerCount = 5
 )
