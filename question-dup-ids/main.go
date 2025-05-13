@@ -17,20 +17,9 @@ import (
 
 // GOOS=linux GOARCH=arm64 go build -o binaryfile ./ ./...      for ec2
 
-// mysql://root:mohit321@127.0.0.1?statusColor=F8F8F8&env=local&name=mysql-local-2&tLSMode=0&usePrivateKey=false&safeModeLevel=0&advancedSafeModeLevel=0&driverVersion=0&lazyload=true
-// mongodb+srv://qb:1xWqW4GP2AzB6IEP@allen-staging-staging-cluster-pl-0.xklzc.mongodb.net/?authMechanism=DEFAULT
-
-/* Prod
-mysqlDSN    = "readonly_user:Readonly_User123@tcp(question-bank-php-service-1.cqu484xdjrzv.ap-south-1.rds.amazonaws.com:3306)/question_pool"
-mongoURI    = "mongodb+srv://qb:EiGG1xOGtnulVkSA@learning-material-management-cluster-prod-cluster-pl-0.4dyev.mongodb.net"
-
-		Addr:     "clustercfg.prod-qb-migration.wmqyle.aps1.cache.amazonaws.com:6379", // Redis server address
-		Password: "kbUcqZ6fm9SZfQIh",
-*/
-
 // MySQL and MongoDB Configurations
 const (
-	mongoURI    = "mongodb+srv://qb:1xWqW4GP2AzB6IEP@allen-staging-staging-cluster-pl-0.xklzc.mongodb.net"
+	mongoURI    = ""
 	batchSize   = 1000
 	workerCount = 5
 )
@@ -47,9 +36,9 @@ func connectMongo() (*mongo.Client, *mongo.Collection, error) {
 
 func redisClient() *redis.Client {
 	rdb := redis.NewClient(&redis.Options{
-		Addr:     "clustercfg.prod-qb-migration.wmqyle.aps1.cache.amazonaws.com:6379", // Redis server address
-		Password: "kbUcqZ6fm9SZfQIh",                                                  // Set password if required
-		DB:       0,                                                                   // Use default DB
+		Addr:     "", // Redis server address
+		Password: "", // Set password if required
+		DB:       0,  // Use default DB
 	})
 	return rdb
 }
