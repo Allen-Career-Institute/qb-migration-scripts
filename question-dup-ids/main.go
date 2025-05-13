@@ -99,7 +99,7 @@ func getQuestionSolution(collection *mongo.Collection, oldQuestionID int64) (str
 
 func getRedisKey(client *redis.Client, oldQuestionID int64) (string, string, error) {
 	questionKey := REDIS_QB_SERVICE + "." + REDIS_MAPPING + "." + REDIS_QUESTIONS + "." + strconv.FormatInt(oldQuestionID, 10)
-	questionMongoID, keyErr := client.LRange(context.Background(), questionKey, 0, -1).Result()
+	questionMongoID, keyErr := client.LRange(context.Background(), questionKey, -1, -1).Result()
 	if keyErr != nil || len(questionMongoID) == 0 {
 		if len(questionMongoID) == 0 {
 			fmt.Printf("empty List in redis for questionID = %v", oldQuestionID)
