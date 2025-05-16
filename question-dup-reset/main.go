@@ -8,7 +8,6 @@ import (
 	"github.com/go-redis/redis/v8"
 	_ "github.com/go-sql-driver/mysql" // Import the MySQL driver
 	"go.mongodb.org/mongo-driver/bson"
-	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 	"log"
@@ -52,67 +51,74 @@ func redisClient() *redis.Client {
 func updateMongo(client *redis.Client, collection *mongo.Collection, oldQuestionID int64) (string, int64, error) {
 	ctx := context.TODO()
 
-	// Find document in MongoDB
-	filter := bson.M{"oldQuestionId": oldQuestionID} // Assuming MySQL ID matches MongoDB document _id
-	findOptions := options.Find()
+	// Find Latest document in MongoDB
+	filter := bson.M{"oldQuestionId": oldQuestionID}
+	findOptions := options.FindOne()
 	findOptions.SetSort(bson.D{{Key: "version", Value: -1}})
 
-	cursor, err := collection.Find(ctx, filter, findOptions)
-	if err != nil {
-		if err == mongo.ErrNoDocuments {
-			fmt.Printf("No document found for oldQuestionId: %d \n", oldQuestionID)
+	result := collection.FindOne(ctx, filter, findOptions)
+	if result.Err() != nil {
+		if result.Err() == mongo.ErrNoDocuments {
+			fmt.Printf("No document found for oldQuestionId: %d", oldQuestionID)
 			return "", 0, nil
 		}
-		fmt.Printf(" updateMongo |  oldQuestionId: %d, err %+v \n", oldQuestionID, err)
+		fmt.Printf(" GetQuestion |  oldQuestionId: %d, err %+v", oldQuestionID, result.Err())
+		return "", 0, result.Err()
+	}
+
+	quesDoc := &QuestionDocument{}
+	err := result.Decode(quesDoc)
+	if err != nil {
+		fmt.Printf("Error decoding question document for oldQuestionId = %v = %v with err = %v", oldQuestionID, err)
 		return "", 0, err
 	}
 
-	if cursor == nil || cursor.RemainingBatchLength() == 0 {
-		fmt.Println("cursor is 0 for oldQuestionId ", oldQuestionID)
-		return "", 0, nil
+	// Modifying others documents to status 3
+	filter1 := bson.M{
+		"oldQuestionId": oldQuestionID,
+		"version":       bson.M{"$ne": quesDoc.Version},
 	}
 
-	var resultList []QuestionDocument
+	update := bson.M{
+		"$set": bson.M{
+			"status":    3,
+			"updatedAt": time.Now().UnixMilli(),
+		},
+	}
 
-	for cursor.Next(ctx) {
-		questionDoc := &QuestionDocument{}
-		if err = cursor.Decode(&questionDoc); err != nil {
-			fmt.Printf("Error decoding document err: %+v \n", err)
-			continue
+	opts := options.Update().SetUpsert(false)
+
+	result1, errNew := collection.UpdateMany(ctx, filter1, update, opts)
+	if errNew != nil {
+		fmt.Printf("Failed to update document Error: %v", errNew)
+	}
+	fmt.Printf(" Document Update Result oldQuestionID %d MatchedCount:%d ModifiedCount:%d \n", oldQuestionID, result1.MatchedCount, result1.ModifiedCount)
+
+	// Modifying Latest documents to status 2 if it is not
+	if quesDoc.Status != 2 {
+		filter2 := bson.M{
+			"oldQuestionId": oldQuestionID,
+			"version":       quesDoc.Version,
 		}
-		resultList = append(resultList, *questionDoc)
-	}
 
-	fmt.Printf("question ID %+v result List %+v \n", oldQuestionID, len(resultList))
-
-	var objectIDs []primitive.ObjectID
-
-	for i, ques := range resultList {
-		if i == 0 {
-			continue
+		update2 := bson.M{
+			"$set": bson.M{
+				"status":    2,
+				"updatedAt": time.Now().UnixMilli(),
+			},
 		}
-		objId, objErr := primitive.ObjectIDFromHex(ques.ID)
-		if objErr != nil {
-			fmt.Printf("Error in generating objectID err %+v \n", objErr)
+		opts2 := options.Update().SetUpsert(false)
+		result2, errNew2 := collection.UpdateMany(ctx, filter2, update2, opts2)
+		if errNew2 != nil {
+			fmt.Printf("Failed to update document Error: %v", errNew2)
 		}
-		objectIDs = append(objectIDs, objId)
+		fmt.Printf(" Document Update2 Result oldQuestionID %d MatchedCount:%d ModifiedCount:%d \n", oldQuestionID, result2.MatchedCount, result2.ModifiedCount)
 	}
-	if len(objectIDs) == 0 {
-		return "", 0, nil
-	}
-	filter1 := bson.M{"_id": bson.M{"$in": objectIDs}}
-	update := bson.M{"$set": bson.M{"questionId": resultList[0].QuestionID}}
 
-	fmt.Printf("records update for questionID %+v, length %+v  \n", oldQuestionID, len(objectIDs))
-
-	result, err := collection.UpdateMany(ctx, filter1, update)
-	if err != nil {
-		fmt.Printf("Failed to update document Error: %v", err)
-	}
-	fmt.Printf(" Document Update Result oldQuestionID %d MatchedCount:%d ModifiedCount:%d \n", oldQuestionID, result.MatchedCount, result.ModifiedCount)
+	// Updating Redis Key
 
 	questionKey := REDIS_QB_SERVICE + "." + REDIS_MAPPING + "." + REDIS_QUESTIONS + "." + strconv.FormatInt(oldQuestionID, 10)
-	redisVal := resultList[0].QuestionID + "_" + strconv.FormatInt(resultList[0].Version, 10)
+	redisVal := quesDoc.QuestionID + "_" + strconv.FormatInt(quesDoc.Version, 10)
 	_, err1 := client.RPush(context.Background(), questionKey, redisVal).Result()
 	if err1 != nil {
 		fmt.Printf("error redis mapping failed for %d \n", oldQuestionID)
@@ -122,9 +128,9 @@ func updateMongo(client *redis.Client, collection *mongo.Collection, oldQuestion
 	questionActiveKey := REDIS_QB_SERVICE + "." + REDIS_MAPPING + "." + REDIS_QUESTIONS + "." + QUESTION_ACTIVE_VERSION + "." + strconv.FormatInt(oldQuestionID, 10)
 
 	questionDataRedis := RedisData{
-		QuestionID:       resultList[0].QuestionID,
-		Version:          resultList[0].Version,
-		UniqueIdentifier: resultList[0].UniqueIdentifier,
+		QuestionID:       quesDoc.QuestionID,
+		Version:          quesDoc.Version,
+		UniqueIdentifier: quesDoc.UniqueIdentifier,
 	}
 
 	jsonData, marshalErr := json.Marshal(questionDataRedis)
@@ -136,7 +142,7 @@ func updateMongo(client *redis.Client, collection *mongo.Collection, oldQuestion
 		fmt.Printf("error redis active version mapping failed for  %d \n", oldQuestionID)
 	}
 
-	return resultList[0].QuestionID, resultList[0].Version, nil
+	return quesDoc.QuestionID, quesDoc.Version, nil
 }
 
 // Fetch document from MongoDB and update it
