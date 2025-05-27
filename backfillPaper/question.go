@@ -130,7 +130,7 @@ type QuestionSetSection struct {
 	NumberOfQuestions             int32                    `bson:"numberOfQuestions"`
 	Subsections                   []QuestionSetSection     `bson:"subsections"`
 	Questions                     []Question               `bson:"questions"`
-	ParentSectionID               int64                    `bson:"parentSectionId,omitempty"`
+	ParentSectionID               int64                    `bson:"parentSectionId"`
 	SectionID                     int64                    `bson:"sectionId,omitempty"`
 	Tags                          []Tag                    `bson:"tags,omitempty"`
 	Namespace                     string                   `bson:"namespace"`
