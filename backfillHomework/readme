@@ -1,0 +1,45 @@
+	//// Create Worker Pool
+	//var wg sync.WaitGroup
+	//recordCh := make(chan Record, batchSize)
+	//
+	//for i := 0; i < workerCount; i++ {
+	//	wg.Add(1)
+	//	go worker(recordCh, collection, &wg)
+	//}
+	//
+	//// Fetch Data in Batches & Send to Workers
+	//offset := 0
+	//for {
+	//	records, err := fetchRecords(db, offset, batchSize)
+	//	if err != nil {
+	//		log.Println("MySQL Fetch Error:", err)
+	//		break
+	//	}
+	//	if len(records) == 0 {
+	//		break // No more records
+	//	}
+	//
+	//	// Send records to worker channel
+	//	for _, rec := range records {
+	//		recordCh <- rec
+	//	}
+	//
+	//	offset += batchSize
+	//}
+	//
+	//// Close channel & Wait for all workers to finish
+	//close(recordCh)
+	//wg.Wait()
+
+
+//// Worker function to process records concurrently
+//func worker(records <-chan QuestionDocument, collection *mongo.Collection, wg *sync.WaitGroup) {
+//	defer wg.Done()
+//	for record := range records {
+//		err := updateMongo(collection, record)
+//		if err != nil {
+//			log.Println("MongoDB Update Error:", err)
+//		}
+//	}
+//}
+
