@@ -4,24 +4,27 @@ import (
 	"context"
 	"database/sql"
 	"fmt"
-	_ "github.com/go-sql-driver/mysql" // Import the MySQL driver
-	"go.mongodb.org/mongo-driver/bson"
+	"sort"
 	"sync"
 	"time"
 
+	_ "github.com/go-sql-driver/mysql" // Import the MySQL driver
+	"go.mongodb.org/mongo-driver/bson"
+
 	// "go.mongodb.org/mongo-driver/bson/primitive"
-	"go.mongodb.org/mongo-driver/mongo"
-	"go.mongodb.org/mongo-driver/mongo/options"
 	"log"
 	"os"
 	"strconv"
+
+	"go.mongodb.org/mongo-driver/mongo"
+	"go.mongodb.org/mongo-driver/mongo/options"
 	// "sync"
 )
 
 // MySQL and MongoDB Configurations
 const (
-	mysqlDSN    = ""
-	mongoURI    = ""
+	mysqlDSN    = "root:PCu2j8LNgQDLEdK@tcp(question-bank-php-ro.allen-internal-prod.in:3306)/question_pool"
+	mongoURI    = "mongodb+srv://qb:EiGG1xOGtnulVkSA@learning-material-management-cluster-prod-cluster-pl-0.4dyev.mongodb.net"
 	batchSize   = 1000
 	workerCount = 5
 )
@@ -59,7 +62,8 @@ func fetchSectionInfo(db *sql.DB, oldPaperId int64) (map[int64]SectionInfo, erro
 			qc.partial_marks_per_question,
 			qc.partial_neg_marks_per_question
 		 FROM section_info qc
-		 WHERE qc.paper_id = ?;
+		 WHERE qc.paper_id = ?
+		 ORDER BY qc.id;
 	`
 
 	rows, err := db.Query(query, oldPaperId)
@@ -202,38 +206,62 @@ func fetchFacultyForQuestions(db *sql.DB, oldPaperId int64) (map[int64]string, e
 }
 
 func FetchQuestionIDsByOldQuestionIDs(ctx context.Context, collection *mongo.Collection, oldQuestionIDs []int64) (map[int64]string, error) {
-	filter := bson.M{"oldQuestionId": bson.M{"$in": oldQuestionIDs}}
-	projection := bson.M{"questionId": 1, "oldQuestionId": 1}
-
-	opts := options.Find().SetProjection(projection)
-
-	cursor, err := collection.Find(ctx, filter, opts)
-	if err != nil {
-		return nil, err
-	}
-	defer cursor.Close(ctx)
-
 	result := make(map[int64]string)
-	for cursor.Next(ctx) {
-		var doc struct {
-			QuestionID    string `bson:"questionId"`
-			OldQuestionID int64  `bson:"oldQuestionId"`
-		}
-		if err := cursor.Decode(&doc); err != nil {
-			return nil, err
-		}
-		result[doc.OldQuestionID] = doc.QuestionID
+	resultMutex := sync.Mutex{}
+
+	// Use a semaphore to limit concurrent queries (e.g., 10 concurrent queries)
+	semaphore := make(chan struct{}, 10)
+	errChan := make(chan error, len(oldQuestionIDs))
+	var wg sync.WaitGroup
+
+	for _, oldQuestionID := range oldQuestionIDs {
+		wg.Add(1)
+		go func(id int64) {
+			defer wg.Done()
+			semaphore <- struct{}{}        // Acquire semaphore
+			defer func() { <-semaphore }() // Release semaphore
+
+			// Query for each oldQuestionId, sort by version desc, limit to 1
+			filter := bson.M{"oldQuestionId": id}
+			projection := bson.M{"questionId": 1, "oldQuestionId": 1}
+			opts := options.FindOne().
+				SetProjection(projection).
+				SetSort(bson.M{"version": -1}) // Get latest version first
+
+			var doc struct {
+				QuestionID    string `bson:"questionId"`
+				OldQuestionID int64  `bson:"oldQuestionId"`
+			}
+
+			err := collection.FindOne(ctx, filter, opts).Decode(&doc)
+			if err != nil {
+				if err == mongo.ErrNoDocuments {
+					// Skip if no document found for this oldQuestionId
+					return
+				}
+				errChan <- err
+				return
+			}
+
+			resultMutex.Lock()
+			result[doc.OldQuestionID] = doc.QuestionID
+			resultMutex.Unlock()
+		}(oldQuestionID)
 	}
 
-	if err := cursor.Err(); err != nil {
-		return nil, err
+	wg.Wait()
+	close(errChan)
+
+	// Check if any errors occurred
+	if len(errChan) > 0 {
+		return nil, <-errChan
 	}
 
 	return result, nil
 }
 
 // Fetch document from MongoDB and update it
-func updateMongo(collection *mongo.Collection, oldPaperId int64, paperInfo PaperInfo, newQuestionToFacultyID map[string]string, sharedList []SharedPaperCenter, namespaceToSectionInfoMap map[string]SectionInfo) error {
+func updateMongo(collection *mongo.Collection, oldPaperId int64, paperInfo PaperInfo, newQuestionToFacultyID map[string]string, sharedList []SharedPaperCenter, namespaceToSectionInfoMap map[string]SectionInfo, isDryRun bool) error {
 	ctx := context.TODO()
 
 	// Find document in MongoDB
@@ -354,6 +382,11 @@ func updateMongo(collection *mongo.Collection, oldPaperId int64, paperInfo Paper
 
 	fmt.Printf("records update for oldPaperId %+v, length %+v \n ", oldPaperId, len(updatedDocs))
 
+	if isDryRun {
+		fmt.Printf("=== DRY RUN MODE - NO ACTUAL CHANGES WILL BE MADE FOR oldPaperId %d ===", oldPaperId)
+		return nil
+	}
+
 	result, err := collection.BulkWrite(ctx, updatedDocs)
 	if err != nil {
 		fmt.Printf("Failed to update oldPaperId %d document Error: %v\n", oldPaperId, err)
@@ -367,18 +400,25 @@ func main() {
 	args := os.Args
 
 	// Check if parameters are passed
-	if len(args) < 3 {
-		fmt.Println("Usage: ./main <param1> <param2> <param2>")
+	if len(args) < 4 {
+		fmt.Println("Usage: ./main <start_id> <end_id> <batch_size> [dry-run]")
+		fmt.Println("Add 'dry-run' as 4th parameter to simulate without database updates")
 		return
 	}
 	param1, err := strconv.ParseInt(args[1], 10, 64) // First parameter
 	param2, err := strconv.ParseInt(args[2], 10, 64) // Second parameter
 	param3, err := strconv.ParseInt(args[3], 10, 64) // Third parameter
 
+	// Check for dry run mode
+	isDryRun := len(args) > 4 && args[4] == "dry-run"
+
 	// Print parameters
 	fmt.Println("Start OldQuestionID Parameter 1:", param1)
 	fmt.Println("End OldQuestionID Parameter 2:", param2)
 	fmt.Println("BatchSize Parameter 3: ", param3)
+	if isDryRun {
+		fmt.Println("=== DRY RUN MODE - NO DATABASE UPDATES WILL BE MADE ===")
+	}
 
 	// Connect to MySQL and MongoDB
 	db, err := connectMySQL()
@@ -458,7 +498,7 @@ func main() {
 					namespaceToSectionInfoMap[value] = sectionIDToSectionInfoMap[key]
 				}
 
-				updateMongo(paperCollection, j, *paperInfo, newQuestionIDToFacultyIDMap, sharedPaperCenter, namespaceToSectionInfoMap)
+				updateMongo(paperCollection, j, *paperInfo, newQuestionIDToFacultyIDMap, sharedPaperCenter, namespaceToSectionInfoMap, isDryRun)
 
 			}(j)
 		}
@@ -467,7 +507,11 @@ func main() {
 		fmt.Printf("Data backfill completed for  %+v %+v \n", oldPaperIDStart, oldPaperIDEnd)
 	}
 
-	fmt.Println("Data backfill completed successfully!")
+	if isDryRun {
+		fmt.Println("=== DRY RUN COMPLETED - NO ACTUAL CHANGES WERE MADE ===")
+	} else {
+		fmt.Println("Data backfill completed successfully!")
+	}
 }
 
 func ConvertStructToBsonInterface[T any](document T) interface{} {
@@ -686,7 +730,17 @@ func generateHierarchy(nodes []SectionInfo) map[int64]string {
 		parentMap[convertInt64(node.ParentID)] = append(parentMap[convertInt64(node.ParentID)], node)
 	}
 
-	// Step 2: Process hierarchy recursively
+	// Step 2: Sort children within each parent group by ID to ensure consistent ordering
+	for parentID := range parentMap {
+		children := parentMap[parentID]
+		// Sort by ID to ensure consistent processing order
+		sort.Slice(children, func(i, j int) bool {
+			return children[i].ID < children[j].ID
+		})
+		parentMap[parentID] = children
+	}
+
+	// Step 3: Process hierarchy recursively
 	var assignNumbering func(parentID int64, prefix string)
 
 	assignNumbering = func(parentID int64, prefix string) {
@@ -695,16 +749,49 @@ func generateHierarchy(nodes []SectionInfo) map[int64]string {
 			return
 		}
 
+		// Handle NULL sequence_ids by assigning incremental values
+		nullSequenceCounter := int64(1)
+		usedSequences := make(map[int64]bool)
+
+		// First pass: collect all non-NULL sequence IDs
 		for _, child := range children {
-			// Create new number by appending SequenceID
-			if child.SequenceID == nil {
-				continue
+			if child.SequenceID != nil {
+				seq := convertInt64(child.SequenceID)
+				if seq > 0 {
+					usedSequences[seq] = true
+				}
 			}
+		}
+
+		for _, child := range children {
+			var sequenceID int64
+
+			if child.SequenceID == nil {
+				// Assign next available sequence number for NULL values
+				for usedSequences[nullSequenceCounter] {
+					nullSequenceCounter++
+				}
+				sequenceID = nullSequenceCounter
+				usedSequences[nullSequenceCounter] = true
+				nullSequenceCounter++
+			} else {
+				sequenceID = convertInt64(child.SequenceID)
+				if sequenceID == 0 { // Handle case where convertInt64 returns 0
+					for usedSequences[nullSequenceCounter] {
+						nullSequenceCounter++
+					}
+					sequenceID = nullSequenceCounter
+					usedSequences[nullSequenceCounter] = true
+					nullSequenceCounter++
+				}
+			}
+
+			// Create new number by appending SequenceID
 			newNumber := prefix
 			if prefix == "" {
-				newNumber += strconv.FormatInt(convertInt64(child.SequenceID), 10) // Root level
+				newNumber += strconv.FormatInt(sequenceID, 10) // Root level
 			} else {
-				newNumber += "." + strconv.FormatInt(convertInt64(child.SequenceID), 10) // Child level
+				newNumber += "." + strconv.FormatInt(sequenceID, 10) // Child level
 			}
 
 			// Store the computed numbering
@@ -715,7 +802,7 @@ func generateHierarchy(nodes []SectionInfo) map[int64]string {
 		}
 	}
 
-	// Step 3: Start numbering for root nodes (parent_id == 0)
+	// Step 4: Start numbering for root nodes (parent_id == 0)
 	assignNumbering(0, "")
 
 	return hierarchy
