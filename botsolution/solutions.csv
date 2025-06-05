@@ -1,0 +1,1054 @@
+oldquestion_id,bot_solution,new_formatted_response
+4869140,"Step 1: The decay of a radioactive element follows the formula
+
+\[
+m = \frac{m_0}{2^{\frac{t}{T_{1/2}}}}
+\]
+
+where  
+\(m_0\) is the initial mass,  
+\(T_{1/2}\) is the half-life, and  
+\(t\) is the elapsed time.
+
+Step 2: Here, \(m_0 = 1\, \text{g}\), \(T_{1/2} = 150\, \text{years}\), and \(t = 300\, \text{years}\).
+
+Step 3: Calculate the exponent:
+
+\[
+\frac{t}{T_{1/2}} = \frac{300}{150} = 2
+\]
+
+Step 4: Substitute into the decay formula:
+
+\[
+m = \frac{1\, \text{g}}{2^2} = \frac{1\, \text{g}}{4} = 0.25\, \text{g}
+\]
+
+Thus, after 300 years, the sealed tube will contain 0.25 g of the sample.","{
+  ""Explain the problem"": ""The question asks how much of a radioactive sample remains after a certain amount of time has passed, given the element's half-life and an initial amount."",
+  ""Concept"": ""Radioactive decay is the process by which an unstable atomic nucleus loses energy by emitting radiation. The half-life is the time required for half of the radioactive atoms in a sample to decay. This means the sample's mass reduces by half every half-life period."",
+  ""Formula"": ""The decay formula used is: \n\n\\[ m = \\frac{m_0}{2^{\\frac{t}{T_{1/2}}}} \\]\n\nwhere:\n- \\(m\\) is the remaining mass,\n- \\(m_0\\) is the initial mass,\n- \\(t\\) is the elapsed time,\n- \\(T_{1/2}\\) is the half-life of the element."",
+  ""Visual Aid"": ""N/A"",
+  ""Calculation"": ""Step 1: Identify values: \\(m_0 = 1\\, \\text{g}\\), \\(T_{1/2} = 150\\, \\text{years}\\), \\(t = 300\\, \\text{years}\\).\n\nStep 2: Calculate how many half-lives have elapsed:\n\\[ \\frac{t}{T_{1/2}} = \\frac{300}{150} = 2 \\]\n\nStep 3: Calculate remaining mass by substituting into the formula:\n\\[ m = \\frac{1}{2^2} = \\frac{1}{4} = 0.25\\, \\text{g} \\]\n\nSo, after 300 years, 0.25 grams of the original sample remains."",
+  ""Hints"": ""Remember that half-life describes how the quantity is halved after each period of length equal to the half-life."",
+  ""Tips and Tricks"": ""Think in terms of doubling or halving for each half-life cycle to simplify calculations; for example, after two half-lives, the mass is one quarter of the original."",
+  ""Common Mistakes"": ""A common error is forgetting to divide the total time by the half-life to find the correct exponent or mixing up the half-life with the elapsed time."",
+  ""Explanation for Incorrect Answers"": ""1 g implies no decay happened, which is incorrect after 300 years.\n0.5 g corresponds to one half-life, but 300 years equals two half-lives.\n0 g is impossible since complete decay is not expected exactly at 300 years."",
+  ""Time Estimate"": ""About 2-3 minutes for a student familiar with half-life calculations."",
+  ""Difficulty Level"": ""Easy - The problem requires simple substitutions into a well-known decay formula with straightforward arithmetic.""
+}"
+2680849,"Step 1: A virtual image is one where the light rays appear to diverge from a point, but they do not actually converge there. This is why you can’t project a virtual image onto a screen because a screen requires real (converging) rays to form an image.
+
+Step 2: When you look into a mirror, however, your eye’s lens takes the diverging rays (which seem to come from the virtual image) and refracts them. In doing so, the lens effectively uses the virtual image as the object for the eye.
+
+Step 3: The eye then converges these rays to form a real image on the retina. Therefore, although the virtual image cannot be projected on a screen (since the rays don’t meet in space), your eye is able to “capture” it because it is acting as a converging system.
+
+Thus, the correct answer is: ""virtual image acts as object for eye lens.""","{
+  ""Explain the problem"": ""The question asks why a virtual image cannot be projected onto a physical screen but can still be seen clearly by the eye, which has a retina that acts like a screen inside the eye."",
+  ""Concept"": ""A virtual image is formed by light rays that appear to diverge from a point but do not actually meet at that point. Because the rays do not converge, you cannot capture or project that image on a screen. However, the eye's lens can receive these diverging rays and refract them, forming a real image on the retina. Thus, the virtual image acts as an object for the eye lens, allowing the eye to see it."",
+  ""Formula"": ""N/A"",
+  ""Visual Aid"": ""N/A"",
+  ""Calculation"": ""N/A"",
+  ""Hints"": ""Recall that a screen can only display an image when light rays physically meet (converge) on it. For virtual images, think about how the eye lens handles the rays coming from such an image."",
+  ""Tips and Tricks"": ""Remember: Real images are formed when rays actually converge and can be projected; virtual images are formed where rays appear to originate but don’t actually converge in space."",
+  ""Common Mistakes"": ""One common mistake is assuming all images can be projected on a screen. Also, confusing virtual images as real ones that actually have converging rays."",
+  ""Explanation for Incorrect Answers"": ""‘Virtual image does not converge’ explains why it can't be on screen but does not answer why it is visible on the retina. ‘Virtual image has wider field view’ is irrelevant to projection or visibility on retina. ‘None’ is incorrect because the correct answer is that the virtual image acts as object for the eye lens."",
+  ""Time Estimate"": ""An average student might take 3-5 minutes to understand and answer this question."",
+  ""Difficulty Level"": ""Easy - The concepts involved are fundamental optics principles commonly introduced in basic physics.""
+}"
+4757813,"We are given a particle in uniform circular motion (constant speed, constant magnitude of acceleration) where the instantaneous acceleration is the centripetal acceleration:
+
+\[
+a_{\text{ins}}=\frac{v^2}{R}
+\]
+
+In a quarter revolution the velocity direction changes by \(90^\circ\). Suppose the initial velocity is along the positive \(y\)-axis (\(v\,\hat{j}\)) and the final velocity along the negative \(x\)-axis (\(-v\,\hat{i}\)). Then the change in velocity is
+
+\[
+\Delta \vec{v}=(-v\,\hat{i})- (v\,\hat{j})=-v\,\hat{i}-v\,\hat{j}
+\]
+
+Its magnitude is
+
+\[
+|\Delta \vec{v}|=\sqrt{(-v)^2+(-v)^2}=\sqrt{v^2+v^2}=\sqrt{2}\,v
+\]
+
+The time taken for a quarter revolution is
+
+\[
+t=\frac{\text{arc length}}{v}=\frac{\pi R/2}{v}=\frac{\pi R}{2v}
+\]
+
+Thus, the magnitude of the average acceleration is
+
+\[
+a_{\text{avg}}=\frac{|\Delta \vec{v}|}{t}=\frac{\sqrt{2}\,v}{\frac{\pi R}{2v}}=\frac{\sqrt{2}\,v\times 2v}{\pi R}=\frac{2\sqrt{2}\,v^2}{\pi R}
+\]
+
+To compare with the instantaneous acceleration, take the ratio:
+
+\[
+\frac{a_{\text{avg}}}{a_{\text{ins}}}=\frac{\frac{2\sqrt{2}\,v^2}{\pi R}}{\frac{v^2}{R}}=\frac{2\sqrt{2}}{\pi}
+\]
+
+So, the average acceleration over a quarter revolution is \(\dfrac{2\sqrt{2}}{\pi}\) times the instantaneous acceleration.
+
+Thus, the correct answer is:
+
+\[
+\frac{2\sqrt{2}}{\pi}
+\]","{
+  ""Explain the problem"": ""The question asks us to find how many times greater the magnitude of the average acceleration is compared to the instantaneous acceleration for a body moving in a circle with constant angular velocity over a quarter of its full revolution."",
+  ""Concept"": ""The problem involves uniform circular motion concepts. Even though the speed is constant, the direction of velocity changes continuously, causing acceleration directed towards the center (centripetal acceleration). Average acceleration over an interval depends on the change in velocity vector over the time elapsed."",
+  ""Formula"": ""Instantaneous acceleration (centripetal): \\[ a_{\\text{ins}} = \\frac{v^2}{R} \\]\nAverage acceleration magnitude: \\[ a_{\\text{avg}} = \\frac{|\\Delta \\vec{v}|}{t} \\]\nWhere:\n- \\(v\\) is the speed\n- \\(R\\) is the radius of the circular path\n- \\(t\\) is the time taken for the quarter revolution\n- \\(\\Delta \\vec{v}\\) is the change in velocity vector"",
+  ""Visual Aid"": ""N/A"",
+  ""Calculation"": ""1. Initial velocity vector is taken along positive y-axis: \\(\\vec{v_i} = v \\hat{j}\\).\n2. After quarter revolution (90 degrees), final velocity vector is along negative x-axis: \\(\\vec{v_f} = -v \\hat{i}\\).\n3. Change in velocity: \\[ \\Delta \\vec{v} = \\vec{v_f} - \\vec{v_i} = -v \\hat{i} - v \\hat{j} \\]\n4. Magnitude: \\[ |\\Delta \\vec{v}| = \\sqrt{(-v)^2 + (-v)^2} = \\sqrt{2} v \\]\n5. Time for quarter revolution: \\[ t = \\frac{\\text{arc length}}{v} = \\frac{\\pi R / 2}{v} = \\frac{\\pi R}{2v} \\]\n6. Average acceleration magnitude: \\[ a_{\\text{avg}} = \\frac{\\sqrt{2} v}{\\frac{\\pi R}{2v}} = \\frac{2 \\sqrt{2} v^2}{\\pi R} \\]\n7. Ratio of average to instantaneous acceleration: \\[ \\frac{a_{\\text{avg}}}{a_{\\text{ins}}} = \\frac{\\frac{2 \\sqrt{2} v^2}{\\pi R}}{\\frac{v^2}{R}} = \\frac{2 \\sqrt{2}}{\\pi} \\]"",
+  ""Hints"": ""Consider how velocity vectors change direction during circular motion and use vector subtraction to find \\(\\Delta \\vec{v}\\). Remember, acceleration is change in velocity over time."",
+  ""Tips and Tricks"": ""Use unit vectors to represent velocity directions and calculate change in velocity as vector difference. Knowing that a quarter revolution changes velocity direction by 90° helps simplify the problem."",
+  ""Common Mistakes"": ""1. Assuming average acceleration equals instantaneous acceleration magnitude.\n2. Forgetting to consider velocity as a vector leading to incorrect magnitude of \\(\\Delta \\vec{v}\\).\n3. Using incorrect time interval for average acceleration calculation."",
+  ""Explanation for Incorrect Answers"": ""Options like \\(\\frac{\\pi}{2}\\), \\(\\pi\\), or 2 do not account for the vector change in velocity; they ignore the geometric factor of the 90° change leading to the \\(\\frac{2 \\sqrt{2}}{\\pi}\\) factor."",
+  ""Time Estimate"": ""An average student might need around 7-10 minutes to understand the concept and perform the calculation."",
+  ""Difficulty Level"": ""Medium because it requires understanding vector nature of velocity and acceleration, and manipulating these using geometry and formulas.""
+}"
+4805806,"Step 1: Identifying the heat‐absorbing processes  
+The cycle shows that heat is absorbed in two parts: during process A→B (at constant volume) and B→C (at constant pressure).
+
+Step 2: Heat absorbed during A→B  
+For a monatomic gas, the molar heat capacity at constant volume is  
+\[
+C_V=\frac{3R}{2}
+\]  
+The heat added during a constant volume process is  
+\[
+Q_{AB}=\mu C_V\Delta T
+\]  
+In the given cycle, it’s found by comparing the state variables and turns out to be  
+\[
+Q_{AB}=\frac{3}{2}\,(2P_0V_0-P_0V_0)=\frac{3}{2}P_0V_0.
+\]
+
+Step 3: Heat absorbed during B→C  
+For a constant pressure process, the molar heat capacity is  
+\[
+C_P=C_V+R=\frac{3R}{2}+R=\frac{5R}{2}.
+\]  
+The heat added is  
+\[
+Q_{BC}=\mu C_P\Delta T.
+\]  
+Using the values from the diagram, one obtains  
+\[
+Q_{BC}=\frac{5}{2}\,(4P_0V_0-2P_0V_0)=5P_0V_0.
+\]
+
+Step 4: Total heat absorbed from the source  
+Add the contributions from A→B and B→C:  
+\[
+Q_{\text{in}}=Q_{AB}+Q_{BC}=\frac{3}{2}P_0V_0+5P_0V_0.
+\]  
+Writing \(5P_0V_0\) as \(\frac{10}{2}P_0V_0\), we have  
+\[
+Q_{\text{in}}=\frac{3+10}{2}\,P_0V_0=\frac{13}{2}P_0V_0.
+\]
+
+Thus, the heat taken in one cycle from the source is  
+\[
+\boxed{\left(\frac{13}{2}\right)P_0V_0.}
+\]","{
+  ""Explain the problem"": ""The question asks for the total amount of heat absorbed by an ideal monatomic gas engine during one complete thermodynamic cycle shown in the given P-V diagram."",
+  ""Concept"": ""The problem involves understanding thermodynamic processes and heat transfer in an ideal monatomic gas. It uses the concepts of heat capacities at constant volume (C_V) and constant pressure (C_P), the properties of ideal gases, and how heat is absorbed or released during different processes (isochoric and isobaric)."",
+  ""Formula"": ""1. Heat absorbed at constant volume: \\( Q = \\mu C_V \\Delta T \\)  \n2. Heat absorbed at constant pressure: \\( Q = \\mu C_P \\Delta T \\)  \nwhere \\( C_V = \\frac{3R}{2} \\) and \\( C_P = C_V + R = \\frac{5R}{2} \\) for a monatomic ideal gas, \\( \\mu \\) is the number of moles, and \\( \\Delta T \\) is the temperature change."",
+  ""Visual Aid"": ""N/A"",
+  ""Calculation"": ""Step 1: Identify heat-absorbing processes are A→B (constant volume) and B→C (constant pressure).  \nStep 2: For A→B, \\( Q_{AB} = \\frac{3}{2} (2P_0V_0 - P_0V_0) = \\frac{3}{2} P_0V_0 \\).  \nStep 3: For B→C, \\( Q_{BC} = \\frac{5}{2} ( 4P_0V_0 - 2P_0V_0 ) = 5 P_0V_0 \\).  \nStep 4: Total heat absorbed is \\( Q_{in} = Q_{AB} + Q_{BC} = \\frac{3}{2} P_0V_0 + 5 P_0V_0 = \\frac{13}{2} P_0V_0 \\)."",
+  ""Hints"": ""Focus on processes where heat enters the system. Use the correct heat capacities for constant volume and constant pressure processes and calculate temperature changes using pressure and volume changes."",
+  ""Tips and Tricks"": ""Remember for a monatomic gas, \\( C_V = \\frac{3}{2}R \\) and \\( C_P = \\frac{5}{2}R \\). Heat absorbed is positive only during the processes where the system gains energy (temperature increases)."",
+  ""Common Mistakes"": ""Confusing the heat capacity values for constant volume and constant pressure, not identifying which processes absorb heat, or mixing up the formula for heat in different processes."",
+  ""Explanation for Incorrect Answers"": ""Options like \\( P_0V_0 \\) or \\( 4P_0V_0 \\) underestimate the total heat absorbed by ignoring one or more heat absorption stages. \\( \\left( \\frac{11}{2} \\right) P_0V_0 \\) is incorrect because it misses contributions from both processes fully."",
+  ""Time Estimate"": ""5-7 minutes"",
+  ""Difficulty Level"": ""Medium - It requires understanding of thermodynamic cycles, correct identification of processes, and application of the right heat capacity formulas.""
+}"
+710079,"We start by noting that the mutual inductance is given by
+
+\[
+M=\frac{\phi_{12}}{I_1},
+\]
+
+where \(\phi_{12}\) is the magnetic flux through the secondary loop (of radius \(R_2\)) due to the current \(I_1\) in the primary loop (of radius \(R_1\)).
+
+For a circular loop carrying current \(I_1\), when \(R_1 \gg R_2\), the magnetic field at the center of the primary loop can be approximated as
+
+\[
+B_1=\frac{\mu_0 I_1}{2 R_1}.
+\]
+
+Since the secondary loop is very small compared to the primary, we assume that the magnetic field \(B_1\) is nearly uniform over its area. The flux through the secondary loop is then
+
+\[
+\phi_{12}=B_1 \times A_2,
+\]
+
+where the area of the secondary loop is
+
+\[
+A_2=\pi R_2^2.
+\]
+
+Substitute \(B_1\) into the expression for \(\phi_{12}\):
+
+\[
+\phi_{12}=\left(\frac{\mu_0 I_1}{2 R_1}\right)(\pi R_2^2)=\frac{\mu_0 \pi R_2^2 I_1}{2 R_1}.
+\]
+
+Now, substitute this flux into the mutual inductance formula:
+
+\[
+M=\frac{\phi_{12}}{I_1}=\frac{\mu_0 \pi R_2^2}{2 R_1}.
+\]
+
+Thus, the mutual inductance is directly proportional to
+
+\[
+M \propto \frac{R_2^2}{R_1}.
+\]
+
+So the correct option is
+
+\[
+\frac{{R_2}^2}{R_1}.
+\]
+
+This shows that as long as \(R_1 \gg R_2\), the mutual inductance depends on the square of the smaller loop’s radius divided by the larger loop’s radius.","{
+  ""Explain the problem"": ""The problem asks us to find how the mutual inductance M between two circular loops placed coaxially in the same plane depends on their radii when one loop's radius (R1) is much larger than the other loop's radius (R2). We want to know which expression correctly describes this proportionality."",
+  ""Concept"": ""The concept involved is mutual inductance, which measures how much magnetic flux through one loop is linked due to the current flowing in another loop. Since the loops are concentric and in the same plane, the magnetic field produced by the larger loop affects the smaller one. When their sizes differ greatly (R1 >> R2), the magnetic field at the center of the large loop can be approximated as uniform over the area of the small loop. This allows us to express mutual inductance in terms of the magnetic field and area of the smaller loop."",
+  ""Formula"": [
+    ""M = \\frac{\\phi_{12}}{I_1},  where \\phi_{12} is the magnetic flux through the secondary loop due to current I_1."",
+    ""B_1 = \\frac{\\mu_0 I_1}{2 R_1},  magnetic field at center of the larger loop."",
+    ""\\phi_{12} = B_1 \\times A_2,  where A_2 = \\pi R_2^2 is the area of smaller loop.""
+  ],
+  ""Visual Aid"": ""N/A"",
+  ""Calculation"": ""1. Magnetic field at center of large loop:\n\\[ B_1 = \\frac{\\mu_0 I_1}{2 R_1} \\]\n\n2. Flux through smaller loop:\n\\[ \\phi_{12} = B_1 \\times \\pi R_2^2 = \\frac{\\mu_0 I_1}{2 R_1} \\times \\pi R_2^2 = \\frac{\\mu_0 \\pi R_2^2 I_1}{2 R_1} \\]\n\n3. Mutual inductance:\n\\[ M = \\frac{\\phi_{12}}{I_1} = \\frac{\\mu_0 \\pi R_2^2}{2 R_1} \\]\n\nTherefore,\n\n\\[ M \\propto \\frac{R_2^2}{R_1} \\]"",
+  ""Hints"": ""Consider that when one loop is much larger, the magnetic field it creates over the smaller loop can be treated as nearly uniform. Use the magnetic field formula for a current loop at its center and relate flux to magnetic field times area."",
+  ""Tips and Tricks"": ""Remember that the magnetic field at the center of a circular loop is \\( B = \\frac{\\mu_0 I}{2R} \\). Also, mutual inductance depends on how much flux of one coil links with the other, so focus on the area of the smaller loop for flux calculation."",
+  ""Common Mistakes"": ""Assuming both loops produce comparable magnetic fields or treating the magnetic field as varying significantly over the smaller loop's area. Another error is mixing up which radius to place in numerator or denominator when relating the mutual inductance."",
+  ""Explanation for Incorrect Answers"": ""Options like \\(\\frac{R_1}{R_2}\\) or \\(\\frac{R_1^2}{R_2}\\) imply that the mutual inductance grows with the larger radius or the ratio of radii wrongly, which contradicts the fact that the magnetic field decreases with increasing radius of the larger loop and flux depends on the smaller loop's area."",
+  ""Time Estimate"": ""About 5 to 7 minutes for a student familiar with basic electromagnetism and mutual inductance."",
+  ""Difficulty Level"": ""Medium. The problem requires understanding mutual inductance and applying approximations for magnetic field due to a current loop, which may not be immediately intuitive but is straightforward once the concept of flux linkage is clear.""
+}"
+3717882,"Step 1: Draw the free-body diagram.  
+On an inclined plane at an angle \(\theta\), the weight \(mg\) of the body can be resolved into two components:  
+- Parallel to the plane: \(mg \sin\theta\)  
+- Perpendicular to the plane: \(mg \cos\theta\)  
+
+Step 2: Find the friction force.  
+The normal force is equal to the perpendicular component:
+\[
+N = mg \cos\theta
+\]
+The kinetic friction acting in the opposite direction to motion is:
+\[
+f = \mu N = \mu mg \cos\theta
+\]
+
+Step 3: Write the net force along the incline.  
+Since friction opposes the motion down the plane, the net force \(F_{\text{net}}\) is:
+\[
+F_{\text{net}} = mg \sin\theta - \mu mg \cos\theta
+\]
+
+Step 4: Apply Newton’s second law.  
+Using \(F = ma\), we have:
+\[
+ma = mg\sin\theta - \mu mg\cos\theta
+\]
+Cancel the mass \(m\) from both sides:
+\[
+a = g\left(\sin\theta - \mu\cos\theta\right)
+\]
+
+Thus, the acceleration of the body sliding down is:
+\[
+a = g\left(\sin\theta - \mu\cos\theta\right)
+\]
+
+So, the correct option is:  
+g(sinθ – μcosθ)","{
+  ""Explain the problem"": ""The question asks for the formula to calculate the acceleration of a body sliding down an inclined plane where friction is present. It wants to know how acceleration depends on the angle of the incline (θ) and the coefficient of friction (μ)."",
+  ""Concept"": ""The problem involves Newton's second law of motion and frictional forces. When a body slides down an incline, the weight component along the plane causes acceleration, while friction opposes the motion. The net effect determines the body's acceleration."",
+  ""Formula"": ""The key formula derived is:\n\\[\na = g(\\sin\\theta - \\mu \\cos\\theta)\n\\]\nwhere:\n- \\(a\\) is the acceleration down the plane,\n- \\(g\\) is gravitational acceleration,\n- \\(\\theta\\) is the angle of the inclined plane,\n- \\(\\mu\\) is the coefficient of kinetic friction."",
+  ""Visual Aid"": ""N/A"",
+  ""Calculation"": ""1. Resolve the weight \\(mg\\) into components:\n   - Parallel to incline: \\(mg \\sin\\theta\\)\n   - Perpendicular to incline: \\(mg \\cos\\theta\\)\n2. Calculate the friction force opposing motion: \\(f = \\mu mg \\cos\\theta\\)\n3. Find net force along incline: \\(F_{net} = mg \\sin\\theta - \\mu mg \\cos\\theta\\)\n4. Apply Newton's second law: \\(ma = F_{net} \\Rightarrow a = g(\\sin\\theta - \\mu \\cos\\theta)\\)."",
+  ""Hints"": ""Recall that friction always acts opposite to the direction of motion, and the normal force depends on the perpendicular component of weight."",
+  ""Tips and Tricks"": ""Remember to resolve the gravitational force into components parallel and perpendicular to the incline first. Then, calculate friction using the normal force."",
+  ""Common Mistakes"": ""One common error is mixing up sine and cosine components or forgetting that friction force depends on the normal force, not the parallel component of weight."",
+  ""Explanation for Incorrect Answers"": ""Options involving terms like \\(\\mu \\sin\\theta\\) or \\(\\mu \\cos\\theta\\) added together incorrectly ignore the direction and definition of friction force. The correct formula must subtract friction from the parallel gravitational component."",
+  ""Time Estimate"": ""Approximately 5 minutes for a student familiar with friction and inclined plane problems."",
+  ""Difficulty Level"": ""Easy — The problem applies basic Newtonian mechanics concepts and requires simple force resolution and algebra.""
+}"
+3528317,"We know that the conversion from Celsius (°C) to Fahrenheit (°F) is based on two reference points: the freezing point of water (0°C = 32°F) and the boiling point of water (100°C = 212°F).
+
+Step 1: Find the difference in temperature for both scales.  
+On the Celsius scale, the difference between boiling and freezing points is  
+\[
+100 - 0 = 100^\circ \text{C},
+\]  
+and on the Fahrenheit scale it is  
+\[
+212 - 32 = 180^\circ \text{F}.
+\]
+
+Step 2: Determine the factor that relates a Celsius change to a Fahrenheit change.  
+A change of \(1^\circ \text{C}\) corresponds to a change of  
+\[
+\frac{180^\circ \text{F}}{100^\circ \text{C}} = \frac{9}{5} \text{F per C}.
+\]
+
+Step 3: Form the conversion formula.  
+Since 0°C corresponds to 32°F, for any temperature \(t^\circ \text{C}\), the corresponding Fahrenheit temperature is obtained by scaling the Celsius part by \(\frac{9}{5}\) and then adding 32:
+\[
+t^\circ \text{F} = \frac{9}{5} t^\circ \text{C} + 32.
+\]
+
+Thus, the correct relation is:  
+t°F = \(\frac{9}{5} t°C + 32\).
+
+Reviewing the given options, this matches option 3.","{
+  ""Explain the problem"": ""The question is asking to identify the correct mathematical relation that converts a temperature given in degrees Celsius (°C) to degrees Fahrenheit (°F). It provides multiple formula options, and you need to select which one accurately represents the conversion."",
+  ""Concept"": ""The core concept involves temperature scales and their relationship. Celsius and Fahrenheit are two different temperature scales with different zero points and intervals. Converting between these requires understanding the linear relationship defined by fixed points: freezing and boiling points of water."",
+  ""Formula"": ""The conversion formula is:\n\\[\nt^\\circ F = \\frac{9}{5} t^\\circ C + 32\n\\]\nwhere:\n- \\(t^\\circ C\\) is the temperature in Celsius,\n- \\(t^\\circ F\\) is the temperature in Fahrenheit."",
+  ""Visual Aid"": ""N/A"",
+  ""Calculation"": ""1. Note that water freezes at 0°C which equals 32°F, and boils at 100°C which equals 212°F.\n2. Calculate the difference in temperature on each scale:\n   - Celsius range: 100 - 0 = 100°C\n   - Fahrenheit range: 212 - 32 = 180°F\n3. Determine the ratio of Fahrenheit change per degree Celsius:\n   \\[\\frac{180}{100} = \\frac{9}{5}\\]\n4. Form the linear equation that converts Celsius to Fahrenheit:\n   \\[t^\\circ F = \\frac{9}{5} t^\\circ C + 32\\]\nThis formula accounts for the offset and scale difference between the two units."",
+  ""Hints"": ""Consider how much one degree change in Celsius corresponds to on the Fahrenheit scale and remember that the freezing point of water aligns at 32°F, not zero."",
+  ""Tips and Tricks"": ""Remember the simple conversion rule: multiply the Celsius temperature by 9/5 and then add 32 to get Fahrenheit. This is a standard formula useful in many real-world scenarios."",
+  ""Common Mistakes"": ""A frequent error is to confuse the scale factor (9/5) and the offset (32), or to forget to add 32 after scaling. Sometimes students use 5/9 for Celsius to Fahrenheit instead of Fahrenheit to Celsius."",
+  ""Explanation for Incorrect Answers"": ""The options with \\(\\frac{5}{9}\\) are incorrect because \\(\\frac{5}{9}\\) is used for converting Fahrenheit to Celsius, not the other way around. Adding or subtracting 32 incorrectly inside the fraction or at the wrong position changes the meaning and leads to wrong results."",
+  ""Time Estimate"": ""An average student would take about 3-5 minutes to understand and select the correct formula."",
+  ""Difficulty Level"": ""Easy - This problem tests fundamental knowledge of temperature conversion formulas, which is a common and straightforward concept.""
+}"
+3715102,"Step 1: Faraday’s law of electromagnetic induction tells us that a changing magnetic flux through a circuit produces an induced emf. This means that if the magnetic field or the area of the circuit changes with time, an emf is induced. This validates statement 3.
+
+Step 2: Faraday’s experiments showed that a changing magnetic field creates an electric field that can drive currents in a conductor even when there is no motion. Mathematically, this is expressed as
+
+\[
+\oint \vec{E}_{ind} \cdot d\vec{\ell} = -\frac{d\Phi_B}{dt}
+\]
+
+confirming statement 2.
+
+Step 3: According to Maxwell’s addition to Ampere's law, a changing electric field generates a magnetic field. This tells us that time-varying electric fields contribute to magnetic effects, which validates statement 1.
+
+Since all three statements are supported by the basic laws of electromagnetism, the correct answer is:
+
+All of these.","{
+  ""Explain the problem"": ""The question asks which of the given statements about electric and magnetic fields and electromagnetic induction are correct. It involves understanding how changing electric and magnetic fields influence each other and how a changing magnetic flux induces an electromotive force (emf)."",
+  ""Concept"": ""The problem is based on fundamental electromagnetism laws, including Faraday's law of electromagnetic induction and Maxwell's equations. Key concepts include: 1) A time-varying magnetic flux induces an emf in a circuit (Faraday's law). 2) A changing magnetic field produces an electric field. 3) A changing electric field produces a magnetic field (Maxwell's addition to Ampere's law). These interrelations explain how electric and magnetic fields generate each other."",
+  ""Formula"": ""Faraday's law of induction: \n\\[\n\\oint \\vec{E}_{ind} \\cdot d\\vec{\\ell} = -\\frac{d\\Phi_B}{dt}\n\\]\nWhere \\( \\vec{E}_{ind} \\) is the induced electric field, and \\( \\Phi_B \\) is the magnetic flux."",
+  ""Visual Aid"": ""N/A"",
+  ""Calculation"": ""N/A"",
+  ""Hints"": ""Recall Maxwell's addition to Ampere's law which states the role of changing electric fields in producing magnetic fields. Also, remember Faraday's law relates changing magnetic flux to induced emf and electric fields."",
+  ""Tips and Tricks"": ""Link the concept that changing magnetic fields induce electric fields and changing electric fields induce magnetic fields, reflecting the symmetry in Maxwell's equations. Remember that 'flux' specifically refers to the magnetic field passing through a surface area, which when changing, causes emf."",
+  ""Common Mistakes"": ""Confusing that only moving magnets induce emf, ignoring that time-varying electric fields can generate magnetic fields, or forgetting the role of magnetic flux rather than just magnetic field in induction."",
+  ""Explanation for Incorrect Answers"": ""Statements denying the capacity of changing electric fields to induce magnetic fields or of changing magnetic fields to induce electric fields contradict Maxwell's equations and Faraday's experiments. Also, ignoring magnetic flux change for emf induction misses the essence of Faraday's law."",
+  ""Time Estimate"": ""Approximately 5 minutes for a student familiar with basic electromagnetism to understand and select the correct answer."",
+  ""Difficulty Level"": ""Easy - This question is conceptual and tests basic fundamental laws in electromagnetism which are common in introductory physics courses.""
+}"
+4216904,"Step 1: Recognize that the configuration with charges –q and +q separated by a small distance L forms an electric dipole.
+
+Step 2: The dipole moment is defined as 
+
+\[
+p = q \times L.
+\]
+
+Step 3: For points far from the dipole (i.e., when \( R \gg L \)), the magnitude of the electric field along the axis of the dipole is given by 
+
+\[
+E = \frac{2p}{4 \pi \varepsilon_0 R^3}.
+\]
+
+Even along other directions (for example, in the plane perpendicular to the dipole axis) the dependence on \(R\) is similar, with the field ultimately varying as \( \frac{1}{R^3} \).
+
+Step 4: Thus, because \(R\) is much larger than \(L\), the dipole field decreases much more rapidly with distance than the field from a single point charge (which would vary as \(\frac{1}{R^2}\)). This confirms that the electric field intensity varies as \( \frac{1}{R^3} \).
+
+Answer: The correct option is 
+
+\[
+\frac{1}{R^3}.
+\]","{
+  ""Explain the problem"": ""The question asks how the magnitude of the electric field intensity varies at a large distance (R) from two point charges of equal magnitude but opposite sign (-q and +q) separated by a distance L, specifically when R is much greater than L."",
+  ""Concept"": ""This problem involves the concept of an electric dipole, which consists of two equal and opposite charges separated by a small distance. The electric field created by a dipole at points far away from it decreases more rapidly than the field from a single point charge."",
+  ""Formula"": ""The dipole moment is given by \n\\[\np = q \\times L\n\\]\nThe electric field at a point far from the dipole (\\( R \\gg L \\)) along the axis of the dipole is:\n\\[\nE = \\frac{2p}{4\\pi \\varepsilon_0 R^3}\n\\]\nwhere:\n- \\( p \\) is the dipole moment,\n- \\( \\varepsilon_0 \\) is the permittivity of free space,\n- \\( R \\) is the distance from the dipole center."",
+  ""Visual Aid"": ""N/A"",
+  ""Calculation"": ""Since \\( R \\gg L \\), the electric field due to the dipole varies as \\( \\frac{1}{R^3} \\). The exact expression along the dipole axis is \\( E = \\frac{2p}{4\\pi \\varepsilon_0 R^3} \\), but regardless of direction, the dependence on \\( R \\) remains \\( \\frac{1}{R^3} \\), which is faster than the \\( \\frac{1}{R^2} \\) variation for a single charge."",
+  ""Hints"": ""Consider the system as an electric dipole because the charges are equal and opposite and separated by a small distance. Recall how the electric field from a dipole depends on distance compared to a single point charge."",
+  ""Tips and Tricks"": ""Remember that the electric field from a single point charge decreases as \\( 1/R^2 \\), but a dipole's field decreases more rapidly as \\( 1/R^3 \\). Identifying dipole configurations quickly can simplify problem-solving."",
+  ""Common Mistakes"": ""Confusing the dipole field variation with that of a single point charge and assuming the field varies as \\( 1/R^2 \\). Neglecting the directionality and distance conditions (\\( R \\gg L \\)) needed to treat the system as a dipole."",
+  ""Explanation for Incorrect Answers"": ""Options such as \\( 1/R^2 \\) correspond to a single point charge, which doesn't apply here since two opposite charges form a dipole. Variations like \\( 1/R^4 \\) or \\( 1/R^6 \\) are not characteristic of dipole fields at large distances."",
+  ""Time Estimate"": ""Approximately 3-5 minutes for a student familiar with electric dipole concepts to reason and answer correctly."",
+  ""Difficulty Level"": ""Medium. The problem requires recognition of the dipole setup and knowledge of how electric fields vary with distance for dipoles, which may not be immediately obvious to beginners.""
+}"
+4466593,"Step 1: Recall that the electric flux \(\phi\) through a surface is given by
+
+\[
+\phi = \vec{E} \cdot \vec{A}
+\]
+
+where \(\vec{E}\) is the electric field and \(\vec{A}\) is the area vector (which is perpendicular to the surface).
+
+Step 2: For a surface lying in the \(yz\) plane, its area vector is normal to the \(yz\) plane—that is, along the \(x\)-axis. Assuming the area vector points in the positive \(x\) direction and has a magnitude of 1 unit, we have
+
+\[
+\vec{A} = 1 \cdot \hat{i}
+\]
+
+Step 3: The given electric field is
+
+\[
+\vec{E} = 10\,\hat{i} + 3\,\hat{j} + 4\,\hat{k}
+\]
+
+Step 4: Taking the dot product,
+
+\[
+\phi = \vec{E} \cdot \vec{A} = (10\,\hat{i} + 3\,\hat{j} + 4\,\hat{k}) \cdot (1\,\hat{i}) = 10 \times 1 + 3 \times 0 + 4 \times 0 = 10
+\]
+
+Thus, the electric flux through the given surface is 10 units.
+
+Answer: 10 units.","{
+  ""Explain the problem"": ""The question asks to find the electric flux through a surface of area 1 unit that lies in the yz-plane when an electric field is given in vector form."",
+  ""Concept"": ""Electric flux measures how much of the electric field passes through a given surface. It is calculated using the dot product of the electric field vector and the surface's area vector."",
+  ""Formula"": ""Electric flux is given by \\( \\phi = \\vec{E} \\cdot \\vec{A} \\), where \\( \\vec{E} \\) is the electric field vector and \\( \\vec{A} \\) is the area vector perpendicular to the surface."",
+  ""Visual Aid"": ""N/A"",
+  ""Calculation"": ""1. The surface lies in the yz-plane, so the area vector \\( \\vec{A} \\) is along the x-axis: \\( \\vec{A} = 1 \\hat{i} \\). 2. Given electric field is \\( \\vec{E} = 10 \\hat{i} + 3 \\hat{j} + 4 \\hat{k} \\). 3. Calculate the dot product: \\[ \\phi = \\vec{E} \\cdot \\vec{A} = (10 \\hat{i} + 3 \\hat{j} + 4 \\hat{k}) \\cdot (1 \\hat{i}) = 10 \\times 1 + 3 \\times 0 + 4 \\times 0 = 10 \\]. Thus, the electric flux is 10 units."",
+  ""Hints"": ""Think about the direction of the surface's area vector and how the electric field components align with it."",
+  ""Tips and Tricks"": ""Remember the dot product only cares about the components of vectors in the same direction. Components perpendicular to the area vector do not contribute to flux."",
+  ""Common Mistakes"": ""Confusing the surface plane with the direction of the area vector or including components of \\( \\vec{E} \\) that are not along the area vector."",
+  ""Explanation for Incorrect Answers"": ""Options other than 10 often result from incorrectly using the full magnitude of \\( \\vec{E} \\) or summing vector components instead of dot product."",
+  ""Time Estimate"": ""About 2–3 minutes for a student familiar with vector dot products and electric flux."",
+  ""Difficulty Level"": ""Easy - The problem involves straightforward application of the dot product to find electric flux with clearly defined vectors.""
+}"
+4955840,"Step 1: Notice that the process depicted in the figure (although not shown here) involves the system’s work done being represented by the area under a curve. In such diagrams, the work executed by the system is measured by the area under the process curve.
+
+Step 2: From the additional explanation provided—“As we move from A to B area continuously increases so work done also increases”—we deduce that as the process proceeds, the accumulated work (area) becomes larger continuously. 
+
+Step 3: Since the work done by the system (or its rate at which work is done) is directly related to the area, a continuously increasing area implies that at every instant the system keeps doing more work. Therefore, the rate of doing work is also increasing throughout the process.
+
+Step 4: By comparing with the given options:
+  • Continuously increases  
+  • Continuously decreases  
+  • First increases then decreases  
+  • First decreases then increases
+
+The correct option, based on the increase of the area from point A to point B, is that the rate with which work is being done by the system continuously increases.
+
+Thus, the answer is: “Continuously increases.”","{
+  ""Explain the problem"": ""The question asks how the rate at which work is done by a system changes during a process represented on a pressure-volume (P-V) diagram. We need to determine whether the work rate continuously increases, decreases, or changes in some other manner."",
+  ""Concept"": ""In thermodynamics, the work done by a system during a process corresponds to the area under the curve on a pressure-volume (P-V) diagram. The rate at which work is done relates to how this area (work) changes as the process progresses. If the area increases more rapidly, the rate of work done is increasing, and vice versa."",
+  ""Formula"": ""Work done by the system, W = \\int P \\, dV, where P is pressure and V is volume. The rate of work done corresponds to the instantaneous change in work with respect to volume change."",
+  ""Visual Aid"": ""N/A"",
+  ""Calculation"": ""Not applicable as no numerical values are provided. The key is to interpret the shape and area under the curve in the P-V diagram and how it changes from point A to point B."",
+  ""Hints"": ""Focus on how the area under the curve changes as you move along the process from start (A) to end (B). A continuously increasing area suggests increasing work done."",
+  ""Tips and Tricks"": ""Remember that in a P-V diagram, work done by the system is the area under the process curve. Observing the trend of this area helps determine the rate of work done."",
+  ""Common Mistakes"": ""Confusing the total work done (total area) with the rate at which work is done. Also, assuming the rate decreases without analyzing the area growth."",
+  ""Explanation for Incorrect Answers"": ""Options suggesting a decrease or a non-monotonic change in the rate are incorrect because the area under the process curve continuously increases from A to B, indicating a continuously increasing work rate."",
+  ""Time Estimate"": ""Approximately 2-3 minutes to analyze and conclude based on the P-V diagram."",
+  ""Difficulty Level"": ""Easy - This problem requires understanding of basic thermodynamic concepts and interpreting simple P-V diagrams.""
+}"
+3448793,"Step 1: For an ideal transformer, the voltage and turn ratios are related by  
+\[
+\frac{V_s}{V_p} = \frac{N_s}{N_p}
+\]
+where \(N_s\) and \(N_p\) are the number of turns in the secondary and primary coils, respectively.
+
+Step 2: Assuming no losses, the input power equals the output power, so  
+\[
+V_p I_p = V_s I_s.
+\]
+Substitute the voltage relation to get the current relation:
+\[
+I_s = \frac{N_p}{N_s} I_p.
+\]
+
+Step 3: Now, consider two cases:  
+(a) In a step-up transformer, the secondary has more turns than the primary (\(N_s > N_p\)). Then,
+\[
+I_s = \frac{N_p}{N_s} I_p < I_p.
+\]
+This means the current in the secondary coil is less than that in the primary coil.
+
+(b) In a step-down transformer, the secondary has fewer turns than the primary (\(N_s < N_p\)). Then,
+\[
+I_s = \frac{N_p}{N_s} I_p > I_p.
+\]
+Here, the current in the secondary coil is more than that in the primary coil.
+
+Step 4: Comparing the two, we conclude that the secondary current is “more in step down and less in step up than primary coil.”
+
+Thus, the correct statement is:  
+""More in step down and less in step up than primary coil.""","{
+  ""Explain the problem"": ""The question asks how the current in the secondary coil of a transformer compares to the current in the primary coil. It wants to know whether the secondary current is less, more, or varies depending on the type of transformer (step-up or step-down)."",
+  ""Concept"": ""The key concept is the working principle of an ideal transformer, which relates the voltages, currents, and number of turns in the primary and secondary coils. Transformers operate based on electromagnetic induction and conserve power (assuming no losses). The current and voltage ratios depend on the turns ratio of the coils."",
+  ""Formula"": ""1. Voltage and turns ratio: \\[ \\frac{V_s}{V_p} = \\frac{N_s}{N_p} \\] where \\(V_s, V_p\\) are secondary and primary voltages, \\(N_s, N_p\\) are number of turns in secondary and primary coils respectively.\n2. Power conservation (ideal transformer): \\[ V_p I_p = V_s I_s \\]\n3. Using the above, current relation: \\[ I_s = \\frac{N_p}{N_s} I_p \\]"",
+  ""Visual Aid"": ""N/A"",
+  ""Calculation"": ""Step 1: For a step-up transformer where \\(N_s > N_p\\),\n\\[ I_s = \\frac{N_p}{N_s} I_p < I_p \\]\nSo the secondary current is less than the primary current.\n\nStep 2: For a step-down transformer where \\(N_s < N_p\\),\n\\[ I_s = \\frac{N_p}{N_s} I_p > I_p \\]\nSo the secondary current is greater than the primary current."",
+  ""Hints"": ""Remember that in a transformer, power is ideally conserved, so an increase in voltage means a decrease in current, and vice versa."",
+  ""Tips and Tricks"": ""Use the turns ratio to quickly determine the direction of change in current: more turns in secondary means step-up voltage, which reduces secondary current; fewer turns means step-down voltage, which increases secondary current."",
+  ""Common Mistakes"": ""Confusing the relationship between voltage and current in transformers, or mixing up step-up and step-down types leading to incorrect assumptions about current magnitude."",
+  ""Explanation for Incorrect Answers"": ""Choosing that the secondary current is always less or always more is incorrect because it depends on the turns ratio. The correct answer is that the secondary current is less in step-up transformers and more in step-down transformers compared to the primary current."",
+  ""Time Estimate"": ""2-3 minutes"",
+  ""Difficulty Level"": ""Easy - This problem is straightforward if the basic transformer relationships are understood.""
+}"
+1676943,"Step 1. Coulomb’s law tells us that the magnitude of the force between two point charges is given by
+
+\[
+F=\frac{k|q_1q_2|}{r^2}.
+\]
+
+Step 2. According to Newton’s third law, the force exerted by \(q_1\) on \(q_2\) is equal in magnitude and opposite in direction to the force exerted by \(q_2\) on \(q_1\). This means
+
+\[
+|F_{12}|=|F_{21}|.
+\]
+
+Step 3. Although the formula for force involves both \(q_1\) and \(q_2\), the equality of these forces is inherent to the law of action and reaction.
+
+Step 4. In diagrams that represent electric field lines, the number of lines drawn is often taken as proportional to the magnitude of the charge. When the lines on the two charges are equal in number, they indicate that the magnitudes of the charges are equal. The similar question’s context explains this point by showing that the forces (and hence by indication, the charges) are equal in magnitude.
+
+Step 5. Thus, if the diagram shows that the forces (or field-line representations) are equal and opposite, it implies that
+
+\[
+\left| \frac{q_1}{q_2} \right|=1.
+\]
+
+So, the correct answer is option “1”.","{
+  ""Explain the problem"": ""The question asks us to determine the ratio of the magnitudes of two charges, \\( \\left| \\frac{q_1}{q_2} \\right| \\), based on the electric field lines shown for two point charges in a figure."",
+  ""Concept"": ""The core concept here is Coulomb's law, which relates the force between two point charges to the magnitude of those charges and the distance between them. Additionally, the principle that the number of electric field lines is proportional to the magnitude of the charge helps relate the diagram to the ratio of charges."",
+  ""Formula"": ""Coulomb's law for the force between two charges is given by:\n\n\\[\nF = \\frac{k |q_1 q_2|}{r^2}\n\\]\nwhere:\n- \\(F\\) is the magnitude of the force,\n- \\(k\\) is Coulomb's constant,\n- \\(q_1, q_2\\) are the magnitudes of the point charges,\n- \\(r\\) is the distance between the charges."",
+  ""Visual Aid"": ""N/A"",
+  ""Calculation"": ""1. Coulomb's law states that the forces between two charges are equal in magnitude and opposite in direction:\n\n\\[\n|F_{12}| = |F_{21}|\n\\]\n\n2. Since the forces are mutual and equal, the magnitude equality implies no direct information on charge ratio without additional context.\n\n3. The key step is to use electric field lines: the number of lines emanating from a charge is proportional to its magnitude.\n\n4. If the lines from both charges are equal in number, then their magnitudes are equal, so:\n\n\\[\n\\left| \\frac{q_1}{q_2} \\right| = 1\n\\]\n\nThus, the ratio of the magnitudes of the charges is 1."",
+  ""Hints"": ""Look closely at the number of field lines coming from each charge; this visually encodes the magnitude of each charge."",
+  ""Tips and Tricks"": ""Remember that electric field lines start from positive charges and end at negative charges. The number of lines is proportional to the strength of the charge, which is a useful shortcut to estimate charge ratios without complex calculations."",
+  ""Common Mistakes"": ""A typical mistake is to confuse the force magnitude with the field line count without recognizing that forces are always equal and opposite due to Newton's third law. Also, ignoring that field line count represents magnitude of charge leads to wrong conclusions."",
+  ""Explanation for Incorrect Answers"": ""Options other than 1 imply unequal numbers of field lines or unequal forces, which contradict the given information from the figure and the principle of equal and opposite forces between two charges."",
+  ""Time Estimate"": ""Around 3 to 5 minutes for an average student familiar with electric fields and Coulomb's law."",
+  ""Difficulty Level"": ""Easy - The problem tests understanding of basic electrostatics and interpreting electric field line diagrams, which are foundational topics in physics.""
+}"
+5121753,"To find the resultant intensity, we first calculate the resultant amplitude using the formula for the superposition of two waves:
+
+\[
+A_{\text{res}} = \sqrt{a_1^2 + a_2^2 + 2a_1a_2 \cos \phi}
+\]
+
+Here, the given amplitudes are \(a_1 = 3A\) and \(a_2 = 2A\), and the phase difference is \(\phi = \frac{\pi}{3}\).
+
+Step 1: Substitute the values:
+
+\[
+A_{\text{res}} = \sqrt{(3A)^2 + (2A)^2 + 2 \cdot (3A) \cdot (2A) \cos\left(\frac{\pi}{3}\right)}
+\]
+
+Step 2: Evaluate each term:
+
+\[
+(3A)^2 = 9A^2,\quad (2A)^2 = 4A^2
+\]
+\[
+2 \cdot (3A) \cdot (2A) = 12A^2,\quad \text{and}\quad \cos\left(\frac{\pi}{3}\right) = \frac{1}{2}
+\]
+
+Step 3: Calculate the cosine term:
+
+\[
+12A^2 \times \frac{1}{2} = 6A^2
+\]
+
+Step 4: Sum all the terms inside the square root:
+
+\[
+A_{\text{res}} = \sqrt{9A^2 + 4A^2 + 6A^2} = \sqrt{19A^2} = \sqrt{19}\,A
+\]
+
+Since intensity is proportional to the square of the amplitude:
+
+\[
+I \propto A_{\text{res}}^2 = \left(\sqrt{19}\,A\right)^2 = 19A^2
+\]
+
+Thus, the resultant intensity is proportional to \(\boxed{19A^2}\).","{
+  ""Explain the problem"": ""The question asks for the resultant intensity when two coherent light waves of different amplitudes interfere at a point, given their phase difference. We need to find the intensity proportional to the combined wave at that point."",
+  ""Concept"": ""When two light waves overlap, their amplitudes combine depending on their phase difference, causing interference. The resultant intensity depends on the square of the resultant amplitude formed by the vector sum of the individual amplitudes considering their phase difference."",
+  ""Formula"": ""Resultant amplitude: \n\\[ A_{res} = \\sqrt{a_1^2 + a_2^2 + 2a_1a_2 \\cos \\phi} \\]\nwhere \\(a_1\\) and \\(a_2\\) are amplitudes of the two waves and \\(\\phi\\) is the phase difference.\n\nIntensity is proportional to the square of the resultant amplitude:\n\\[I \\propto A_{res}^2 \\]"",
+  ""Visual Aid"": ""N/A"",
+  ""Calculation"": ""Given: \\(a_1 = 3A\\), \\(a_2 = 2A\\), \\(\\phi = \\frac{\\pi}{3}\\).\n\nStep 1: Substitute values into the formula:\n\\[ A_{res} = \\sqrt{(3A)^2 + (2A)^2 + 2 \\times 3A \\times 2A \\times \\cos\\left(\\frac{\\pi}{3}\\right)} \\]\n\nStep 2: Calculate each term:\n\\[9A^2 + 4A^2 + 12A^2 \\times \\frac{1}{2} = 9A^2 + 4A^2 + 6A^2 = 19A^2 \\]\n\nStep 3: So,\n\\[ A_{res} = \\sqrt{19A^2} = \\sqrt{19}A \\]\n\nStep 4: Intensity proportional to:\n\\[ I \\propto (\\sqrt{19}A)^2 = 19A^2 \\]"",
+  ""Hints"": ""Remember that the resultant intensity depends on the square of the combined amplitude. Use the cosine of the phase difference to handle interference effects."",
+  ""Tips and Tricks"": ""Always square the amplitudes first and carefully apply the cosine of the phase difference. Recall \\(\\cos\\frac{\\pi}{3} = \\frac{1}{2}\\) to simplify calculations quickly."",
+  ""Common Mistakes"": ""Students often forget to square amplitudes or neglect the cosine term, resulting in incorrect intensity. Miscalculating \\(\\cos\\frac{\\pi}{3}\\) is another frequent error."",
+  ""Explanation for Incorrect Answers"": ""Choices like 5A², 13A², or 6A² result from either omitting the interference term, only adding amplitudes directly, or only adding squares without the cosine term. The correct value accounts for phase difference and results in 19A²."",
+  ""Time Estimate"": ""About 3-5 minutes for a student familiar with interference of waves."",
+  ""Difficulty Level"": ""Easy — The problem requires straightforward application of the interference formula with given amplitudes and phase difference.""
+}"
+1864631,"Step 1: Recall that when a body is at rest, it is in equilibrium. This means there is no net force acting on the body.
+
+Step 2: Mathematically, this condition of translational equilibrium is expressed as
+
+\[
+\sum \vec{F} = \vec{0}
+\]
+
+This does not imply that there are absolutely no forces; rather, any forces present balance each other exactly.
+
+Step 3: Let’s analyze the given options:
+
+1. ""There must be no force acting on it"" – This is incorrect because a body can have several forces acting on it, but if they cancel out, the body remains at rest.
+2. ""The force acting on it is not in contact with it"" – This is not a valid explanation regarding the equilibrium condition.
+3. ""The combination of forces acting on it balance each other"" – This is correct, as the net force (i.e., the vector sum of the forces) is zero.
+4. ""The body is in vacuum"" – Whether or not a body is in a vacuum does not affect the condition for equilibrium.
+
+Step 4: Therefore, the correct statement is that when a body is stationary, it is because the combination of forces acting on it balance each other.
+
+In summary, the equilibrium condition requires that all the forces acting on the body cancel out, resulting in no net force. Hence, the correct choice is option 3: “the combination of forces acting on it balance each other.”","{
+  ""Explain the problem"": ""The question asks which statement correctly explains why a body remains stationary. In other words, it wants to understand under what conditions a body does not move."",
+  ""Concept"": ""The core concept here is mechanical equilibrium. A body is said to be in equilibrium (and hence stationary) when the total or net force acting on it is zero. This means all the forces acting on the body balance each other out perfectly, resulting in no change in motion."",
+  ""Formula"": ""\\[ \\sum \\vec{F} = \\vec{0} \\]\nwhere \\( \\sum \\vec{F} \\) represents the vector sum of all forces acting on the body, and it equals zero for equilibrium."",
+  ""Visual Aid"": ""N/A"",
+  ""Calculation"": ""N/A"",
+  ""Hints"": ""Think about what it means for an object not to move. Is it that it has no forces, or that the forces cancel each other?"",
+  ""Tips and Tricks"": ""Remember: For an object to stay at rest, the *net* force must be zero; individual forces can be present but must balance out."",
+  ""Common Mistakes"": ""Assuming that if an object is stationary, no forces act on it. This is wrong because multiple forces can act yet balance perfectly."",
+  ""Explanation for Incorrect Answers"": ""1. 'There must be no force acting on it' is wrong because forces can act but cancel out.\n2. 'The force acting on it is not in contact with it' is irrelevant to stationary condition.\n4. 'The body is in vacuum' does not affect whether the forces balance or not."",
+  ""Time Estimate"": ""About 2-3 minutes to understand the equilibrium concept and evaluate options."",
+  ""Difficulty Level"": ""Easy - This problem is straightforward as it tests basic knowledge of force equilibrium.""
+}"
+2450434,"We are told that the virtual image is twice the size of the object. For mirrors, the (absolute) linear magnification is given by
+
+  \[ |m|=\frac{\text{image distance}}{\text{object distance}} \]
+   
+Because the image is twice the object’s size, we have
+
+  \[ \frac{|v|}{u} = 2. \]
+   
+This implies
+
+  \[ |v| = 2u. \]
+
+We are also given that the distance between the object and the virtual image is 45 cm. Since the object lies in front of the mirror and the virtual image (for a concave mirror when the object is inside the focal length) appears behind the mirror, the separation is
+
+  \[ \text{object distance} + \text{image distance (absolute value)} = u + |v| = 45\,\text{cm}. \]
+
+Substitute \(|v|=2u\):
+
+  \[ u + 2u = 45 \quad \Longrightarrow \quad 3u = 45, \]
+  \[ u = 15\,\text{cm} \quad \text{and} \quad |v| = 2\times15 = 30\,\text{cm}. \]
+
+Now, using the mirror equation
+
+  \[ \frac{1}{v} + \frac{1}{u} = \frac{1}{f}, \]
+   
+we must use the appropriate signs. In the New Cartesian sign convention for mirrors:
+• The object distance \(u\) is positive (since the object lies in front);
+• For virtual images, the image distance \(v\) is negative.
+• For a concave mirror, the focal length \(f\) is positive.
+
+Thus, let
+
+  \[ u = 15\,\text{cm},\quad v = -30\,\text{cm}. \]
+
+Plug these into the mirror equation:
+
+  \[ \frac{1}{-30} + \frac{1}{15} = \frac{1}{f}. \]
+  
+Calculate the left side:
+
+  \[ -\frac{1}{30} + \frac{2}{30} = \frac{1}{30}. \]
+
+Hence,
+
+  \[ \frac{1}{f} = \frac{1}{30}\quad \Longrightarrow\quad f = 30\,\text{cm}. \]
+
+So, the magnitude of the focal length is 30 cm.
+
+In summary:
+1. From magnification: \( |v| = 2u\).
+2. Object–image separation gives: \( 3u = 45\,\text{cm}\)  ⟹ \( u = 15\,\text{cm},\; |v| = 30\,\text{cm}\).
+3. Applying the mirror formula with proper signs leads to \( f = 30\,\text{cm}\).
+
+Thus, the correct answer is 30 cm.","{
+  ""Explain the problem"": ""The question asks to find the magnitude of the focal length of a mirror given that a virtual image formed is twice the size of the object, and the distance between the object and this virtual image is 45 cm."",
+  ""Concept"": ""This problem involves the properties of mirrors, specifically the relationship between object distance, image distance, magnification, and focal length. The mirror formula and magnification concept for spherical mirrors are applied, using the sign conventions for virtual images."",
+  ""Formula"": ""1. Magnification:\n\\[ |m| = \\frac{|v|}{|u|} \\]\nwhere \\(m\\) is magnification, \\(v\\) image distance, and \\(u\\) object distance.\n\n2. Mirror formula:\n\\[ \\frac{1}{v} + \\frac{1}{u} = \\frac{1}{f} \\]\nwhere \\(f\\) is the focal length of the mirror."",
+  ""Visual Aid"": ""N/A"",
+  ""Calculation"": ""Given that the magnification \\(|m|=2\\), we have:\n\\[ |v| = 2|u| \\]\nDistance between object and image is 45 cm, so:\n\\[ u + |v| = 45 \\implies u + 2u = 45 \\implies 3u = 45 \\implies u = 15\\,\\text{cm} \\]\nThen,\n\\[ |v| = 2 \\times 15 = 30\\,\\text{cm} \\]\nSign conventions for virtual image and object in front of the mirror:\n\\[ u = +15\\,\\text{cm}, \\quad v = -30\\,\\text{cm} \\]\nApply the mirror formula:\n\\[ \\frac{1}{v} + \\frac{1}{u} = \\frac{1}{f} \\implies \\frac{1}{-30} + \\frac{1}{15} = \\frac{1}{f} \\]\nCalculate left side:\n\\[ -\\frac{1}{30} + \\frac{2}{30} = \\frac{1}{30} \\]\nTherefore,\n\\[ \\frac{1}{f} = \\frac{1}{30} \\implies f = 30\\,\\text{cm} \\]\nThus, the magnitude of the focal length is 30 cm."",
+  ""Hints"": ""Remember the sign conventions for mirrors: virtual images have negative image distance, and focal length for concave mirrors is positive. Also, relate magnification to image and object distances."",
+  ""Tips and Tricks"": ""Use magnification first to find the ratio of image and object distances. Then use the mirror equation with correct signs. Keep track of sign conventions carefully to avoid mistakes."",
+  ""Common Mistakes"": ""1. Forgetting to apply the sign convention for the image distance, especially that virtual images have negative image distance.\n2. Incorrectly assuming the image is real instead of virtual.\n3. Mixing up the magnification formula by taking the wrong ratio of distances."",
+  ""Explanation for Incorrect Answers"": ""Options other than 30 cm likely result from neglecting sign conventions or incorrect calculation of object or image distances. For example, 20 cm or 15 cm do not satisfy the mirror equation with the given conditions."",
+  ""Time Estimate"": ""Approximately 5-7 minutes, assuming familiarity with mirror formulas and sign conventions."",
+  ""Difficulty Level"": ""Medium - Understanding and applying the sign conventions correctly and linking magnification to distances makes it a moderate level problem.""
+}"
+3319446,"Step 1: Identify the vectors.  
+• The proton’s velocity \(\vec{v}\) is directed horizontally toward you (i.e., coming out of the page).  
+• The magnetic field \(\vec{B}\) is directed downward.
+
+Step 2: Apply the right‐hand rule for a positively charged particle.  
+For a positive charge like a proton, the magnetic force is given by
+
+\[
+\vec{F}_m = q\,(\vec{v} \times \vec{B})
+\]
+
+Step 3: Use the right-hand rule.  
+• Point your index finger in the direction of \(\vec{v}\) (toward you, or out of the page).  
+• Point your middle finger in the direction of \(\vec{B}\) (downward).  
+• Your thumb, when extended, will then point in the direction of \(\vec{F}_m\).
+
+Step 4: Determine the direction.  
+When you do this, your thumb points to your left. Thus, the magnetic force (and hence the deflection) on the proton beam is toward your left side.
+
+Final Answer: The beam of protons deflects to your left side.","{
+  ""Explain the problem"": ""The question asks how a beam of protons moving horizontally towards you behaves as it passes through a magnetic field directed downward. Specifically, it wants to know the direction in which the proton beam deflects due to the magnetic field."",
+  ""Concept"": ""The problem involves the concept of the magnetic force on a moving charged particle. When a charged particle such as a proton moves in a magnetic field, it experiences a force given by the Lorentz force law. The direction of this force depends on the velocity of the particle, the direction of the magnetic field, and the charge of the particle. The cross product determines the direction of the force, and the right-hand rule is used for positively charged particles."",
+  ""Formula"": ""The magnetic force on a charged particle is given by:\n\n\\[\n\\vec{F}_m = q (\\vec{v} \\times \\vec{B})\n\\]\nwhere:\n- \\(q\\) is the charge of the particle (positive for proton),\n- \\(\\vec{v}\\) is the velocity vector of the particle,\n- \\(\\vec{B}\\) is the magnetic field vector,\n- \\(\\times\\) denotes the cross product."",
+  ""Visual Aid"": ""N/A"",
+  ""Calculation"": ""N/A (The problem involves direction only, no numerical calculation required.)"",
+  ""Hints"": ""Remember that the magnetic force direction on a positive charge is given by the right-hand rule applied to the velocity and magnetic field vectors."",
+  ""Tips and Tricks"": ""For positively charged particles, point your index finger in the direction of velocity, middle finger in direction of magnetic field, then your thumb points to the direction of magnetic force. This helps quickly determine the direction of deflection."",
+  ""Common Mistakes"": ""A common mistake is to confuse the direction of the velocity or magnetic field vectors or to use the left-hand rule instead of the right-hand rule for positive charges. Another error is not correctly identifying the direction \""toward you\"" as out of the page."",
+  ""Explanation for Incorrect Answers"": ""\""To your right side\"" is incorrect because the right-hand rule shows force is to the left. \""Does not deflect\"" is wrong as a moving charge in a magnetic field experiences a force. \""Nothing can be said\"" is incorrect since the directions of velocity and magnetic field are given and the right-hand rule can be applied."",
+  ""Time Estimate"": ""About 3 to 5 minutes for a student familiar with vector directions and the right-hand rule."",
+  ""Difficulty Level"": ""Easy - The problem only requires understanding vector directions and applying the right-hand rule, which is a basic concept in electromagnetism.""
+}"
+5121716,"We start with Brewster’s law which tells us that the polarising (Brewster’s) angle \( i_p \) is related to the refractive index \( \mu \) of the medium by
+
+\[
+\mu = \tan i_p.
+\]
+
+Given \( i_p = 53^\circ \), we calculate
+
+\[
+\mu = \tan 53^\circ.
+\]
+
+A calculator shows that \(\tan 53^\circ\) is approximately \( \frac{4}{3} \) (or about 1.33).
+
+The critical angle \( i_c \) is given by the relation
+
+\[
+\sin i_c = \frac{1}{\mu}.
+\]
+
+Substitute the value of \(\mu\):
+
+\[
+\sin i_c = \frac{1}{\tan 53^\circ} \approx \frac{1}{\frac{4}{3}} = \frac{3}{4}.
+\]
+
+Thus, the critical angle is
+
+\[
+i_c = \sin^{-1}\left(\frac{3}{4}\right).
+\]
+
+So, the correct option is
+
+\[
+\sin^{-1}\left(\frac{3}{4}\right).
+\]","{
+  ""Explain the problem"": ""The question asks us to find the critical angle of a medium given its polarising (Brewster’s) angle, which is 53 degrees. Essentially, we need to determine the angle at which total internal reflection starts occurring in that medium."",
+  ""Concept"": ""The core concepts involved are Brewster's law, which relates the polarising angle to the refractive index, and the concept of the critical angle, which marks the boundary for total internal reflection in optics."",
+  ""Formula"": ""1. Brewster's Law: \\( \\mu = \\tan i_p \\), where \\( \\mu \\) is the refractive index and \\( i_p \\) is the polarising angle. 2. Critical Angle Relation: \\( \\sin i_c = \\frac{1}{\\mu} \\), where \\( i_c \\) is the critical angle."",
+  ""Visual Aid"": ""N/A"",
+  ""Calculation"": ""Given \\( i_p = 53^\\circ \\), first calculate refractive index:\n\n\\[\n\\mu = \\tan 53^\\circ \\approx \\frac{4}{3} \\approx 1.33\n\\]\n\nThen, using \\( \\sin i_c = \\frac{1}{\\mu} \\), substitute the value:\n\n\\[\n\\sin i_c = \\frac{1}{\\frac{4}{3}} = \\frac{3}{4} = 0.75\n\\]\n\nHence,\n\n\\[\ni_c = \\sin^{-1} \\left( \\frac{3}{4} \\right)\n\\]\n\nwhich matches the answer choice \\( \\sin^{-1} \\left( \\frac{3}{4} \\right) \\)."",
+  ""Hints"": ""Recall that the polarising angle helps find the refractive index using the tangent function. Then use the refractive index to find the critical angle via the sine function inverse."",
+  ""Tips and Tricks"": ""Remember that for Brewster’s angle, \\( \\mu = \\tan i_p \\) and for the critical angle, \\( \\sin i_c = \\frac{1}{\\mu} \\). Keeping these two relations in mind simplifies the problem significantly."",
+  ""Common Mistakes"": ""Mistaking the formula for the critical angle as \\( \\sin i_c = \\mu \\) instead of \\( \\sin i_c = \\frac{1}{\\mu} \\); mixing up which trigonometric function relates to the Brewster angle and which relates to the critical angle."",
+  ""Explanation for Incorrect Answers"": ""Options involving \\( \\sin^{-1} \\left( \\frac{2}{3} \\right) \\), \\( \\cos^{-1} \\left( \\frac{3}{4} \\right) \\), or \\( \\sin^{-1} \\left( \\frac{4}{5} \\right) \\) do not arise from the correct use of Brewster’s law and the critical angle formula, so they are incorrect."",
+  ""Time Estimate"": ""An average student might take about 3 to 5 minutes to understand the concepts and perform the calculations."",
+  ""Difficulty Level"": ""Easy - The problem involves direct use of well-known formulas from optics and straightforward calculations.""
+}"
+5121700,"Step 1 – Write the formula for the angular width of the central maximum:  
+\[
+w_{\theta} = \frac{2\lambda}{a}
+\]
+
+Step 2 – Convert the given quantities to SI units:  
+• Wavelength, \(\lambda = 5000\,\text{\AA}\). Since \(1\,\text{\AA} = 10^{-10}\,\text{m}\),  
+\[
+\lambda = 5000 \times 10^{-10}\,\text{m} = 5 \times 10^{-7}\,\text{m}
+\]  
+• Slit width, \(a = 10 \times 10^{-5}\,\text{cm}\). First, convert cm to m using \(1\,\text{cm} = 10^{-2}\,\text{m}\):  
+\[
+a = 10 \times 10^{-5}\,\text{cm} \times 10^{-2}\,\frac{\text{m}}{\text{cm}} = 10 \times 10^{-7}\,\text{m} = 1 \times 10^{-6}\,\text{m}
+\]
+
+Step 3 – Substitute the values into the formula:  
+\[
+w_{\theta} = \frac{2 \times 5 \times 10^{-7}\,\text{m}}{1 \times 10^{-6}\,\text{m}} = \frac{1 \times 10^{-6}}{1 \times 10^{-6}} = 1\,\text{rad}
+\]
+
+Thus, the angular width of the central maximum is 1 radian.","{
+  ""Explain the problem"": ""The question asks to find the angular width of the central maximum in a Fraunhofer diffraction pattern produced by a single slit, given the wavelength of light and the slit width."",
+  ""Concept"": ""Fraunhofer diffraction describes the diffraction pattern of waves passing through a single slit when the light source and the screen are effectively at infinite distances. The central maximum is the brightest and widest central fringe in the diffraction pattern. Its angular width depends on the wavelength of the light and the width of the slit."",
+  ""Formula"": ""The formula used to calculate the angular width of the central maximum is\n\n\\[ w_{\\theta} = \\frac{2\\lambda}{a} \\]\n\nwhere:\n- \\( w_{\\theta} \\) is the angular width of the central maximum (in radians),\n- \\( \\lambda \\) is the wavelength of the light,\n- \\( a \\) is the width of the slit."",
+  ""Visual Aid"": ""N/A"",
+  ""Calculation"": ""1. Convert the given wavelength from angstroms to meters:\n   \\[ \\lambda = 5000\\,\\text{\\AA} = 5000 \\times 10^{-10}\\,\\text{m} = 5 \\times 10^{-7}\\,\\text{m} \\]\n\n2. Convert the slit width from centimeters to meters:\n   \\[ a = 10 \\times 10^{-5}\\,\\text{cm} = 10 \\times 10^{-5} \\times 10^{-2}\\,\\text{m} = 1 \\times 10^{-6}\\,\\text{m} \\]\n\n3. Substitute these values into the formula:\n   \\[ w_{\\theta} = \\frac{2 \\times 5 \\times 10^{-7}}{1 \\times 10^{-6}} = 1\\,\\text{rad} \\]\n\nHence, the angular width of the central maximum is 1 radian."",
+  ""Hints"": ""Remember to convert all given measurements into consistent SI units before applying the formula. The angle is usually calculated in radians for these types of problems."",
+  ""Tips and Tricks"": ""Keep in mind that the angular width of diffraction patterns is often given as \\( 2\\theta \\), twice the angle to the first minimum, which leads to the factor of 2 in the formula. Always double-check unit conversions, as mistakes there can change the answer drastically."",
+  ""Common Mistakes"": ""A frequent error is forgetting to convert the slit width and wavelength to meters properly, leading to incorrect numerical substitution. Another mistake is forgetting the factor of 2 in the formula for the full angular width of the central maximum."",
+  ""Explanation for Incorrect Answers"": ""'2 rad', '3 rad', and '4 rad' are all incorrect because they do not match the calculation after proper unit conversion and substitution. The factor in the formula ensures the angular width should be exactly 1 rad given the provided values."",
+  ""Time Estimate"": ""Approximately 5-7 minutes for an average student familiar with diffraction concepts and unit conversions."",
+  ""Difficulty Level"": ""Medium - The problem requires knowledge of Fraunhofer diffraction and attention to careful unit conversions, which might be tricky for beginners.""
+}"
+3511312,"Step 1: The energy initially stored in a capacitor is given by
+
+\[
+U = \frac{1}{2} C V^2.
+\]
+
+Step 2: Here, the capacitance is
+
+\[
+C = 10\,\mu\text{F} = 10 \times 10^{-6}\,\text{F},
+\]
+
+and the voltage is
+
+\[
+V = 500\,\text{V}.
+\]
+
+Step 3: Substitute these values into the energy formula:
+
+\[
+U = \frac{1}{2} \times 10 \times 10^{-6}\,\text{F} \times (500\,\text{V})^2.
+\]
+
+Step 4: First, calculate the square of the voltage:
+
+\[
+(500)^2 = 250000.
+\]
+
+Step 5: Now multiply:
+
+\[
+10 \times 10^{-6}\,\text{F} \times 250000 = 10 \times 250000 \times 10^{-6} = 2500000 \times 10^{-6} = 2.5.
+\]
+
+Step 6: Finally, multiply by \(\frac{1}{2}\):
+
+\[
+U = \frac{1}{2} \times 2.5 = 1.25\,\text{J}.
+\]
+
+Thus, when the charged capacitor discharges through the resistor, all of the stored energy is converted into heat (assuming an ideal discharge). 
+
+Answer: The heat produced in the resistor is \(\boxed{1.25\,\text{J}}\).","{
+  ""Explain the problem"": ""The question asks to find out how much heat is produced when a charged capacitor discharges through a resistor. We know the capacitor's capacitance, the voltage it was charged to, and the resistance. The problem wants the amount of heat energy generated during the discharge."",
+  ""Concept"": ""The core concept is the energy stored in a capacitor, which is given by the formula \\(U = \\frac{1}{2} C V^2\\). When the capacitor discharges through a resistor, the stored electrical energy is converted into heat energy in the resistor. This is an application of energy conservation in electric circuits."",
+  ""Formula"": ""The key formula used is: \\[ U = \\frac{1}{2} C V^2 \\]\nwhere \\(U\\) is the energy stored in the capacitor (in joules), \\(C\\) is the capacitance (in farads), and \\(V\\) is the voltage across the capacitor (in volts)."",
+  ""Visual Aid"": ""N/A"",
+  ""Calculation"": ""Step 1: Given \\(C = 10\\,\\mu\\text{F} = 10 \\times 10^{-6}\\,\\text{F}\\) and \\(V = 500\\,\\text{V}\\).\n\nStep 2: Calculate the square of the voltage:\n\\[ 500^2 = 250000 \\]\n\nStep 3: Calculate the energy stored:\n\\[ U = \\frac{1}{2} \\times 10 \\times 10^{-6} \\times 250000 = \\frac{1}{2} \\times 2.5 = 1.25\\,\\text{J} \\]\n\nStep 4: When the capacitor discharges through the resistor, this entire energy converts into heat in the resistor, so the heat produced is \\(1.25\\,\\text{J}\\)."",
+  ""Hints"": ""Recall that the energy stored in a capacitor depends on both capacitance and the square of the voltage. Also, when the capacitor discharges through a resistor, all stored energy is dissipated as heat."",
+  ""Tips and Tricks"": ""To quickly remember the energy formula for a capacitor: it’s similar to kinetic energy, with \\(\\frac{1}{2}\\) times capacitance times voltage squared. Make sure to convert microfarads to farads correctly before calculations."",
+  ""Common Mistakes"": ""A common mistake is to forget to convert microfarads to farads, or to forget squaring the voltage. Another is to assume the resistor dissipates only part of the energy, ignoring that the full stored energy converts to heat."",
+  ""Explanation for Incorrect Answers"": ""Answers like 500 J, 250 J, or 125 J are too large because they ignore unit conversions or the \\(\\frac{1}{2}\\) factor in the energy formula. The correct energy stored is 1.25 J, which is much smaller due to microfarad capacitance and correct calculation steps."",
+  ""Time Estimate"": ""An average student would take about 3 to 5 minutes to solve this problem, including unit conversion and calculation."",
+  ""Difficulty Level"": ""Easy - This problem involves straightforward application of the capacitor energy formula and simple arithmetic with unit conversion.""
+}"
+3477762,"Step 1: In a plane mirror, the image is as far behind the mirror as the object is in front. This means when the object moves towards the mirror, the image appears to move towards the mirror at the same speed.
+
+Step 2: Given the object’s speed is 2 m/sec towards the mirror, its distance from the mirror decreases at 2 m/sec. Similarly, the image’s distance from the mirror (behind the mirror) also decreases at 2 m/sec.
+
+Step 3: To an external observer, the speed at which the image and the object approach each other is the sum of their speeds with respect to the mirror. Therefore, the closing speed is
+
+\[
+2\, \text{m/s} + 2\, \text{m/s} = 4\, \text{m/s}.
+\]
+
+Thus, the speed of the image with respect to the object is 4 m/sec.
+
+Hence, the correct answer is 4 m/sec.","{
+  ""Explain the problem"": ""The question asks how fast the image of an object appears to move when the object moves towards a stationary plane mirror at a speed of 2 m/s. The motion is along the line perpendicular to the mirror surface."",
+  ""Concept"": ""In a plane mirror, the image is formed at the same distance behind the mirror as the object is in front of it. When the object moves towards the mirror, its image moves correspondingly closer from behind the mirror. The speed of the image relative to an external observer depends on the speed of the object and the relative positions."",
+  ""Formula"": ""The key understanding is that the image speed relative to the mirror equals the object speed. The closing speed between object and image is given by:\n\n\\[\n\\text{Closing speed} = v_{object} + v_{image} = 2v_{object}\n\\]\nwhere \\(v_{object}\\) is the speed of the object."",
+  ""Visual Aid"": ""N/A"",
+  ""Calculation"": ""Given the object speed towards the mirror is 2 m/s, the image moves towards the mirror at the same speed (2 m/s) behind it. Therefore, their relative speed towards each other is:\n\n\\[\n2\\, \\text{m/s} + 2\\, \\text{m/s} = 4\\, \\text{m/s}\n\\]\nThis means the image appears to approach the object at 4 m/s."",
+  ""Hints"": ""Remember that in a plane mirror, the image distance equals the object distance but on the opposite side of the mirror. Speeds towards the mirror add when measuring how fast the image and object approach each other."",
+  ""Tips and Tricks"": ""If an object moves towards a plane mirror at speed \\(v\\), the image also moves towards the mirror at speed \\(v\\). The closing speed between the object and image is always twice the object speed."",
+  ""Common Mistakes"": ""One common mistake is to assume the image speed is the same as the object speed relative to an observer, ignoring that the image moves from behind the mirror, so their relative speed doubles."",
+  ""Explanation for Incorrect Answers"": ""'1 m/sec' and '2 m/sec' are incorrect because they underestimate the relative speed between object and image. '8 m/sec' is too large as it overestimates the addition of speeds. The correct relative speed is twice the object speed, i.e., 4 m/sec."",
+  ""Time Estimate"": ""An average student might take about 3-5 minutes to understand and solve this problem."",
+  ""Difficulty Level"": ""Easy. The problem relies on a fundamental property of plane mirror image formation and basic relative speed addition.""
+}"
+1001181,"Step 1: Let the magnitude of the force that body A exerts on body B be \[ F \]. According to Newton’s second law for body B (mass = 2m) we have
+\[
+a = \frac{F}{2m}.
+\]
+Thus, the force is
+\[
+F = 2ma.
+\]
+
+Step 2: By Newton’s third law, body B exerts an equal and opposite force on body A. Therefore, the force acting on body A is also of magnitude \[ F = 2ma \].
+
+Step 3: For body A (mass = m), using Newton’s second law, the acceleration \[ a_A \] is given by
+\[
+a_A = \frac{F}{m} = \frac{2ma}{m} = 2a.
+\]
+
+Thus, the magnitude of the acceleration of body A is \textbf{2a}.","{
+  ""Explain the problem"": ""The question asks us to find the acceleration of body A when it exerts a force on body B, and body B has a known acceleration."",
+  ""Concept"": ""This problem involves Newton’s laws of motion, specifically Newton’s second law, which relates force, mass, and acceleration, and Newton’s third law, which states that forces between two interacting bodies are equal in magnitude and opposite in direction."",
+  ""Formula"": ""Newton's second law: \nF = ma \nwhere F is the force, m is the mass, and a is the acceleration."",
+  ""Visual Aid"": ""N/A"",
+  ""Calculation"": ""1. Let the force exerted by A on B be F. For body B of mass 2m with acceleration a, from Newton’s second law:\n\\[ a = \\frac{F}{2m} \\implies F = 2ma \\]\n2. By Newton's third law, the force exerted on A by B is also F but in the opposite direction.\n3. For body A (mass m), the acceleration \\( a_A \\) is:\n\\[ a_A = \\frac{F}{m} = \\frac{2ma}{m} = 2a \\]\nTherefore, the acceleration of A is \\( 2a \\)."",
+  ""Hints"": ""Remember Newton’s third law says forces between two bodies are equal and opposite. Use the given acceleration of body B to find the force first."",
+  ""Tips and Tricks"": ""Use the known acceleration of one body and mass ratios to find force, then use action-reaction pairs for the other body’s acceleration."",
+  ""Common Mistakes"": ""Ignoring that the force on body A is equal and opposite to that on B. Assuming acceleration of A equals a without calculation."",
+  ""Explanation for Incorrect Answers"": ""Zero is wrong because both bodies must experience forces and accelerations. 'a' or 'a/2' ignore the mass ratio and thus the correct acceleration magnitude."",
+  ""Time Estimate"": ""Approximately 3 to 5 minutes for a student familiar with Newton's laws."",
+  ""Difficulty Level"": ""Easy - This problem directly applies basic Newton’s second and third laws without complex calculations.""
+}"
+1000871,"Step 1: Identify the effective speed when swimming upstream. When swimming upstream, the swimmer's effective speed against the current is the difference between his speed in still water and the river’s speed. This can be written as:
+
+\[
+v_{\text{net}} = v_{\text{swimmer}} - v_{\text{river}}
+\]
+
+Step 2: Use the given distance and time to find the net speed. The swimmer covers 30 m in 10 seconds upstream, so the net speed is:
+
+\[
+v_{\text{net}} = \frac{\text{Distance}}{\text{Time}} = \frac{30\ \text{m}}{10\ \text{s}} = 3\ \text{m/s}
+\]
+
+Step 3: Substitute the values in the equation and solve for the river’s speed:
+
+\[
+5\ \text{m/s} - v_{\text{river}} = 3\ \text{m/s}
+\]
+
+Subtract 3 m/s from 5 m/s:
+
+\[
+v_{\text{river}} = 5\ \text{m/s} - 3\ \text{m/s} = 2\ \text{m/s}
+\]
+
+Thus, the speed of the river is \(\boxed{2\ \text{m/s}}\).","{
+  ""Explain the problem"": ""The question asks us to find the speed of the river's current when a swimmer with a known speed in still water swims upstream for a given distance and time. Essentially, it wants us to determine how fast the river is flowing based on how the swimmer's speed is affected."",
+  ""Concept"": ""The core concept is relative velocity in the presence of a flowing medium (river). When swimming upstream, the swimmer's effective speed is reduced by the speed of the river current because the swimmer moves against it. Therefore, the swimmer's net speed upstream equals his speed in still water minus the speed of the river."",
+  ""Formula"": ""The main formula used is:\n\n\\[ v_{net} = v_{swimmer} - v_{river} \\]\n\nwhere:\n- \\(v_{net}\\) is the swimmer's effective speed upstream,\n- \\(v_{swimmer}\\) is the swimmer's speed in still water,\n- \\(v_{river}\\) is the speed of the river current."",
+  ""Visual Aid"": ""N/A"",
+  ""Calculation"": ""1. Calculate the swimmer's effective speed upstream from distance and time:\n\n\\[ v_{net} = \\frac{30\\ \\text{m}}{10\\ \\text{s}} = 3\\ \\text{m/s} \\]\n\n2. Use the relative velocity formula to find river speed:\n\n\\[ 5\\ \\text{m/s} - v_{river} = 3\\ \\text{m/s} \\]\n\n3. Solve for \\(v_{river}\\):\n\n\\[ v_{river} = 5 - 3 = 2\\ \\text{m/s} \\]\n\nSo, the speed of the river is 2 m/s."",
+  ""Hints"": ""Think about how the current affects the swimmer's speed when moving upstream versus still water. Use the formula that relates the swimmer's speed in still water, river speed, and net speed."",
+  ""Tips and Tricks"": ""Remember that when moving upstream (against the current), the effective speed is reduced by the river speed; downstream, it would be increased by the river speed."",
+  ""Common Mistakes"": ""Students might forget to subtract the river speed from the swimmer's speed when going upstream or incorrectly calculate the net speed from distance and time."",
+  ""Explanation for Incorrect Answers"": ""- 3 m/s: This is the net speed upstream, not the river speed.\n- 5 m/s: This is the swimmer's speed in still water, not the current.\n- 10 m/s: This is not related to the problem's data and is too large.\n- 2 m/s: Correct answer as reasoned above."",
+  ""Time Estimate"": ""An average student might take about 2-4 minutes to solve this problem."",
+  ""Difficulty Level"": ""Easy - The problem uses basic concepts of relative velocity and simple arithmetic calculations.""
+}"
+3859666,"We can solve the problem by noting that the small creature is moving with constant speed along a vertical circle. Since the sun’s rays are parallel, the shadow of the creature on the horizontal ground is determined by the projection of the creature’s position onto that plane.
+
+Step 1: Represent the creature's motion along the circle with uniform circular motion. If the creature is at a point along a circle of radius R, its position can be written in terms of the angle \(\theta\) as  
+\[
+(x,y) = (R\cos\theta, R\sin\theta).
+\]
+
+Step 2: The shadow, as the foot of a perpendicular from the creature to the horizontal ground along the direction of the sun’s rays, will have one of its coordinates given by the projection. For an appropriate sun position (for example, if the sun is low in the sky such that the projecting line is along the vertical direction), the horizontal coordinate of the shadow is given by  
+\[
+x = R \sin\theta.
+\]
+Since the creature undergoes uniform circular motion, the angle \(\theta\) changes uniformly with time as  
+\[
+\theta = \omega t.
+\]
+
+Step 3: Substituting \(\theta = \omega t\) in the above relation, we get  
+\[
+x = R\sin(\omega t),
+\]
+which is the standard equation of Simple Harmonic Motion (SHM) where the amplitude is \(R\), angular frequency is \(\omega\), and the period is \(T = \frac{2\pi}{\omega}\).
+
+Thus, the shadow of the creature is not moving in a circle or a parabola but rather executing SHM.
+
+Answer: Executes SHM.","{
+  ""Explain the problem"": ""The question asks how the shadow of a small creature moving at constant speed along a vertical circular path behaves when projected onto a horizontal surface by sunlight. It wants to know the shape or type of motion the shadow follows."",
+  ""Concept"": ""The core concept is the projection of uniform circular motion onto a horizontal plane. When an object moves in a vertical circle at constant speed, its position can be described by circular motion variables. The sunlight creates parallel rays, so the shadow's motion on the ground is the projection of the circular motion along the sun’s light direction. This projection leads to Simple Harmonic Motion (SHM) when viewed on a one-dimensional horizontal line."",
+  ""Formula"": ""Position of the creature on the circle:\n\\[\n(x,y) = (R \\cos \\theta, R \\sin \\theta)\n\\]\nWhere \\(R\\) is the radius of the circle and \\(\\theta\\) is the angular position.\n\nAngular position changes uniformly with time:\n\\[\n\\theta = \\omega t\n\\]\nShadow position on horizontal plane (depending on sun’s direction):\n\\[\nx = R \\sin(\\omega t)\n\\]\nHere,\n- \\(x\\) is the shadow’s position on the horizontal axis,\n- \\(\\omega\\) is the angular velocity,\n- \\(t\\) is time.\n\nThis is the equation of Simple Harmonic Motion (SHM)."",
+  ""Visual Aid"": ""N/A"",
+  ""Calculation"": ""N/A"",
+  ""Hints"": ""Consider how the position of the object on the circle relates to the shadow’s position if sunlight rays are parallel. Think about how the sine or cosine function relates to uniform circular motion and how it looks as a function of time."",
+  ""Tips and Tricks"": ""Remember that projection of circular motion along one axis produces SHM, which follows sine or cosine functions. Associating circular motion angles with time makes it easier to identify the shadow's path."",
+  ""Common Mistakes"": ""Students might mistakenly think the shadow moves in a circle or a parabola. They may forget that the sun’s rays are parallel and that the shadow is a projection, not the actual path of the object."",
+  ""Explanation for Incorrect Answers"": ""- 'Describes a uniform circle': Incorrect because the shadow is a projection, not the actual object moving in a circle.\n- 'Describes a parabola': Incorrect since the shadow’s horizontal position varies sinusoidally, not quadratically.\n- 'Moves in an irregular way': Incorrect as the motion is regular and predictable, specifically SHM."",
+  ""Time Estimate"": ""An average student might take around 5 to 10 minutes to understand and solve this problem."",
+  ""Difficulty Level"": ""Easy - The problem involves basic understanding of uniform circular motion and its projection, which is common in physics at the introductory level.""
+}"
+3861343,"Step 1: The escape velocity from the Earth’s surface is given by
+
+\[
+V_e = \sqrt{\frac{2GM}{R_e}}
+\]
+
+where \( G \) is the gravitational constant, \( M \) is the mass of the Earth, and \( R_e \) is the radius of the Earth.
+
+Step 2: At a height of \( 7R_e \) above the surface, the distance from the centre of the Earth becomes
+
+\[
+r = R_e + 7R_e = 8R_e.
+\]
+
+So, the escape velocity from this new position is
+
+\[
+V'_e = \sqrt{\frac{2GM}{8R_e}}.
+\]
+
+Step 3: Simplify the expression:
+
+\[
+V'_e = \sqrt{\frac{2GM}{8R_e}} = \sqrt{\frac{GM}{4R_e}}.
+\]
+
+Step 4: Express \( V'_e \) in terms of \( V_e \). Since
+
+\[
+V_e^2 = \frac{2GM}{R_e},
+\]
+
+we can write
+
+\[
+\frac{GM}{R_e} = \frac{V_e^2}{2}.
+\]
+
+Substitute this into the expression for \( V'_e \):
+
+\[
+V'_e = \sqrt{\frac{1}{4} \cdot \frac{V_e^2}{2}} = \sqrt{\frac{V_e^2}{8}}.
+\]
+
+Step 5: Finally, taking the square root gives
+
+\[
+V'_e = \frac{V_e}{\sqrt{8}} = \frac{V_e}{2\sqrt{2}}.
+\]
+
+Thus, the escape velocity from a height equal to \( 7R_e \) above the Earth's surface is
+
+\[
+\boxed{\frac{V_e}{2\sqrt{2}}.}
+\]","{
+  ""Explain the problem"": ""The question asks us to find the escape velocity of a body from a point that is at a height equal to 7 times the Earth's radius (7Re) above the Earth's surface. We already know the escape velocity from the Earth's surface (Ve), and we need to calculate how it changes at this higher altitude."",
+  ""Concept"": ""The core concept here is escape velocity, which is the minimum speed an object must have to break free from the gravitational attraction of a planet without further propulsion. Escape velocity depends on the distance from the center of the planet—specifically, it decreases as the distance from the center increases."",
+  ""Formula"": ""The escape velocity from a distance r from the Earth's center is given by:\n\n\\[\nV_e = \\sqrt{\\frac{2GM}{r}}\n\\]\n\nwhere:\n- \\( G \\) is the gravitational constant,\n- \\( M \\) is the mass of the Earth,\n- \\( r \\) is the distance from Earth's center (Earth's radius plus height above Earth's surface)."",
+  ""Visual Aid"": ""N/A"",
+  ""Calculation"": ""1. At Earth's surface, escape velocity:\n\n\\[\nV_e = \\sqrt{\\frac{2GM}{R_e}}\n\\]\n\n2. At a height of 7Re, the distance from Earth's center is:\n\n\\[\nr = R_e + 7R_e = 8R_e\n\\]\n\n3. Escape velocity at this height is:\n\n\\[\nV'_e = \\sqrt{\\frac{2GM}{8R_e}} = \\sqrt{\\frac{GM}{4R_e}}\n\\]\n\n4. Expressing \\(V'_e\\) in terms of \\(V_e\\):\n\nSince \\(V_e^2 = \\frac{2GM}{R_e}\\), we get\n\n\\[\n\\frac{GM}{R_e} = \\frac{V_e^2}{2}\n\\]\n\nSubstitute into \\(V'_e\\):\n\n\\[\nV'_e = \\sqrt{\\frac{1}{4} \\cdot \\frac{V_e^2}{2}} = \\sqrt{\\frac{V_e^2}{8}} = \\frac{V_e}{\\sqrt{8}} = \\frac{V_e}{2\\sqrt{2}}\n\\]\n\nTherefore, the escape velocity at a height of 7Re is \\( \\boxed{\\frac{V_e}{2\\sqrt{2}}} \\)."",
+  ""Hints"": ""Remember that escape velocity depends inversely on the square root of the distance from the center of Earth. Increase in height increases the distance, so the velocity decreases accordingly."",
+  ""Tips and Tricks"": ""Instead of recalculating from scratch, express the new escape velocity in terms of the known surface escape velocity to simplify the calculations."",
+  ""Common Mistakes"": ""A common mistake is to use the height directly instead of the total distance from the Earth's center; remember to add the Earth's radius to the height before using it in the formula."",
+  ""Explanation for Incorrect Answers"": ""Options like \\( \\frac{V_e}{\\sqrt{2}} \\), \\( \\frac{V_e}{2} \\), or \\( \\frac{V_e}{4} \\) do not account correctly for the increase in distance (8 times Earth's radius) and thus yield incorrect values when the formula for escape velocity is applied properly."",
+  ""Time Estimate"": ""An average student might take about 5 minutes to understand and solve this problem."",
+  ""Difficulty Level"": ""Easy - The problem involves straightforward application of the escape velocity formula and simple algebraic manipulation.""
+}"
