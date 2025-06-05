@@ -2,7 +2,7 @@ import pandas as pd
 from pymongo import MongoClient
 
 
-client = MongoClient("mongodb+srv://qb:EiGG1xOGtnulVkSA@learning-material-management-cluster-prod-cluster-pl-0.4dyev.mongodb.net")  # Adjust as needed
+client = MongoClient("")  # Adjust as needed
 db = client["qb"]  # Replace with your actual database name
 collection = db["questionSolutions"]
 
