@@ -23,8 +23,8 @@ import (
 
 // MySQL and MongoDB Configurations
 const (
-	mysqlDSN    = "root:PCu2j8LNgQDLEdK@tcp(question-bank-php-ro.allen-internal-prod.in:3306)/question_pool"
-	mongoURI    = "mongodb+srv://qb:EiGG1xOGtnulVkSA@learning-material-management-cluster-prod-cluster-pl-0.4dyev.mongodb.net"
+	mysqlDSN    = ""
+	mongoURI    = ""
 	batchSize   = 1000
 	workerCount = 5
 )
