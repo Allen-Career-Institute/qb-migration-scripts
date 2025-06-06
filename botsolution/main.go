@@ -5,6 +5,7 @@ import (
 	"database/sql"
 	"encoding/csv"
 	"encoding/json"
+	"errors"
 	"fmt"
 	_ "github.com/go-sql-driver/mysql" // Import the MySQL driver
 	"html/template"
@@ -73,7 +74,7 @@ func latexToImageURL(latex string) string {
 
 	req, err := http.NewRequest("POST", apiURL, bytes.NewBufferString(requestBody))
 	if err != nil {
-		log.Printf("Error creating request for LaTeX '%s': %v", latex, err)
+		fmt.Printf("Error creating request for LaTeX '%s': %v \n", latex, err)
 		return ""
 	}
 	req.Header.Set("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8")
@@ -81,14 +82,14 @@ func latexToImageURL(latex string) string {
 
 	resp, err := client.Do(req)
 	if err != nil {
-		log.Printf("Error making API call for LaTeX '%s': %v", latex, err)
+		fmt.Printf("Error making API call for LaTeX '%s': %v \n", latex, err)
 		return ""
 	}
 	defer resp.Body.Close()
 
 	if resp.StatusCode != http.StatusOK {
 		bodyBytes, _ := io.ReadAll(resp.Body)
-		log.Printf("API call failed for LaTeX '%s' with status %d: %s", latex, resp.StatusCode, string(bodyBytes))
+		fmt.Printf("API call failed for LaTeX '%s' with status %d: %s \n", latex, resp.StatusCode, string(bodyBytes))
 		return ""
 	}
 
@@ -119,7 +120,7 @@ func latexToImageURL(latex string) string {
 		return imageUrl
 	}
 
-	log.Printf("API response for LaTeX '%s' contained no URLs.", latex)
+	fmt.Printf("API response for LaTeX '%s' contained no URLs. \n", latex)
 	return ""
 }
 
@@ -127,7 +128,7 @@ func getBotSolution(jsonData string) string {
 	var decayData RadioactiveDecay
 	err := json.Unmarshal([]byte(jsonData), &decayData)
 	if err != nil {
-		log.Fatalf("Error unmarshaling JSON: %v", err)
+		fmt.Printf("Error unmarshaling JSON: %v \n", err)
 	}
 
 	var sb strings.Builder
@@ -190,6 +191,7 @@ func getBotSolution(jsonData string) string {
 	// htmlOutput := template.HTML(sb.String())
 	return sb.String()
 }
+
 func updateMySQL(db *sql.DB, oldQuestionID int64, solution string) {
 
 	query := `
@@ -222,20 +224,20 @@ func updateMySQL(db *sql.DB, oldQuestionID int64, solution string) {
 
 	stmt, err := db.Prepare("UPDATE question_content SET solution = ? WHERE qns_id = ? AND language = 1")
 	if err != nil {
-		log.Fatalf("Error preparing update statement: %d %v", oldQuestionID, err)
+		fmt.Printf("Error preparing update statement: %d %v \n", oldQuestionID, err)
 		return
 	}
 	defer stmt.Close()
 
 	result, err := stmt.Exec(solution, oldQuestionID)
 	if err != nil {
-		log.Fatalf("Error executing update statement: %d %v", oldQuestionID, err)
+		fmt.Printf("Error executing update statement: %d %v \n", oldQuestionID, err)
 		return
 	}
 
 	rowsAffected, err := result.RowsAffected()
 	if err != nil {
-		log.Fatalf("Error getting rows affected: %d %v", oldQuestionID, err)
+		fmt.Printf("Error getting rows affected: %d %v \n", oldQuestionID, err)
 		return
 	}
 
@@ -279,9 +281,11 @@ func main() {
 		fmt.Printf("Data Insertion started for: %+v \n", record[0])
 
 		htmlOutput := getBotSolution(record[2])
-		fmt.Println(htmlOutput)
 
-		updateMySQL(db, oldQuestionID, htmlOutput)
+		jsonOutput, _ := json.Marshal(htmlOutput)
+		// fmt.Println(string(jsonOutput))
+
+		updateMySQL(db, oldQuestionID, string(jsonOutput))
 		fmt.Printf("Data Insertion completed for  %+v \n", oldQuestionID)
 	}
 
