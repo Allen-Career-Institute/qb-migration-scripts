@@ -190,8 +190,35 @@ func getBotSolution(jsonData string) string {
 	// htmlOutput := template.HTML(sb.String())
 	return sb.String()
 }
-
 func updateMySQL(db *sql.DB, oldQuestionID int64, solution string) {
+
+	query := `
+       select
+	    q.solution
+	FROM question_content q
+	WHERE q.qns_id = ? AND q.language = 1;
+    `
+
+	row := db.QueryRow(query, oldQuestionID)
+	if row.Err() != nil {
+		if errors.Is(row.Err(), sql.ErrNoRows) {
+			fmt.Printf("No qns found with ID %d.\n", oldQuestionID)
+		}
+		fmt.Printf("error in questions query %+v \n", row.Err())
+		return
+	}
+	var sol string
+	err := row.Scan(&sol)
+	if err != nil {
+		fmt.Printf("error in fetching question records %d %+v \n", oldQuestionID, err)
+		return
+	}
+
+	sol = strings.TrimPrefix(strings.TrimSuffix(sol, `"`), `"`)
+	if len(sol) != 0 {
+		fmt.Printf("solution already present %d %d \n", oldQuestionID, len(sol))
+		return
+	}
 
 	stmt, err := db.Prepare("UPDATE question_content SET solution = ? WHERE qns_id = ? AND language = 1")
 	if err != nil {
