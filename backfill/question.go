@@ -92,8 +92,8 @@ type QuestionDocument struct {
 	SourceCenter           string             `bson:"sourceCenter,omitempty"`
 	CreatedBy              string             `bson:"createdBy,omitempty"`
 	UpdatedBy              string             `bson:"updatedBy,omitempty"`
-	CreatedAt              int64              `bson:"createdAt,omitempty"`
-	UpdatedAt              int64              `bson:"updatedAt,omitempty"`
+	CreatedAt              int64              `bson:"createdAt"`
+	UpdatedAt              int64              `bson:"updatedAt"`
 	QuestionValidation     QuestionValidation `bson:"questionValidation,omitempty"`
 	OldTaxonomyData        []OldTaxonomyData  `bson:"oldTaxonomyData,omitempty"`
 	HasVideoSolution       bool               `bson:"hasVideoSolution,omitempty"`
@@ -118,6 +118,7 @@ type OldTaxonomyData struct {
 	Subject  string `bson:"subject,omitempty"`
 	Topic    string `bson:"topic,omitempty"`
 	SubTopic string `bson:"subtopic,omitempty"`
+	TaxonomyId string `bson:"taxonomyId,omitempty"`
 }
 
 type QuestionValidation struct {
@@ -184,6 +185,7 @@ type TaxonomyData struct {
 	SubjectId  string `bson:"subjectId,omitempty"`
 	TopicId    string `bson:"topicId,omitempty"`
 	SubTopicId string `bson:"subtopicId,omitempty"`
+	SuperTopicId string `bson:"supertopicId,omitempty"`
 }
 
 type MatchOption struct {
@@ -216,3 +218,5 @@ type ContentDoc struct {
 	Language   string `bson:"language"`
 	Text       string `bson:"text"`
 }
+
+
