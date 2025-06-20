@@ -1,90 +1,121 @@
 import pandas as pd
-from pymongo import MongoClient
 import time
+from pymongo import MongoClient
 
-# MongoDB setup
-client = MongoClient("mongodb://localhost:27017/")  # 🔁 Update if needed
-db = client["your_db_name"]                         # 🔁 Replace with your DB name
-collection = db["your_collection_name"]             # 🔁 Replace with your collection name
+# === MongoDB Setup ===
+mongo_uri = ""
+client = MongoClient(mongo_uri)
+db = client["qb"]
+collection = db["questionSolutions"]
 
-# Load CSV
-df = pd.read_csv("input.csv")
+# === Load CSV ===
+df = pd.read_csv("Finaladityatuploadjeeneetpncf.csv")  # Columns: oldQuestionId,vTag2
 
-# Setup log file
+# === Log Files ===
 log_file = open("vtag2_update_log.txt", "w")
-def log(msg):
-    print(msg)
-    log_file.write(msg + "\n")
+processed_log = open("vtag2_processed.csv", "w")
+processed_log.write("oldQuestionId,vTag2\n")
 
-# Counters
+# === Counters ===
 added_count = 0
 updated_count = 0
 skipped_count = 0
 error_count = 0
 
-# Batch processing
+def log(msg):
+    print(msg)
+    log_file.write(msg + "\n")
+
+# === Batch Processing ===
 batch_size = 100
-total_rows = len(df)
 
-for start in range(0, total_rows, batch_size):
-    end = min(start + batch_size, total_rows)
-    batch = df.iloc[start:end]
-    log(f"\n🔄 Processing batch {start // batch_size + 1} ({start} to {end - 1})")
+for batch_start in range(0, len(df), batch_size):
+    batch = df.iloc[batch_start:batch_start+batch_size]
+    log(f"\n🔄 Processing batch {batch_start // batch_size + 1} ({batch_start} to {batch_start + len(batch) - 1})")
 
-    for index, row in batch.iterrows():
+    for _, row in batch.iterrows():
         try:
             old_qid = int(row["oldQuestionId"])
-            new_vtag2 = row["vTag2"]
+            new_vtag2 = str(row["vTag2"]).strip()
 
             docs = list(collection.find({"oldQuestionId": old_qid}))
-
             if not docs:
                 log(f"[SKIP] No document found for oldQuestionId: {old_qid}")
                 skipped_count += 1
+                processed_log.write(f"{old_qid},{new_vtag2}\n")
                 continue
 
             for doc in docs:
                 doc_id = doc["_id"]
                 video_solutions = doc.get("videoSolutions", [])
 
-                has_correct_vtag2 = any(vs.get("vTag2") == new_vtag2 for vs in video_solutions)
-                if has_correct_vtag2:
+                # --- Check if vTag2 exists
+                found_index = next((i for i, vs in enumerate(video_solutions) if "vTag2" in vs), -1)
+                current_vtag2 = video_solutions[found_index]["vTag2"] if found_index != -1 else None
+
+                if current_vtag2 == new_vtag2:
                     log(f"[SKIP] vTag2 '{new_vtag2}' already exists for oldQuestionId: {old_qid}")
                     skipped_count += 1
+                    processed_log.write(f"{old_qid},{new_vtag2}\n")
                     continue
 
-                found_index = -1
-                for i, vs in enumerate(video_solutions):
-                    if "vTag2" in vs:
-                        found_index = i
-                        break
-
-                if found_index >= 0:
+                if found_index != -1:
+                    # UPDATE existing vTag2
                     collection.update_one(
                         {"_id": doc_id},
-                        {f"$set": {f"videoSolutions.{found_index}.vTag2": new_vtag2}}
+                        {"$set": {f"videoSolutions.{found_index}.vTag2": new_vtag2}}
                     )
-                    log(f"[UPDATE] vTag2 updated to '{new_vtag2}' for oldQuestionId: {old_qid}")
+                    log(f"[UPDATE] old vTag2: '{current_vtag2}' → new vTag2: '{new_vtag2}' for oldQuestionId: {old_qid}")
                     updated_count += 1
+                    processed_log.write(f"{old_qid},{new_vtag2}\n")
+
                 else:
-                    collection.update_one(
-                        {"_id": doc_id},
-                        {"$push": {"videoSolutions": {"vTag2": new_vtag2}}}
-                    )
-                    log(f"[ADD] vTag2 '{new_vtag2}' added for oldQuestionId: {old_qid}")
-                    added_count += 1
+                    # Check for empty object inside videoSolutions
+                    empty_index = next((i for i, vs in enumerate(video_solutions) if vs == {}), -1)
+
+                    if empty_index >= 0:
+                        collection.update_one(
+                            {"_id": doc_id},
+                            {"$set": {f"videoSolutions.{empty_index}": {"vTag2": new_vtag2}}}
+                        )
+                        log(f"[UPDATE] Replaced empty object with vTag2 '{new_vtag2}' for oldQuestionId: {old_qid}")
+                        updated_count += 1
+                        processed_log.write(f"{old_qid},{new_vtag2}\n")
+
+                    elif not video_solutions:
+                        # If videoSolutions key missing or empty
+                        collection.update_one(
+                            {"_id": doc_id},
+                            {"$set": {"videoSolutions": [{"vTag2": new_vtag2}]}}
+                        )
+                        log(f"[ADD] vTag2 '{new_vtag2}' added for oldQuestionId: {old_qid}")
+                        added_count += 1
+                        processed_log.write(f"{old_qid},{new_vtag2}\n")
+
+                    else:
+                        # Append new vTag2 to videoSolutions
+                        collection.update_one(
+                            {"_id": doc_id},
+                            {"$push": {"videoSolutions": {"vTag2": new_vtag2}}}
+                        )
+                        log(f"[ADD] vTag2 '{new_vtag2}' added for oldQuestionId: {old_qid}")
+                        added_count += 1
+                        processed_log.write(f"{old_qid},{new_vtag2}\n")
 
         except Exception as e:
-            log(f"[ERROR] Failed oldQuestionId: {row.get('oldQuestionId')}, Error: {str(e)}")
+            log(f"[ERROR] Failed oldQuestionId: {row.get('oldQuestionId')} Error: {e}")
             error_count += 1
+            processed_log.write(f"{row.get('oldQuestionId')},{row.get('vTag2')}\n")
 
-    # Wait 2 seconds after each batch
-    time.sleep(2)
+    time.sleep(2)  # Pause between batches
 
-# Final report
+# === Final Report ===
 log("\n=== FINAL REPORT ===")
 log(f"✅ Added:   {added_count}")
 log(f"🔄 Updated: {updated_count}")
-log(f"⏭️ Skipped:  {skipped_count}")
+log(f"⏭️ Skipped: {skipped_count}")
 log(f"❌ Errors:   {error_count}")
+
+# === Close Logs ===
 log_file.close()
+processed_log.close()
