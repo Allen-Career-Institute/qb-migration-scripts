@@ -42,6 +42,7 @@ type Content struct {
 	TextSolutionStatus int32        `bson:"textSolutionStatus,omitempty"`
 	DisplayAnswer      string       `bson:"displayAnswer,omitempty"`
 	DisplayOptions     string       `bson:"displayOptions,omitempty"`
+	GroupVersion       string       `bson:"groupVersion,omitempty"`
 }
 
 type BookReference struct {
@@ -105,7 +106,11 @@ type QuestionDocument struct {
 	HashTags               []HashTags         `bson:"hashTags,omitempty"`
 	ExtraInfo              string             `bson:"extraInfo,omitempty"`
 	DuplicacyStatus        int32              `bson:"duplicacyStatus,omitempty"`
+	QuestionQualityStatus  QuestionQualityStatus `bson:"questionQualityStatus,omitempty"`
+	FacultyName            string                `bson:"facultyName,omitempty"`
 }
+
+type QuestionQualityStatus int32
 
 type HashTags struct {
 	HashTagID   string `bson:"hashTagId,omitempty"`
