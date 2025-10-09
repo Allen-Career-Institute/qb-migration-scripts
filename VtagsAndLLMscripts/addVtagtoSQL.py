@@ -54,7 +54,7 @@ for _, row in df.iterrows():
     old_question_id = row["oldQuestionId"]
     new_vtag = row["vTag"]
 
-    # First, check existing vtag
+    # Fetch current vtag
     cursor.execute(
         "SELECT vtag FROM question_pool.questions WHERE id = %s",
         (old_question_id,)
@@ -70,24 +70,24 @@ for _, row in df.iterrows():
     current_vtag = result[0]
 
     if current_vtag is None or current_vtag.strip() == "":
-        # Perform update
+        # Perform update (set both vtag and vtag_type)
         cursor.execute(
             """
             UPDATE question_pool.questions
-            SET vtag = %s
-            WHERE id = %s AND (vtag IS NULL OR vtag = '')
+            SET vtag = %s,
+                vtag_type = 'video'
+            WHERE id = %s
+              AND (vtag IS NULL OR vtag = '')
             """,
             (new_vtag, old_question_id)
         )
         conn.commit()
         added += 1
-        logging.info(f"ADDED vTag '{new_vtag}' for oldQuestionId {old_question_id}")
+        logging.info(f"ADDED vTag '{new_vtag}' and set vtag_type='video' for oldQuestionId {old_question_id}")
         results.append([old_question_id, "ADDED", new_vtag, None])
     else:
         skipped += 1
-        logging.info(
-            f"SKIPPED oldQuestionId {old_question_id} - already has vTag '{current_vtag}'"
-        )
+        logging.info(f"SKIPPED oldQuestionId {old_question_id} - already has vTag '{current_vtag}'")
         results.append([old_question_id, "SKIPPED", new_vtag, current_vtag])
 
 # ======================
