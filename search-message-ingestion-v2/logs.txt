@@ -1,0 +1,51 @@
+2025/09/30 14:44:00 main.go:77: Start OldQuestionID: 2819800
+2025/09/30 14:44:00 main.go:79: End OldQuestionID: 2819810
+2025/09/30 14:44:00 main.go:81: Range size per goroutine: 1
+2025/09/30 14:44:00 main.go:83: Concurrent API calls: 1
+2025/09/30 14:44:00 main.go:85: API Workers: 1
+2025/09/30 14:44:00 main.go:87: API Batch Size: 1
+2025/09/30 14:44:00 main.go:109: Processing batch: 2819800 to 2819800
+2025/09/30 14:44:01 main.go:251: Range [2819800-2819800]: Processed=1, Success=1, Failed=0, Overall=true
+2025/09/30 14:44:01 main.go:133: GoRoutine [2819800-2819800]: All successful
+2025/09/30 14:44:01 main.go:142: Batch completed: 2819800 to 2819800. Sleeping for 1 second...
+2025/09/30 14:44:02 main.go:109: Processing batch: 2819801 to 2819801
+2025/09/30 14:44:02 main.go:251: Range [2819801-2819801]: Processed=1, Success=1, Failed=0, Overall=true
+2025/09/30 14:44:02 main.go:133: GoRoutine [2819801-2819801]: All successful
+2025/09/30 14:44:02 main.go:142: Batch completed: 2819801 to 2819801. Sleeping for 1 second...
+2025/09/30 14:44:03 main.go:109: Processing batch: 2819802 to 2819802
+2025/09/30 14:44:03 main.go:251: Range [2819802-2819802]: Processed=1, Success=1, Failed=0, Overall=true
+2025/09/30 14:44:03 main.go:133: GoRoutine [2819802-2819802]: All successful
+2025/09/30 14:44:03 main.go:142: Batch completed: 2819802 to 2819802. Sleeping for 1 second...
+2025/09/30 14:44:04 main.go:109: Processing batch: 2819803 to 2819803
+2025/09/30 14:44:04 main.go:251: Range [2819803-2819803]: Processed=1, Success=1, Failed=0, Overall=true
+2025/09/30 14:44:04 main.go:133: GoRoutine [2819803-2819803]: All successful
+2025/09/30 14:44:04 main.go:142: Batch completed: 2819803 to 2819803. Sleeping for 1 second...
+2025/09/30 14:44:05 main.go:109: Processing batch: 2819804 to 2819804
+2025/09/30 14:44:05 main.go:251: Range [2819804-2819804]: Processed=1, Success=1, Failed=0, Overall=true
+2025/09/30 14:44:05 main.go:133: GoRoutine [2819804-2819804]: All successful
+2025/09/30 14:44:05 main.go:142: Batch completed: 2819804 to 2819804. Sleeping for 1 second...
+2025/09/30 14:44:06 main.go:109: Processing batch: 2819805 to 2819805
+2025/09/30 14:44:06 main.go:251: Range [2819805-2819805]: Processed=1, Success=1, Failed=0, Overall=true
+2025/09/30 14:44:06 main.go:133: GoRoutine [2819805-2819805]: All successful
+2025/09/30 14:44:06 main.go:142: Batch completed: 2819805 to 2819805. Sleeping for 1 second...
+2025/09/30 14:44:07 main.go:109: Processing batch: 2819806 to 2819806
+2025/09/30 14:44:07 main.go:251: Range [2819806-2819806]: Processed=1, Success=1, Failed=0, Overall=true
+2025/09/30 14:44:07 main.go:133: GoRoutine [2819806-2819806]: All successful
+2025/09/30 14:44:07 main.go:142: Batch completed: 2819806 to 2819806. Sleeping for 1 second...
+2025/09/30 14:44:08 main.go:109: Processing batch: 2819807 to 2819807
+2025/09/30 14:44:08 main.go:251: Range [2819807-2819807]: Processed=1, Success=1, Failed=0, Overall=true
+2025/09/30 14:44:08 main.go:133: GoRoutine [2819807-2819807]: All successful
+2025/09/30 14:44:08 main.go:142: Batch completed: 2819807 to 2819807. Sleeping for 1 second...
+2025/09/30 14:44:09 main.go:109: Processing batch: 2819808 to 2819808
+2025/09/30 14:44:09 main.go:251: Range [2819808-2819808]: Processed=1, Success=1, Failed=0, Overall=true
+2025/09/30 14:44:09 main.go:133: GoRoutine [2819808-2819808]: All successful
+2025/09/30 14:44:09 main.go:142: Batch completed: 2819808 to 2819808. Sleeping for 1 second...
+2025/09/30 14:44:10 main.go:109: Processing batch: 2819809 to 2819809
+2025/09/30 14:44:10 main.go:251: Range [2819809-2819809]: Processed=1, Success=1, Failed=0, Overall=true
+2025/09/30 14:44:10 main.go:133: GoRoutine [2819809-2819809]: All successful
+2025/09/30 14:44:10 main.go:142: Batch completed: 2819809 to 2819809. Sleeping for 1 second...
+2025/09/30 14:44:11 main.go:109: Processing batch: 2819810 to 2819810
+2025/09/30 14:44:11 main.go:251: Range [2819810-2819810]: Processed=1, Success=1, Failed=0, Overall=true
+2025/09/30 14:44:11 main.go:133: GoRoutine [2819810-2819810]: All successful
+2025/09/30 14:44:11 main.go:142: Batch completed: 2819810 to 2819810. Sleeping for 1 second...
+2025/09/30 14:44:12 main.go:147: All batches completed!
