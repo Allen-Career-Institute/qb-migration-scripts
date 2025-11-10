@@ -1,0 +1,869 @@
+# Failed oldQuestionIds - Generated on 2025-10-07T21:23:37.880968
+# Format: oldQuestionId,reason
+801330,No question document found
+801334,No question document found
+802860,No question document found
+802866,No question document found
+803442,No question document found
+804737,No question document found
+804747,No question document found
+804755,No question document found
+804774,No question document found
+804807,No question document found
+804811,No question document found
+804836,No question document found
+804877,No question document found
+804909,No question document found
+804921,No question document found
+804992,No question document found
+805035,No question document found
+805086,No question document found
+805337,No question document found
+805340,No question document found
+805341,No question document found
+805344,No question document found
+805350,No question document found
+805356,No question document found
+805372,No question document found
+805396,No question document found
+805570,No question document found
+806036,No question document found
+806066,No question document found
+807148,No question document found
+807174,No question document found
+807340,No question document found
+809389,No question document found
+809413,No question document found
+809420,No question document found
+809421,No question document found
+809422,No question document found
+809423,No question document found
+809425,No question document found
+809426,No question document found
+809427,No question document found
+809428,No question document found
+809429,No question document found
+809431,No question document found
+809432,No question document found
+809475,No question document found
+811148,No question document found
+811149,No question document found
+811150,No question document found
+812421,No question document found
+812551,No question document found
+812557,No question document found
+812668,No question document found
+813112,No question document found
+813170,No question document found
+814566,No question document found
+814753,No question document found
+815062,No question document found
+815911,No question document found
+815973,No question document found
+815983,No question document found
+816169,No question document found
+817072,No question document found
+817432,No question document found
+817584,No question document found
+817756,No question document found
+819310,No question document found
+820295,No question document found
+820302,No question document found
+820425,No question document found
+820535,No question document found
+821069,No question document found
+821090,No question document found
+821091,No question document found
+821095,No question document found
+821097,No question document found
+821100,No question document found
+821101,No question document found
+821102,No question document found
+821103,No question document found
+821104,No question document found
+821105,No question document found
+821106,No question document found
+821107,No question document found
+821108,No question document found
+821109,No question document found
+821110,No question document found
+821115,No question document found
+821116,No question document found
+821118,No question document found
+821120,No question document found
+821121,No question document found
+821122,No question document found
+821123,No question document found
+821124,No question document found
+821125,No question document found
+821126,No question document found
+821129,No question document found
+821131,No question document found
+821135,No question document found
+821144,No question document found
+821224,No question document found
+821235,No question document found
+821238,No question document found
+821239,No question document found
+821242,No question document found
+821243,No question document found
+821253,No question document found
+821255,No question document found
+821259,No question document found
+821260,No question document found
+821268,No question document found
+821269,No question document found
+821272,No question document found
+821285,No question document found
+821293,No question document found
+821297,No question document found
+821327,No question document found
+821329,No question document found
+821338,No question document found
+821339,No question document found
+821342,No question document found
+821358,No question document found
+821502,No question document found
+821517,No question document found
+821519,No question document found
+821526,No question document found
+821527,No question document found
+821534,No question document found
+821554,No question document found
+821555,No question document found
+822437,No question document found
+822949,No question document found
+824032,No question document found
+824049,No question document found
+824050,No question document found
+824311,No question document found
+825028,No question document found
+827438,No question document found
+827839,No question document found
+829127,No question document found
+830496,No question document found
+830518,No question document found
+830666,No question document found
+831850,No question document found
+831954,No question document found
+831966,No question document found
+832017,No question document found
+832019,No question document found
+832024,No question document found
+832039,No question document found
+832047,No question document found
+832066,No question document found
+832073,No question document found
+832082,No question document found
+832090,No question document found
+832103,No question document found
+832135,No question document found
+832147,No question document found
+832152,No question document found
+832158,No question document found
+832162,No question document found
+832167,No question document found
+832171,No question document found
+832177,No question document found
+832454,No question document found
+832457,No question document found
+833669,No question document found
+833672,No question document found
+833674,No question document found
+833677,No question document found
+833680,No question document found
+833916,No question document found
+834299,No question document found
+834301,No question document found
+834303,No question document found
+834306,No question document found
+834307,No question document found
+834314,No question document found
+834316,No question document found
+834318,No question document found
+834320,No question document found
+834321,No question document found
+835640,No question document found
+835925,No question document found
+836220,No question document found
+836537,No question document found
+836572,No question document found
+836574,No question document found
+836575,No question document found
+836595,No question document found
+836597,No question document found
+836604,No question document found
+836608,No question document found
+836611,No question document found
+836613,No question document found
+836615,No question document found
+836616,No question document found
+837521,No question document found
+837522,No question document found
+837525,No question document found
+837529,No question document found
+838254,No question document found
+838798,No question document found
+840826,No question document found
+841176,No question document found
+841360,No question document found
+843117,No question document found
+843584,No question document found
+843587,No question document found
+843591,No question document found
+843746,No question document found
+843748,No question document found
+843755,No question document found
+843901,No question document found
+844037,No question document found
+844089,No question document found
+844090,No question document found
+844091,No question document found
+844092,No question document found
+844093,No question document found
+844094,No question document found
+844095,No question document found
+844096,No question document found
+844097,No question document found
+844098,No question document found
+844099,No question document found
+846288,No question document found
+846477,No question document found
+848398,API call failed for some/all languages: [1, 2]
+848434,API call failed for some/all languages: [1, 2]
+848439,No question document found
+848540,API call failed for some/all languages: [1, 2]
+848571,API call failed for some/all languages: [1]
+848672,API call failed for some/all languages: [1, 2]
+848745,API call failed for some/all languages: [1, 2]
+848768,API call failed for some/all languages: [1, 2]
+848830,No question document found
+848837,No question document found
+849107,API call failed for some/all languages: [1, 2]
+849233,No question document found
+849255,No question document found
+849397,API call failed for some/all languages: [1]
+849825,No question document found
+850084,No question document found
+850280,No question document found
+850566,No question document found
+851384,No question document found
+851385,No question document found
+852156,No question document found
+852544,No question document found
+854528,No question document found
+856562,No question document found
+856563,No question document found
+857675,No question document found
+857709,No question document found
+857757,No question document found
+858222,No question document found
+858231,No question document found
+858273,No question document found
+858379,No question document found
+858559,No question document found
+858677,No question document found
+858681,No question document found
+858684,No question document found
+859180,No question document found
+859217,No question document found
+859351,No question document found
+860706,No question document found
+861763,No question document found
+861828,No question document found
+861831,No question document found
+861833,No question document found
+861835,No question document found
+861836,No question document found
+861837,No question document found
+861838,No question document found
+861921,No question document found
+861947,No question document found
+861955,No question document found
+861960,No question document found
+861965,No question document found
+861990,No question document found
+861998,No question document found
+862003,No question document found
+862021,No question document found
+862024,No question document found
+862031,No question document found
+862035,No question document found
+862037,No question document found
+862041,No question document found
+862043,No question document found
+862058,No question document found
+862061,No question document found
+862064,No question document found
+862116,No question document found
+862123,No question document found
+862127,No question document found
+862130,No question document found
+862133,No question document found
+862513,No question document found
+862524,No question document found
+862528,No question document found
+862535,No question document found
+862544,No question document found
+862551,No question document found
+862557,No question document found
+862578,No question document found
+862651,No question document found
+862657,No question document found
+862660,No question document found
+862667,No question document found
+862672,No question document found
+862676,No question document found
+862681,No question document found
+862685,No question document found
+862691,No question document found
+862694,No question document found
+862699,No question document found
+862705,No question document found
+862706,No question document found
+862713,No question document found
+863730,No question document found
+864010,No question document found
+864023,No question document found
+864535,No question document found
+867032,No question document found
+867033,No question document found
+868219,API call failed for some/all languages: [1, 2, 3]
+868251,API call failed for some/all languages: [1, 2, 3]
+868338,API call failed for some/all languages: [1, 2]
+868368,API call failed for some/all languages: [1, 2, 3]
+868411,API call failed for some/all languages: [1, 2, 3]
+868427,API call failed for some/all languages: [1, 2, 3]
+868506,API call failed for some/all languages: [1, 2, 3]
+868524,API call failed for some/all languages: [1, 2]
+868664,API call failed for some/all languages: [1, 2, 3]
+868794,API call failed for some/all languages: [1, 2, 3]
+868882,API call failed for some/all languages: [1, 2]
+869103,No question document found
+869403,API call failed for some/all languages: [1]
+869475,API call failed for some/all languages: [1, 2, 3]
+869751,API call failed for some/all languages: [1, 2]
+869833,API call failed for some/all languages: [1, 2]
+870423,API call failed for some/all languages: [1, 2]
+871703,No question document found
+871725,No question document found
+873920,No question document found
+873922,No question document found
+875341,No question document found
+875466,No question document found
+876971,No question document found
+882346,No question document found
+882439,No question document found
+883594,No question document found
+883738,API call failed for some/all languages: [1, 2]
+883774,API call failed for some/all languages: [1, 2]
+883816,API call failed for some/all languages: [1, 2]
+883895,API call failed for some/all languages: [1, 2, 3]
+884064,API call failed for some/all languages: [1, 2]
+884301,API call failed for some/all languages: [1, 2]
+884377,API call failed for some/all languages: [1, 2]
+884440,API call failed for some/all languages: [1, 2]
+885854,API call failed for some/all languages: [1]
+886350,No question document found
+886481,No question document found
+887483,API call failed for some/all languages: [1, 2]
+889197,No question document found
+889623,No question document found
+889824,No question document found
+891725,No question document found
+892180,No question document found
+892185,No question document found
+892191,No question document found
+892196,No question document found
+892202,No question document found
+892211,No question document found
+892219,No question document found
+892711,No question document found
+892714,No question document found
+892717,No question document found
+892720,No question document found
+892724,No question document found
+892726,No question document found
+892729,No question document found
+892731,No question document found
+892732,No question document found
+892735,No question document found
+892737,No question document found
+892742,No question document found
+892757,No question document found
+892759,No question document found
+892761,No question document found
+892763,No question document found
+892766,No question document found
+892768,No question document found
+892771,No question document found
+892772,No question document found
+892775,No question document found
+892777,No question document found
+892778,No question document found
+892788,No question document found
+892791,No question document found
+892792,No question document found
+892798,No question document found
+892805,No question document found
+892807,No question document found
+892811,No question document found
+892840,No question document found
+892842,No question document found
+892845,No question document found
+892849,No question document found
+892850,No question document found
+892852,No question document found
+892856,No question document found
+892859,No question document found
+892860,No question document found
+892861,No question document found
+892862,No question document found
+893208,No question document found
+893210,No question document found
+893215,No question document found
+893219,No question document found
+893222,No question document found
+893238,No question document found
+893244,No question document found
+893253,No question document found
+893257,No question document found
+893261,No question document found
+893266,No question document found
+893270,No question document found
+893272,No question document found
+893275,No question document found
+893276,No question document found
+893277,No question document found
+893280,No question document found
+893282,No question document found
+893283,No question document found
+893288,No question document found
+893289,No question document found
+893290,No question document found
+893291,No question document found
+893303,No question document found
+893316,No question document found
+893319,No question document found
+893325,No question document found
+893327,No question document found
+893330,No question document found
+893332,No question document found
+893344,No question document found
+893347,No question document found
+893353,No question document found
+893361,No question document found
+893369,No question document found
+893376,No question document found
+893382,No question document found
+893384,No question document found
+893385,No question document found
+893390,No question document found
+893448,No question document found
+893449,No question document found
+893450,No question document found
+893451,No question document found
+893452,No question document found
+893453,No question document found
+893454,No question document found
+893455,No question document found
+893456,No question document found
+893457,No question document found
+893458,No question document found
+893459,No question document found
+893460,No question document found
+893461,No question document found
+893462,No question document found
+893463,No question document found
+893464,No question document found
+893465,No question document found
+893466,No question document found
+893467,No question document found
+893468,No question document found
+893469,No question document found
+893470,No question document found
+893471,No question document found
+893472,No question document found
+893473,No question document found
+893474,No question document found
+893475,No question document found
+893476,No question document found
+893477,No question document found
+893505,No question document found
+893506,No question document found
+893507,No question document found
+893508,No question document found
+893509,No question document found
+893510,No question document found
+893511,No question document found
+893512,No question document found
+893514,No question document found
+893515,No question document found
+893520,No question document found
+893521,No question document found
+893522,No question document found
+893523,No question document found
+893524,No question document found
+894443,No question document found
+894455,No question document found
+894476,No question document found
+895612,No question document found
+896068,No question document found
+899116,No question document found
+900134,No question document found
+902212,No question document found
+902763,No question document found
+902764,No question document found
+902767,No question document found
+902770,No question document found
+902780,No question document found
+902784,No question document found
+902789,No question document found
+902793,No question document found
+902796,No question document found
+902799,No question document found
+902802,No question document found
+902805,No question document found
+902807,No question document found
+902809,No question document found
+902813,No question document found
+902845,No question document found
+902848,No question document found
+902851,No question document found
+902855,No question document found
+902857,No question document found
+902860,No question document found
+902865,No question document found
+902866,No question document found
+902869,No question document found
+902875,No question document found
+902900,No question document found
+902907,No question document found
+902911,No question document found
+902919,No question document found
+902922,No question document found
+902926,No question document found
+902946,No question document found
+902957,No question document found
+902966,No question document found
+902973,No question document found
+902979,No question document found
+902995,No question document found
+903007,No question document found
+903012,No question document found
+903014,No question document found
+903018,No question document found
+903021,No question document found
+903025,No question document found
+903029,No question document found
+903035,No question document found
+903460,No question document found
+903470,No question document found
+903491,No question document found
+904938,No question document found
+904942,No question document found
+904947,No question document found
+904971,No question document found
+904973,No question document found
+904979,No question document found
+904982,No question document found
+904987,No question document found
+905009,No question document found
+905010,No question document found
+905014,No question document found
+905015,No question document found
+905021,No question document found
+905027,No question document found
+905029,No question document found
+905031,No question document found
+905033,No question document found
+905036,No question document found
+905085,No question document found
+905098,No question document found
+905325,No question document found
+905603,API call failed for some/all languages: [1]
+905639,No question document found
+908979,No question document found
+914769,No question document found
+916078,No question document found
+916080,No question document found
+916081,No question document found
+916083,No question document found
+916084,No question document found
+916085,No question document found
+916086,No question document found
+917895,No question document found
+919777,API call failed for some/all languages: [1, 2, 3]
+919780,API call failed for some/all languages: [1, 2]
+919879,API call failed for some/all languages: [1]
+919938,API call failed for some/all languages: [1, 2, 3]
+919955,API call failed for some/all languages: [1, 2]
+919974,API call failed for some/all languages: [1, 2]
+919977,API call failed for some/all languages: [1, 2]
+919990,API call failed for some/all languages: [1, 2]
+920015,API call failed for some/all languages: [1, 2]
+920033,API call failed for some/all languages: [1, 2]
+920052,API call failed for some/all languages: [1, 2]
+920069,API call failed for some/all languages: [1]
+920074,API call failed for some/all languages: [1, 2, 3]
+920087,API call failed for some/all languages: [1, 2]
+920116,API call failed for some/all languages: [1, 2]
+920129,API call failed for some/all languages: [1]
+920143,API call failed for some/all languages: [1, 2]
+920146,API call failed for some/all languages: [1, 2]
+920163,API call failed for some/all languages: [1, 2]
+920183,API call failed for some/all languages: [1, 2]
+920203,API call failed for some/all languages: [1, 2]
+920205,API call failed for some/all languages: [1, 2]
+920224,API call failed for some/all languages: [1, 2]
+920241,API call failed for some/all languages: [1, 2]
+920247,API call failed for some/all languages: [1, 2]
+920263,API call failed for some/all languages: [1]
+920321,API call failed for some/all languages: [1]
+920352,API call failed for some/all languages: [1]
+920383,API call failed for some/all languages: [1, 2]
+920406,API call failed for some/all languages: [1, 2]
+920429,API call failed for some/all languages: [1]
+920547,No question document found
+920552,No question document found
+920555,No question document found
+920558,No question document found
+920562,No question document found
+920565,No question document found
+920573,API call failed for some/all languages: [1, 2]
+920768,API call failed for some/all languages: [1]
+923093,No question document found
+923095,No question document found
+923096,No question document found
+923098,No question document found
+923099,No question document found
+923100,No question document found
+923104,No question document found
+923105,No question document found
+923112,No question document found
+923113,No question document found
+923114,No question document found
+923116,No question document found
+923117,No question document found
+923118,No question document found
+923119,No question document found
+923120,No question document found
+923127,No question document found
+923130,No question document found
+924017,No question document found
+924028,No question document found
+924847,No question document found
+926875,No question document found
+926876,No question document found
+926879,No question document found
+926880,No question document found
+926881,No question document found
+926888,No question document found
+926891,No question document found
+926892,No question document found
+926901,No question document found
+926916,No question document found
+926923,No question document found
+926930,No question document found
+926935,No question document found
+926938,No question document found
+926943,No question document found
+926947,No question document found
+926951,No question document found
+926952,No question document found
+926954,No question document found
+926957,No question document found
+926963,No question document found
+927085,No question document found
+934498,No question document found
+937643,No question document found
+943951,No question document found
+944956,No question document found
+945096,API call failed for some/all languages: [1, 2]
+945218,API call failed for some/all languages: [1, 2, 3]
+945299,API call failed for some/all languages: [1]
+945300,API call failed for some/all languages: [1]
+945375,API call failed for some/all languages: [1, 2]
+945393,API call failed for some/all languages: [1]
+945410,API call failed for some/all languages: [1]
+945494,API call failed for some/all languages: [1, 2]
+945528,API call failed for some/all languages: [1]
+945531,API call failed for some/all languages: [1, 2]
+945549,API call failed for some/all languages: [1, 2]
+945550,API call failed for some/all languages: [1, 2, 3]
+945566,API call failed for some/all languages: [1]
+945585,API call failed for some/all languages: [1]
+945606,API call failed for some/all languages: [1]
+945613,API call failed for some/all languages: [1, 2, 3]
+945623,API call failed for some/all languages: [1]
+945645,API call failed for some/all languages: [1]
+945648,API call failed for some/all languages: [1]
+945662,API call failed for some/all languages: [1, 2]
+945681,No question document found
+945682,API call failed for some/all languages: [1, 2]
+945684,API call failed for some/all languages: [1, 2]
+945694,No question document found
+945695,No question document found
+945696,No question document found
+945697,No question document found
+945698,No question document found
+945699,No question document found
+945700,No question document found
+945701,API call failed for some/all languages: [1, 2]
+945703,No question document found
+945704,No question document found
+945705,No question document found
+945706,No question document found
+945721,API call failed for some/all languages: [1, 2]
+945742,API call failed for some/all languages: [1, 2, 3]
+945746,No question document found
+945771,API call failed for some/all languages: [1]
+945819,No question document found
+945866,API call failed for some/all languages: [1]
+945996,API call failed for some/all languages: [1]
+946033,API call failed for some/all languages: [1]
+946153,No question document found
+946177,No question document found
+946359,API call failed for some/all languages: [1, 2, 3]
+947782,No question document found
+950494,No question document found
+950498,No question document found
+953787,No question document found
+956109,No question document found
+957044,No question document found
+959286,No question document found
+959291,No question document found
+959298,No question document found
+959303,No question document found
+959508,No question document found
+959566,No question document found
+961549,No question document found
+961566,No question document found
+961850,No question document found
+965033,No question document found
+965670,No question document found
+965672,No question document found
+965677,No question document found
+965684,No question document found
+965686,No question document found
+965695,No question document found
+965712,No question document found
+965714,No question document found
+965719,No question document found
+965720,No question document found
+968693,No question document found
+973767,No question document found
+974066,No question document found
+976647,No question document found
+976795,No question document found
+977043,No question document found
+977131,No question document found
+978055,No question document found
+978057,No question document found
+978058,No question document found
+978059,No question document found
+978060,No question document found
+978061,No question document found
+978062,No question document found
+978065,No question document found
+978066,No question document found
+978067,No question document found
+978070,No question document found
+978071,No question document found
+978074,No question document found
+978128,No question document found
+978129,No question document found
+980190,No question document found
+982293,No question document found
+982294,No question document found
+982295,No question document found
+982296,No question document found
+982298,No question document found
+982306,No question document found
+982309,No question document found
+982310,No question document found
+982312,No question document found
+982314,No question document found
+982315,No question document found
+982316,No question document found
+982319,No question document found
+982320,No question document found
+982322,No question document found
+984745,No question document found
+985657,No question document found
+987322,No question document found
+988228,No question document found
+988629,No question document found
+988739,No question document found
+989598,No question document found
+989608,No question document found
+990826,No question document found
+991411,No question document found
+991415,No question document found
+991418,No question document found
+991420,No question document found
+991425,No question document found
+991430,No question document found
+991432,No question document found
+991435,No question document found
+992782,No question document found
+993375,No question document found
+993380,No question document found
+993391,No question document found
+993396,No question document found
+993401,No question document found
+993402,No question document found
+993403,No question document found
+993404,No question document found
+993405,No question document found
+993406,No question document found
+993407,No question document found
+993408,No question document found
+993910,No question document found
+994150,No question document found
+994164,No question document found
+994166,No question document found
+994678,API call failed for some/all languages: [1, 2]
+994717,API call failed for some/all languages: [1, 2, 3]
+994736,API call failed for some/all languages: [1, 2]
+994755,API call failed for some/all languages: [1, 2]
+994777,API call failed for some/all languages: [1, 2]
+994812,API call failed for some/all languages: [1, 2]
+994838,API call failed for some/all languages: [1, 2]
+994850,API call failed for some/all languages: [1, 2]
+994874,API call failed for some/all languages: [1, 2]
+994886,API call failed for some/all languages: [1, 2]
+994889,API call failed for some/all languages: [1, 2]
+994910,API call failed for some/all languages: [1, 2]
+994914,API call failed for some/all languages: [1, 2]
+994929,API call failed for some/all languages: [1, 2]
+994931,API call failed for some/all languages: [1, 2]
+994944,API call failed for some/all languages: [1, 2, 3]
+994952,API call failed for some/all languages: [1, 2]
+994970,API call failed for some/all languages: [1]
+994998,API call failed for some/all languages: [1, 2]
+995004,API call failed for some/all languages: [1, 2, 3]
+995028,API call failed for some/all languages: [1, 2, 3]
+995044,API call failed for some/all languages: [1, 3]
+995046,API call failed for some/all languages: [1, 2]
+995062,API call failed for some/all languages: [1, 2]
+995095,API call failed for some/all languages: [1, 2, 3]
+995123,API call failed for some/all languages: [1, 2, 3]
+995197,API call failed for some/all languages: [1, 2]
+995481,API call failed for some/all languages: [1]
+995506,API call failed for some/all languages: [1]
+996481,No question document found
+996494,No question document found
+996508,No question document found
+996510,No question document found
+996527,No question document found
+996535,No question document found
+996548,No question document found
+996560,No question document found
+996565,No question document found
+996568,No question document found
+996583,No question document found
+996587,No question document found
+996593,No question document found
+996595,No question document found
+996599,No question document found

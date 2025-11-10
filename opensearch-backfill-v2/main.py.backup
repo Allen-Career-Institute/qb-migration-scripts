@@ -1,0 +1,689 @@
+#!/usr/bin/env python3
+"""
+Python conversion of the Go opensearch-backfill script.
+Instead of indexing to OpenSearch, this script writes all records to a pickle file.
+"""
+
+import sys
+import pickle
+import logging
+import requests
+import json
+from typing import Dict, List, Optional, Any, Set
+from dataclasses import dataclass, field
+from concurrent.futures import ThreadPoolExecutor, as_completed
+import threading
+from pymongo import MongoClient
+from pymongo.errors import PyMongoError
+
+
+# Constants
+MONGO_URI = "mongodb+srv://qb:1xWqW4GP2AzB6IEP@allen-staging-staging-cluster-pl-0.xklzc.mongodb.net"
+MONGO_DB = "qb"
+QUESTIONS_COLL = "questions"
+SOLUTIONS_COLL = "questionSolutions"
+
+# API Constants
+API_ENDPOINT = "https://bff.allen-stage.in/question/v1/questions/search/callback"
+CLIENT_ID = "qb_client"
+ENTITY_TYPE = "questions"
+
+WORKERS_DEFAULT = 20
+BULK_SIZE_DEFAULT = 100
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
+
+
+@dataclass
+class CustomTag:
+    tag_name: str = ""
+    value: str = ""
+    tag_type: str = ""
+
+
+@dataclass
+class TaxonomyData:
+    taxonomy_id: str = ""
+    class_id: str = ""
+    subject_id: str = ""
+    topic_id: str = ""
+    subtopic_id: str = ""
+    supertopic_id: str = ""
+    concept_id: str = ""
+
+
+@dataclass
+class HashTags:
+    hash_tag_id: str = ""
+    description: str = ""
+
+
+@dataclass
+class TextSolutionDocument:
+    language: int = 0
+    text: str = ""
+
+
+@dataclass
+class VideoSolutionDocument:
+    v_tag: str = ""
+    v_tag2: str = ""
+
+
+@dataclass
+class QuestionSolutionDoc:
+    old_question_id: int = 0
+    text_solutions: List[TextSolutionDocument] = field(default_factory=list)
+    video_solutions: List[VideoSolutionDocument] = field(default_factory=list)
+    structured_text_solutions: List[Dict[str, Any]] = field(default_factory=list)
+
+
+@dataclass
+class Tag:
+    name: str = ""
+    value: str = ""
+
+
+@dataclass
+class QuestionOption:
+    text: str = ""
+
+
+@dataclass
+class QuestionStem:
+    text: str = ""
+
+
+@dataclass
+class QuestionContent:
+    language: int = 0
+    question_nature: int = 0
+    has_text_solution: bool = False
+    question_stem: QuestionStem = field(default_factory=QuestionStem)
+    options: List[QuestionOption] = field(default_factory=list)
+    answer: str = ""
+
+
+@dataclass
+class QuestionDoc:
+    question_id: str = ""
+    old_question_id: int = 0
+    version: int = 0
+    status: int = 0
+    type: int = 0
+    qns_level: int = 0
+    session: int = 0
+    source: int = 0
+    source_center: str = ""
+    unique_identifier: str = ""
+    has_video_solution: bool = False
+    content: List[QuestionContent] = field(default_factory=list)
+    taxonomy_data: List[TaxonomyData] = field(default_factory=list)
+    old_tags: List[Tag] = field(default_factory=list)
+    custom_tags: List[CustomTag] = field(default_factory=list)
+    hash_tags: List[HashTags] = field(default_factory=list)
+    created_at: int = 0
+    updated_at: int = 0
+
+
+@dataclass
+class TaxonomyIDs:
+    class_tax: List[str] = field(default_factory=list)
+    subject_tax: List[str] = field(default_factory=list)
+    topic_tax: List[str] = field(default_factory=list)
+    subtopic_tax: List[str] = field(default_factory=list)
+    concept_tax: List[str] = field(default_factory=list)
+
+
+@dataclass
+class BackfillConfig:
+    mongo_uri: str = MONGO_URI
+    mongo_db: str = MONGO_DB
+    questions_col: str = QUESTIONS_COLL
+    solutions_col: str = SOLUTIONS_COLL
+    start_id: int = 0
+    end_id: int = 0
+    chunk_size: int = 0
+    workers: int = WORKERS_DEFAULT
+    bulk_size: int = BULK_SIZE_DEFAULT
+    out_file: str = "opensearch_backfill_data.pkl"
+    api_endpoint: str = API_ENDPOINT
+    bearer_token: str = ""  # To be set when creating config
+
+
+class MongoConnector:
+    """MongoDB connection handler"""
+    
+    def __init__(self, uri: str, database: str):
+        self.uri = uri
+        self.database = database
+        self.client = None
+        self.db = None
+        self.questions_collection = None
+        self.solutions_collection = None
+    
+    def connect(self):
+        """Establish MongoDB connection"""
+        try:
+            self.client = MongoClient(self.uri)
+            self.db = self.client[self.database]
+            self.questions_collection = self.db[QUESTIONS_COLL]
+            self.solutions_collection = self.db[SOLUTIONS_COLL]
+            logger.info("MongoDB connection established successfully")
+            return True
+        except PyMongoError as e:
+            logger.error(f"MongoDB connection error: {e}")
+            return False
+    
+    def disconnect(self):
+        """Close MongoDB connection"""
+        if self.client:
+            self.client.close()
+            logger.info("MongoDB connection closed")
+
+
+class DocumentProcessor:
+    """Processes questions by calling search callback API"""
+    
+    def __init__(self, mongo_connector: MongoConnector, api_endpoint: str, bearer_token: str):
+        self.mongo = mongo_connector
+        self.api_endpoint = api_endpoint
+        self.bearer_token = bearer_token
+        self.results_lock = threading.Lock()
+        self.all_documents = []
+    
+    def process_question(self, old_question_id: int) -> List[Dict[str, Any]]:
+        """Process a single question by calling the search callback API"""
+        try:
+            # Find the latest version of the question (only fetch questionId and content)
+            filter_query = {"oldQuestionId": old_question_id}
+            question_doc = self.mongo.questions_collection.find_one(
+                filter_query,
+                sort=[("version", -1)],
+                projection={"questionId": 1, "content.language": 1}
+            )
+            
+            if not question_doc:
+                logger.warning(f"No question found for oldQuestionId: {old_question_id}")
+                return []
+            
+            question_id = question_doc.get("questionId", "")
+            if not question_id:
+                logger.warning(f"No questionId found for oldQuestionId: {old_question_id}")
+                return []
+            
+            # Extract all languages from content
+            content = question_doc.get("content", [])
+            languages = set()
+            for content_item in content:
+                lang = content_item.get("language")
+                if lang is not None:
+                    languages.add(lang)
+            
+            if not languages:
+                logger.warning(f"No languages found for oldQuestionId: {old_question_id}")
+                return []
+            
+            # Make API calls for each language
+            api_responses = []
+            for language in languages:
+                unique_identifier = f"{question_id}_{language}"
+                response_data = self._call_search_callback_api(unique_identifier)
+                if response_data:
+                    # Add metadata to the response
+                    response_data["_meta"] = {
+                        "old_question_id": old_question_id,
+                        "question_id": question_id,
+                        "language": language,
+                        "unique_identifier": unique_identifier
+                    }
+                    api_responses.append(response_data)
+            
+            logger.info(f"Processed oldQuestionId {old_question_id}: {len(api_responses)} API responses")
+            return api_responses
+            
+        except Exception as e:
+            logger.error(f"Error processing question {old_question_id}: {e}")
+            return []
+    
+    def _call_search_callback_api(self, unique_identifier: str) -> Optional[Dict[str, Any]]:
+        """Call the search callback API for a unique identifier"""
+        try:
+            headers = {
+                "Authorization": f"Bearer {self.bearer_token}",
+                "Content-Type": "application/json"
+            }
+            
+            payload = {
+                "client_id": CLIENT_ID,
+                "entity_type": ENTITY_TYPE,
+                "unique_identifier": unique_identifier
+            }
+            
+            logger.debug(f"Making API call for unique_identifier: {unique_identifier}")
+            
+            response = requests.post(
+                self.api_endpoint,
+                headers=headers,
+                json=payload,
+                timeout=30
+            )
+            
+            if response.status_code == 200:
+                logger.debug(f"API call successful for unique_identifier: {unique_identifier}")
+                return response.json()
+            else:
+                logger.error(f"API call failed for {unique_identifier}: {response.status_code} - {response.text}")
+                return None
+                
+        except requests.RequestException as e:
+            logger.error(f"API request error for {unique_identifier}: {e}")
+            return None
+        except Exception as e:
+            logger.error(f"Unexpected error calling API for {unique_identifier}: {e}")
+            return None
+    
+    def add_documents(self, documents: List[Dict[str, Any]]):
+        """Thread-safe method to add documents to the results list"""
+        if documents:
+            with self.results_lock:
+                self.all_documents.extend(documents)
+
+
+class OpenSearchBackfill:
+    """Main backfill orchestrator"""
+    
+    def __init__(self, config: BackfillConfig):
+            question_stem = QuestionStem(text=content_item.get("questionStem", {}).get("text", ""))
+            options = [QuestionOption(text=opt.get("text", "")) for opt in content_item.get("options", [])]
+            
+            content = QuestionContent(
+                language=content_item.get("language", 0),
+                question_nature=content_item.get("questionNature", 0),
+                has_text_solution=content_item.get("hasTextSolution", False),
+                question_stem=question_stem,
+                options=options,
+                answer=content_item.get("answer", "")
+            )
+            content_list.append(content)
+        
+        # Convert taxonomy data
+        taxonomy_list = []
+        for tax_item in doc.get("taxonomyData", []):
+            taxonomy = TaxonomyData(
+                taxonomy_id=tax_item.get("taxonomyId", ""),
+                class_id=tax_item.get("classId", ""),
+                subject_id=tax_item.get("subjectId", ""),
+                topic_id=tax_item.get("topicId", ""),
+                subtopic_id=tax_item.get("subtopicId", ""),
+                supertopic_id=tax_item.get("supertopicId", ""),
+                concept_id=tax_item.get("conceptId", "")
+            )
+            taxonomy_list.append(taxonomy)
+        
+        # Convert old tags
+        old_tags_list = []
+        for tag_item in doc.get("oldTags", []):
+            tag = Tag(name=tag_item.get("name", ""), value=tag_item.get("value", ""))
+            old_tags_list.append(tag)
+        
+        # Convert custom tags
+        custom_tags_list = []
+        for ctag_item in doc.get("customTags", []):
+            custom_tag = CustomTag(
+                tag_name=ctag_item.get("tag_name", ""),
+                value=ctag_item.get("value", ""),
+                tag_type=ctag_item.get("tag_type", "")
+            )
+            custom_tags_list.append(custom_tag)
+        
+        # Convert hash tags
+        hash_tags_list = []
+        for htag_item in doc.get("hashTags", []):
+            hash_tag = HashTags(
+                hash_tag_id=htag_item.get("hashTagId", ""),
+                description=htag_item.get("description", "")
+            )
+            hash_tags_list.append(hash_tag)
+        
+        return QuestionDoc(
+            question_id=doc.get("questionId", ""),
+            old_question_id=doc.get("oldQuestionId", 0),
+            version=doc.get("version", 0),
+            status=doc.get("status", 0),
+            type=doc.get("type", 0),
+            qns_level=doc.get("qnsLevel", 0),
+            session=doc.get("session", 0),
+            source=doc.get("source", 0),
+            source_center=doc.get("sourceCenter", ""),
+            unique_identifier=doc.get("uniqueIdentifier", ""),
+            has_video_solution=doc.get("hasVideoSolution", False),
+            content=content_list,
+            taxonomy_data=taxonomy_list,
+            old_tags=old_tags_list,
+            custom_tags=custom_tags_list,
+            hash_tags=hash_tags_list,
+            created_at=doc.get("createdAt", 0),
+            updated_at=doc.get("updatedAt", 0)
+        )
+    
+    def _mongo_doc_to_solution_doc(self, doc: Dict[str, Any]) -> QuestionSolutionDoc:
+        """Convert MongoDB solution document to QuestionSolutionDoc dataclass"""
+        text_solutions = []
+        for ts_item in doc.get("textSolutions", []):
+            text_sol = TextSolutionDocument(
+                language=ts_item.get("language", 0),
+                text=ts_item.get("text", "")
+            )
+            text_solutions.append(text_sol)
+        
+        video_solutions = []
+        for vs_item in doc.get("videoSolutions", []):
+            video_sol = VideoSolutionDocument(
+                v_tag=vs_item.get("vTag", ""),
+                v_tag2=vs_item.get("vTag2", "")
+            )
+            video_solutions.append(video_sol)
+        
+        return QuestionSolutionDoc(
+            old_question_id=doc.get("oldQuestionId", 0),
+            text_solutions=text_solutions,
+            video_solutions=video_solutions,
+            structured_text_solutions=doc.get("structuredTextSolutions", [])
+        )
+    
+    def _build_opensearch_docs(self, question: QuestionDoc, solution: Optional[QuestionSolutionDoc]) -> List[Dict[str, Any]]:
+        """Build OpenSearch documents from question and solution data"""
+        # Compute solution-related flags and vTags
+        has_text_solution = False
+        has_bot_solution = False
+        v_tags_set: Set[str] = set()
+        
+        if solution:
+            for ts in solution.text_solutions:
+                if ts.text.strip():
+                    has_text_solution = True
+                    break
+            
+            for vs in solution.video_solutions:
+                if vs.v_tag:
+                    v_tags_set.add(vs.v_tag)
+                if vs.v_tag2:
+                    v_tags_set.add(vs.v_tag2)
+            
+            if solution.structured_text_solutions:
+                has_bot_solution = True
+        
+        has_v_tag = len(v_tags_set) > 0
+        
+        # Simple metadata extraction from old tags
+        stream_name = self._get_old_tag_value(question.old_tags, "streamName")
+        class_name = self._get_old_tag_value(question.old_tags, "className")
+        subject_name = self._get_old_tag_value(question.old_tags, "subjectName")
+        topic_name = self._get_old_tag_value(question.old_tags, "topicName")
+        sub_topic_name = self._get_old_tag_value(question.old_tags, "subTopicName")
+        
+        streams = [stream_name] if stream_name else []
+        subject_names = [subject_name] if subject_name else []
+        topic_names = [topic_name] if topic_name else []
+        sub_topic_names = [sub_topic_name] if sub_topic_name else []
+        
+        docs = []
+        for content in question.content:
+            options = [opt.text.strip() for opt in content.options if opt.text.strip()]
+            
+            # Extract taxonomy IDs
+            tax_ids = self._extract_taxonomy_ids(question.taxonomy_data)
+            
+            lang_str = str(content.language)
+            doc = {
+                "_id": f"{question.question_id}_{lang_str}",
+                "old_question_id": question.old_question_id,
+                "status": question.status,
+                "stream": streams,
+                "subject": subject_names,
+                "question": content.question_stem.text,
+                "options": options,
+                "class": class_name,
+                "language": content.language,
+                "has_text_solution": content.has_text_solution or has_text_solution,
+                "has_video_solution": question.has_video_solution,
+                "has_vtag": has_v_tag,
+                "has_bot_solution": has_bot_solution,
+                "source_root": "allen",
+                "question_id": question.question_id,
+                "current_version_id": question.version,
+                "answer": content.answer,
+                "topic": topic_names,
+                "sub_topic": sub_topic_names,
+                "difficulty_level": question.qns_level,
+                "question_type": question.type,
+                "session": question.session,
+                "source": question.source,
+                "source_center": question.source_center,
+                "unique_identifier": question.unique_identifier,
+                "created_at": question.created_at,
+                "updated_at": question.updated_at
+            }
+            
+            # Add custom tags and hash tags
+            custom_tags = self._format_custom_tags(question.custom_tags)
+            if custom_tags:
+                doc["custom_tags"] = custom_tags
+            
+            hash_tags = self._format_hash_tags(question.hash_tags)
+            if hash_tags:
+                doc["hashTags"] = hash_tags
+            
+            # Add taxonomy fields
+            self._add_taxonomy_fields_to_document(doc, tax_ids)
+            
+            docs.append(doc)
+        
+        return docs
+    
+    def _get_old_tag_value(self, tags: List[Tag], key: str) -> str:
+        """Helper to read values from oldTags list (case-insensitive on name)"""
+        for tag in tags:
+            if tag.name.lower() == key.lower():
+                return tag.value
+        return ""
+    
+    def _extract_taxonomy_ids(self, taxonomy_data: List[TaxonomyData]) -> TaxonomyIDs:
+        """Extract taxonomy IDs and create formatted combinations"""
+        result = TaxonomyIDs()
+        
+        taxonomy_sets = {
+            "class": set(),
+            "subject": set(),
+            "topic": set(),
+            "subtopic": set(),
+            "concept": set()
+        }
+        
+        for tax in taxonomy_data:
+            self._process_taxonomy_entry(tax, taxonomy_sets)
+        
+        result.class_tax = list(taxonomy_sets["class"])
+        result.subject_tax = list(taxonomy_sets["subject"])
+        result.topic_tax = list(taxonomy_sets["topic"])
+        result.subtopic_tax = list(taxonomy_sets["subtopic"])
+        result.concept_tax = list(taxonomy_sets["concept"])
+        
+        return result
+    
+    def _process_taxonomy_entry(self, tax: TaxonomyData, sets: Dict[str, set]):
+        """Process a single taxonomy entry"""
+        if not tax.taxonomy_id.strip():
+            return
+        
+        self._add_taxonomy_combination(sets["class"], tax.taxonomy_id, tax.class_id)
+        self._add_taxonomy_combination(sets["subject"], tax.taxonomy_id, tax.subject_id)
+        self._add_taxonomy_combination(sets["topic"], tax.taxonomy_id, tax.topic_id)
+        self._add_taxonomy_combination(sets["subtopic"], tax.taxonomy_id, tax.subtopic_id)
+        self._add_taxonomy_combination(sets["concept"], tax.taxonomy_id, tax.concept_id)
+    
+    def _add_taxonomy_combination(self, taxonomy_set: set, taxonomy_id: str, field_id: str):
+        """Add taxonomy combination to set"""
+        if not field_id.strip():
+            return
+        combination = f"{taxonomy_id}_{field_id}"
+        taxonomy_set.add(combination)
+    
+    def _add_taxonomy_fields_to_document(self, doc: Dict[str, Any], ids: TaxonomyIDs):
+        """Add taxonomy fields to document if they have values"""
+        if ids.class_tax:
+            doc["class_tax"] = ids.class_tax
+        if ids.subject_tax:
+            doc["subject_tax"] = ids.subject_tax
+        if ids.topic_tax:
+            doc["topic_tax"] = ids.topic_tax
+        if ids.subtopic_tax:
+            doc["sub_topic_tax"] = ids.subtopic_tax
+        if ids.concept_tax:
+            doc["concept_tax"] = ids.concept_tax
+    
+    def _format_custom_tags(self, custom_tags: List[CustomTag]) -> List[str]:
+        """Format custom tags as tagName|value strings"""
+        if not custom_tags:
+            return []
+        
+        formatted = []
+        for tag in custom_tags:
+            if tag.tag_name.strip() and tag.value.strip():
+                formatted.append(f"{tag.tag_name}|{tag.value}")
+        return formatted
+    
+    def _format_hash_tags(self, hash_tags: List[HashTags]) -> List[str]:
+        """Format hash tags as id|description strings"""
+        if not hash_tags:
+            return []
+        
+        formatted = []
+        for tag in hash_tags:
+            if tag.hash_tag_id.strip() and tag.description.strip():
+                formatted.append(f"{tag.hash_tag_id}|{tag.description}")
+        return formatted
+    
+    def add_documents(self, documents: List[Dict[str, Any]]):
+        """Thread-safe method to add documents to the results list"""
+        if documents:
+            with self.results_lock:
+                self.all_documents.extend(documents)
+
+
+class OpenSearchBackfill:
+    """Main backfill orchestrator"""
+    
+    def __init__(self, config: BackfillConfig):
+        self.config = config
+        self.mongo_connector = MongoConnector(config.mongo_uri, config.mongo_db)
+        self.processor = DocumentProcessor(self.mongo_connector)
+    
+    def run(self):
+        """Execute the backfill process"""
+        logger.info(f"Starting backfill from {self.config.start_id} to {self.config.end_id}")
+        logger.info(f"Batch size: {self.config.chunk_size}, Workers: {self.config.workers}")
+        
+        # Connect to MongoDB
+        if not self.mongo_connector.connect():
+            logger.error("Failed to connect to MongoDB")
+            return False
+        
+        try:
+            # Process in batches
+            for i in range(self.config.start_id, self.config.end_id + 1, self.config.chunk_size):
+                old_question_id_start = i
+                old_question_id_end = min(i + self.config.chunk_size - 1, self.config.end_id)
+                
+                self._process_batch(old_question_id_start, old_question_id_end)
+                logger.info(f"Data backfill completed for range {old_question_id_start} to {old_question_id_end}")
+            
+            # Save all documents to pickle file
+            self._save_to_pickle()
+            
+            logger.info("Data backfill completed successfully!")
+            return True
+            
+        except Exception as e:
+            logger.error(f"Error during backfill: {e}")
+            return False
+        finally:
+            self.mongo_connector.disconnect()
+    
+    def _process_batch(self, start_id: int, end_id: int):
+        """Process a batch of questions using thread pool"""
+        question_ids = list(range(start_id, end_id + 1))
+        
+        with ThreadPoolExecutor(max_workers=self.config.workers) as executor:
+            # Submit all tasks
+            future_to_id = {
+                executor.submit(self.processor.process_question, qid): qid 
+                for qid in question_ids
+            }
+            
+            # Collect results
+            for future in as_completed(future_to_id):
+                question_id = future_to_id[future]
+                try:
+                    documents = future.result()
+                    self.processor.add_documents(documents)
+                except Exception as e:
+                    logger.error(f"Error processing question {question_id}: {e}")
+    
+    def _save_to_pickle(self):
+        """Save all documents to pickle file"""
+        try:
+            with open(self.config.out_file, 'wb') as f:
+                pickle.dump(self.processor.all_documents, f, protocol=pickle.HIGHEST_PROTOCOL)
+            
+            total_docs = len(self.processor.all_documents)
+            logger.info(f"Successfully saved {total_docs} documents to {self.config.out_file}")
+            
+        except Exception as e:
+            logger.error(f"Error saving to pickle file: {e}")
+            raise
+
+
+def main():
+    """Main entry point"""
+    if len(sys.argv) < 4:
+        print("Usage: python main.py <startOldQuestionId> <endOldQuestionId> <batchSize>")
+        sys.exit(1)
+    
+    try:
+        start_id = int(sys.argv[1])
+        end_id = int(sys.argv[2])
+        batch_size = int(sys.argv[3])
+    except ValueError:
+        print("Error: All arguments must be integers")
+        sys.exit(1)
+    
+    print(f"Start OldQuestionID Parameter 1: {start_id}")
+    print(f"End OldQuestionID Parameter 2: {end_id}")
+    print(f"BatchSize Parameter 3: {batch_size}")
+    
+    # Create configuration
+    config = BackfillConfig(
+        start_id=start_id,
+        end_id=end_id,
+        chunk_size=batch_size,
+        workers=batch_size,  # Use batch_size as number of threads
+        out_file=f"opensearch_backfill_{start_id}_{end_id}.pkl"
+    )
+    
+    # Run backfill
+    backfill = OpenSearchBackfill(config)
+    success = backfill.run()
+    
+    if not success:
+        sys.exit(1)
+
+
+if __name__ == "__main__":
+    main()

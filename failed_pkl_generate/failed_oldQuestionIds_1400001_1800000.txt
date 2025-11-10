@@ -1,0 +1,485 @@
+# Failed oldQuestionIds - Generated on 2025-10-08T08:48:14.253105
+# Format: oldQuestionId,reason
+1421167,No question document found
+1424851,No question document found
+1427340,No question document found
+1441979,No question document found
+1442091,No question document found
+1449416,API call failed for some/all languages: [1]
+1449538,API call failed for some/all languages: [1, 2]
+1449557,API call failed for some/all languages: [1, 2]
+1449578,API call failed for some/all languages: [1]
+1449617,API call failed for some/all languages: [1]
+1449635,API call failed for some/all languages: [1]
+1449658,API call failed for some/all languages: [1]
+1449697,API call failed for some/all languages: [1]
+1449711,API call failed for some/all languages: [1]
+1449729,API call failed for some/all languages: [1]
+1449732,API call failed for some/all languages: [1]
+1449749,API call failed for some/all languages: [1]
+1449768,API call failed for some/all languages: [1]
+1449786,API call failed for some/all languages: [1]
+1449807,API call failed for some/all languages: [1]
+1449825,API call failed for some/all languages: [1, 2]
+1449844,API call failed for some/all languages: [1]
+1449885,API call failed for some/all languages: [1]
+1449890,API call failed for some/all languages: [1]
+1449903,API call failed for some/all languages: [1]
+1449922,API call failed for some/all languages: [1]
+1449950,API call failed for some/all languages: [1]
+1449959,API call failed for some/all languages: [1, 2]
+1450007,API call failed for some/all languages: [1, 2]
+1450102,API call failed for some/all languages: [1]
+1450228,API call failed for some/all languages: [1]
+1450545,API call failed for some/all languages: [1]
+1450965,API call failed for some/all languages: [1, 2, 3]
+1458205,No question document found
+1463160,API call failed for some/all languages: [1]
+1463239,API call failed for some/all languages: [1, 2]
+1463260,API call failed for some/all languages: [1]
+1463319,API call failed for some/all languages: [1]
+1463337,API call failed for some/all languages: [1]
+1463377,API call failed for some/all languages: [1]
+1463393,API call failed for some/all languages: [1]
+1463412,API call failed for some/all languages: [1]
+1463417,API call failed for some/all languages: [1]
+1463434,API call failed for some/all languages: [1]
+1463451,API call failed for some/all languages: [1]
+1463460,API call failed for some/all languages: [1]
+1463469,API call failed for some/all languages: [1]
+1463485,API call failed for some/all languages: [1]
+1463507,API call failed for some/all languages: [1]
+1463539,API call failed for some/all languages: [1, 3]
+1463545,API call failed for some/all languages: [1]
+1463554,API call failed for some/all languages: [1]
+1463561,API call failed for some/all languages: [1]
+1463581,API call failed for some/all languages: [1]
+1463620,API call failed for some/all languages: [1]
+1463634,API call failed for some/all languages: [1]
+1463644,API call failed for some/all languages: [1]
+1463675,API call failed for some/all languages: [1, 2]
+1463730,API call failed for some/all languages: [1]
+1463769,API call failed for some/all languages: [1]
+1463942,API call failed for some/all languages: [1, 2]
+1463972,API call failed for some/all languages: [1]
+1464014,API call failed for some/all languages: [1]
+1464077,API call failed for some/all languages: [1]
+1464100,API call failed for some/all languages: [1]
+1464178,API call failed for some/all languages: [1]
+1464328,API call failed for some/all languages: [1]
+1464528,API call failed for some/all languages: [1]
+1464585,API call failed for some/all languages: [1]
+1497341,No question document found
+1497566,No question document found
+1497643,No question document found
+1501545,No question document found
+1501546,No question document found
+1501548,No question document found
+1501549,No question document found
+1501551,No question document found
+1501577,No question document found
+1501581,No question document found
+1502257,No question document found
+1502259,No question document found
+1502260,No question document found
+1502261,No question document found
+1502262,No question document found
+1502268,No question document found
+1508497,API call failed for some/all languages: [1]
+1508637,API call failed for some/all languages: [1, 2]
+1508670,API call failed for some/all languages: [1, 2]
+1508718,API call failed for some/all languages: [1, 2]
+1508726,API call failed for some/all languages: [1, 2]
+1508805,API call failed for some/all languages: [1]
+1508821,API call failed for some/all languages: [1]
+1508882,API call failed for some/all languages: [1]
+1508901,API call failed for some/all languages: [1, 2]
+1508944,API call failed for some/all languages: [1]
+1509295,API call failed for some/all languages: [1]
+1509431,API call failed for some/all languages: [1, 2]
+1509482,No question document found
+1510035,API call failed for some/all languages: [1, 2]
+1510643,API call failed for some/all languages: [1, 2]
+1520617,No question document found
+1522971,No question document found
+1522972,No question document found
+1522973,No question document found
+1522974,No question document found
+1522978,No question document found
+1530238,No question document found
+1530245,No question document found
+1530483,No question document found
+1530867,No question document found
+1532765,No question document found
+1532766,No question document found
+1532767,No question document found
+1532769,No question document found
+1532772,No question document found
+1532777,No question document found
+1542705,No question document found
+1543006,No question document found
+1543029,No question document found
+1543272,No question document found
+1543296,No question document found
+1543324,No question document found
+1544758,API call failed for some/all languages: [1]
+1544760,API call failed for some/all languages: [1]
+1544834,API call failed for some/all languages: [1, 2, 3]
+1544839,API call failed for some/all languages: [1, 2]
+1544927,API call failed for some/all languages: [1, 2]
+1544937,API call failed for some/all languages: [1]
+1544944,API call failed for some/all languages: [1, 2]
+1544947,API call failed for some/all languages: [1]
+1544988,API call failed for some/all languages: [1, 2]
+1545021,API call failed for some/all languages: [1]
+1545026,API call failed for some/all languages: [1, 2, 3]
+1545049,API call failed for some/all languages: [1]
+1545201,API call failed for some/all languages: [1]
+1545801,API call failed for some/all languages: [1, 2]
+1546396,API call failed for some/all languages: [1, 2]
+1546413,API call failed for some/all languages: [1, 3]
+1546474,API call failed for some/all languages: [1]
+1546490,API call failed for some/all languages: [1, 2]
+1546508,API call failed for some/all languages: [1, 2]
+1546519,API call failed for some/all languages: [1, 3]
+1546532,API call failed for some/all languages: [1]
+1546598,API call failed for some/all languages: [1]
+1546606,API call failed for some/all languages: [1, 2]
+1546643,API call failed for some/all languages: [1]
+1546661,API call failed for some/all languages: [1]
+1546737,API call failed for some/all languages: [1]
+1546743,API call failed for some/all languages: [1]
+1546763,API call failed for some/all languages: [1]
+1546826,API call failed for some/all languages: [1]
+1546965,API call failed for some/all languages: [1, 2]
+1548444,No question document found
+1556127,No question document found
+1561501,No question document found
+1561871,No question document found
+1561910,No question document found
+1562889,No question document found
+1570859,No question document found
+1570864,No question document found
+1570913,No question document found
+1571308,No question document found
+1571956,No question document found
+1572989,API call failed for some/all languages: [1, 2]
+1573760,No question document found
+1575274,No question document found
+1575418,No question document found
+1575449,No question document found
+1575452,No question document found
+1575457,No question document found
+1575665,No question document found
+1575668,No question document found
+1578713,No question document found
+1578722,No question document found
+1578728,No question document found
+1578731,No question document found
+1578740,No question document found
+1578755,No question document found
+1578762,No question document found
+1578768,No question document found
+1578775,No question document found
+1578777,No question document found
+1578788,No question document found
+1578797,No question document found
+1578808,No question document found
+1578814,No question document found
+1578816,No question document found
+1578828,No question document found
+1578850,No question document found
+1578856,No question document found
+1578865,No question document found
+1578871,No question document found
+1578881,No question document found
+1578887,No question document found
+1578891,No question document found
+1578899,No question document found
+1578906,No question document found
+1578911,No question document found
+1578916,No question document found
+1578923,No question document found
+1578929,No question document found
+1578932,No question document found
+1578945,No question document found
+1578950,No question document found
+1578961,No question document found
+1578967,No question document found
+1578977,No question document found
+1578987,No question document found
+1578998,No question document found
+1579006,No question document found
+1581528,No question document found
+1583427,No question document found
+1583432,No question document found
+1583747,No question document found
+1583754,No question document found
+1583757,No question document found
+1583761,No question document found
+1583763,No question document found
+1583937,API call failed for some/all languages: [1, 3]
+1584012,API call failed for some/all languages: [1, 2]
+1584029,API call failed for some/all languages: [1, 2]
+1584052,API call failed for some/all languages: [1, 2]
+1584244,API call failed for some/all languages: [1, 2]
+1584281,API call failed for some/all languages: [1]
+1584367,API call failed for some/all languages: [1, 2]
+1584726,API call failed for some/all languages: [1, 2]
+1587782,API call failed for some/all languages: [1]
+1624748,No question document found
+1629312,API call failed for some/all languages: [1, 3]
+1629355,API call failed for some/all languages: [1, 3]
+1629416,API call failed for some/all languages: [1]
+1629458,API call failed for some/all languages: [1]
+1629527,API call failed for some/all languages: [1, 3]
+1629549,API call failed for some/all languages: [1]
+1629654,API call failed for some/all languages: [1]
+1673137,No question document found
+1673139,No question document found
+1673140,No question document found
+1673141,No question document found
+1673142,No question document found
+1673143,No question document found
+1673144,No question document found
+1673145,No question document found
+1673147,No question document found
+1673150,No question document found
+1677807,No question document found
+1677813,No question document found
+1677823,No question document found
+1678060,API call failed for some/all languages: [1]
+1678134,API call failed for some/all languages: [1, 2, 3]
+1678175,API call failed for some/all languages: [1]
+1678196,API call failed for some/all languages: [1]
+1678237,API call failed for some/all languages: [1]
+1678296,API call failed for some/all languages: [1, 2]
+1678350,API call failed for some/all languages: [1, 2]
+1678395,API call failed for some/all languages: [1, 3]
+1678403,API call failed for some/all languages: [1]
+1678414,API call failed for some/all languages: [1, 2]
+1678429,API call failed for some/all languages: [1]
+1678447,API call failed for some/all languages: [1, 2]
+1678481,API call failed for some/all languages: [1]
+1678537,API call failed for some/all languages: [1]
+1678566,API call failed for some/all languages: [1, 2]
+1678587,API call failed for some/all languages: [1, 2]
+1678680,API call failed for some/all languages: [1, 2]
+1678767,API call failed for some/all languages: [1, 2]
+1678789,API call failed for some/all languages: [1]
+1678857,API call failed for some/all languages: [1, 2]
+1679011,API call failed for some/all languages: [1]
+1679090,API call failed for some/all languages: [1, 2]
+1679685,API call failed for some/all languages: [1]
+1679713,API call failed for some/all languages: [1]
+1681639,API call failed for some/all languages: [1]
+1681678,API call failed for some/all languages: [1, 2]
+1681757,API call failed for some/all languages: [1]
+1681772,No question document found
+1681773,No question document found
+1681774,No question document found
+1681778,API call failed for some/all languages: [1, 2]
+1681835,API call failed for some/all languages: [1, 2]
+1681852,API call failed for some/all languages: [1]
+1681866,API call failed for some/all languages: [1]
+1681885,API call failed for some/all languages: [1]
+1681906,API call failed for some/all languages: [1]
+1681931,API call failed for some/all languages: [1]
+1681946,API call failed for some/all languages: [1]
+1681980,API call failed for some/all languages: [1]
+1681989,API call failed for some/all languages: [1]
+1682007,API call failed for some/all languages: [1]
+1682026,API call failed for some/all languages: [1]
+1682028,API call failed for some/all languages: [1, 3]
+1682062,API call failed for some/all languages: [1]
+1682083,API call failed for some/all languages: [1]
+1682282,API call failed for some/all languages: [1]
+1682393,API call failed for some/all languages: [1]
+1682469,API call failed for some/all languages: [1]
+1682533,API call failed for some/all languages: [1]
+1682691,API call failed for some/all languages: [1]
+1684471,API call failed for some/all languages: [1, 2]
+1701850,No question document found
+1701851,No question document found
+1712579,API call failed for some/all languages: [1]
+1712638,API call failed for some/all languages: [1]
+1712640,API call failed for some/all languages: [1]
+1712677,API call failed for some/all languages: [1]
+1712759,API call failed for some/all languages: [1, 2]
+1712760,API call failed for some/all languages: [1]
+1712776,API call failed for some/all languages: [1]
+1712810,API call failed for some/all languages: [1]
+1712857,API call failed for some/all languages: [1]
+1712859,API call failed for some/all languages: [1]
+1712868,API call failed for some/all languages: [1]
+1712875,API call failed for some/all languages: [1]
+1712890,API call failed for some/all languages: [1]
+1712891,API call failed for some/all languages: [1]
+1712915,API call failed for some/all languages: [1, 2]
+1712934,API call failed for some/all languages: [1]
+1712947,API call failed for some/all languages: [1]
+1712953,API call failed for some/all languages: [1, 2]
+1712971,API call failed for some/all languages: [1]
+1712989,API call failed for some/all languages: [1]
+1712990,API call failed for some/all languages: [1, 2]
+1713006,API call failed for some/all languages: [1, 2]
+1713014,API call failed for some/all languages: [1]
+1713022,API call failed for some/all languages: [1]
+1713037,API call failed for some/all languages: [1]
+1713039,API call failed for some/all languages: [1, 2]
+1713042,API call failed for some/all languages: [1]
+1713044,API call failed for some/all languages: [1]
+1713061,API call failed for some/all languages: [1]
+1713067,API call failed for some/all languages: [1]
+1713082,API call failed for some/all languages: [1, 2]
+1713100,API call failed for some/all languages: [1]
+1713104,API call failed for some/all languages: [1, 2]
+1713107,API call failed for some/all languages: [1]
+1713179,API call failed for some/all languages: [1, 2]
+1713262,API call failed for some/all languages: [1]
+1713290,API call failed for some/all languages: [1]
+1713331,API call failed for some/all languages: [1, 3]
+1713385,API call failed for some/all languages: [1]
+1713427,API call failed for some/all languages: [1]
+1713432,API call failed for some/all languages: [1, 2]
+1713472,API call failed for some/all languages: [1, 2]
+1713563,API call failed for some/all languages: [1]
+1713606,API call failed for some/all languages: [1, 3]
+1717639,API call failed for some/all languages: [1]
+1717678,API call failed for some/all languages: [1, 3]
+1717696,API call failed for some/all languages: [1, 2]
+1717759,API call failed for some/all languages: [1, 3]
+1717775,API call failed for some/all languages: [1]
+1717800,API call failed for some/all languages: [1, 3]
+1717813,API call failed for some/all languages: [1]
+1717830,API call failed for some/all languages: [1, 3]
+1717848,API call failed for some/all languages: [1, 3]
+1717898,API call failed for some/all languages: [1]
+1717931,API call failed for some/all languages: [1]
+1717950,API call failed for some/all languages: [1, 2]
+1717957,API call failed for some/all languages: [1]
+1718010,API call failed for some/all languages: [1]
+1718043,API call failed for some/all languages: [1]
+1718073,API call failed for some/all languages: [1, 2]
+1718092,API call failed for some/all languages: [1]
+1718118,API call failed for some/all languages: [1]
+1718198,API call failed for some/all languages: [1, 2]
+1718215,API call failed for some/all languages: [1, 3]
+1718379,API call failed for some/all languages: [1, 2]
+1718581,API call failed for some/all languages: [1, 3]
+1718862,API call failed for some/all languages: [1, 2]
+1719142,API call failed for some/all languages: [1, 2, 3]
+1719201,API call failed for some/all languages: [1]
+1719324,API call failed for some/all languages: [1, 2]
+1738137,API call failed for some/all languages: [1]
+1738160,API call failed for some/all languages: [1]
+1738292,API call failed for some/all languages: [1]
+1738318,API call failed for some/all languages: [1]
+1738356,API call failed for some/all languages: [1]
+1738368,API call failed for some/all languages: [1]
+1738373,API call failed for some/all languages: [1]
+1738390,API call failed for some/all languages: [1]
+1738408,API call failed for some/all languages: [1]
+1738453,API call failed for some/all languages: [1]
+1738458,API call failed for some/all languages: [1]
+1738470,API call failed for some/all languages: [1]
+1738489,API call failed for some/all languages: [1]
+1738509,API call failed for some/all languages: [1]
+1738523,API call failed for some/all languages: [1, 2, 3]
+1738537,API call failed for some/all languages: [1]
+1738543,API call failed for some/all languages: [1]
+1738566,API call failed for some/all languages: [1, 2]
+1738591,API call failed for some/all languages: [1, 2]
+1738593,API call failed for some/all languages: [1, 2]
+1738602,API call failed for some/all languages: [1]
+1738609,API call failed for some/all languages: [1, 2]
+1738621,API call failed for some/all languages: [1, 3]
+1738623,API call failed for some/all languages: [1, 2]
+1738641,API call failed for some/all languages: [1, 2]
+1738664,API call failed for some/all languages: [1]
+1738847,API call failed for some/all languages: [1]
+1738965,API call failed for some/all languages: [1]
+1738984,API call failed for some/all languages: [1]
+1739067,API call failed for some/all languages: [1]
+1739319,API call failed for some/all languages: [1]
+1739363,API call failed for some/all languages: [1]
+1739383,API call failed for some/all languages: [1, 3]
+1739482,API call failed for some/all languages: [1, 2]
+1740349,API call failed for some/all languages: [1]
+1740793,API call failed for some/all languages: [1, 2, 3]
+1741349,API call failed for some/all languages: [1]
+1749569,No question document found
+1750673,No question document found
+1750675,No question document found
+1750678,No question document found
+1750679,No question document found
+1751416,No question document found
+1771743,No question document found
+1771749,No question document found
+1773186,No question document found
+1773400,No question document found
+1776435,API call failed for some/all languages: [1]
+1776537,API call failed for some/all languages: [1]
+1776593,API call failed for some/all languages: [1]
+1776616,API call failed for some/all languages: [1]
+1776630,API call failed for some/all languages: [1, 2]
+1776652,API call failed for some/all languages: [1]
+1776668,API call failed for some/all languages: [1]
+1776693,API call failed for some/all languages: [1]
+1776703,API call failed for some/all languages: [1]
+1776746,API call failed for some/all languages: [1]
+1776765,API call failed for some/all languages: [1]
+1776787,API call failed for some/all languages: [1, 2, 3]
+1776819,API call failed for some/all languages: [1, 2]
+1776836,API call failed for some/all languages: [1]
+1776843,API call failed for some/all languages: [1]
+1776862,API call failed for some/all languages: [1]
+1777036,API call failed for some/all languages: [1, 3]
+1777147,API call failed for some/all languages: [1]
+1777166,API call failed for some/all languages: [1]
+1777335,API call failed for some/all languages: [1, 2, 3]
+1778097,API call failed for some/all languages: [1]
+1778098,API call failed for some/all languages: [1, 2]
+1779396,API call failed for some/all languages: [1, 2, 3]
+1779435,API call failed for some/all languages: [1, 3]
+1779450,API call failed for some/all languages: [1]
+1779524,API call failed for some/all languages: [1, 2]
+1779544,API call failed for some/all languages: [1]
+1779572,API call failed for some/all languages: [1, 3]
+1779580,API call failed for some/all languages: [1]
+1779671,API call failed for some/all languages: [1, 2]
+1779757,API call failed for some/all languages: [1]
+1779783,API call failed for some/all languages: [1]
+1779801,API call failed for some/all languages: [1]
+1779854,API call failed for some/all languages: [1]
+1779944,API call failed for some/all languages: [1]
+1780287,API call failed for some/all languages: [1]
+1780391,API call failed for some/all languages: [1]
+1780532,No question document found
+1780835,No question document found
+1781065,API call failed for some/all languages: [1]
+1781581,No question document found
+1781653,No question document found
+1782402,API call failed for some/all languages: [1]
+1782633,API call failed for some/all languages: [1, 2]
+1788688,No question document found
+1788783,No question document found
+1788791,No question document found
+1788802,No question document found
+1788812,No question document found
+1788823,No question document found
+1788839,No question document found
+1788848,No question document found
+1788860,No question document found
+1788869,No question document found
+1788876,No question document found
+1788881,No question document found
+1788893,No question document found
+1788899,No question document found
+1788905,No question document found
+1788913,No question document found
+1788920,No question document found
+1788923,No question document found
+1793232,No question document found
+1795678,No question document found
+1796051,No question document found

@@ -1,0 +1,353 @@
+# Failed oldQuestionIds - Generated on 2025-10-13T08:52:14.506498
+# Format: oldQuestionId,reason
+5003483,No question document found
+5016175,No question document found
+5046098,API call failed for some/all languages: [1]
+5046154,API call failed for some/all languages: [1]
+5046287,API call failed for some/all languages: [1]
+5046305,API call failed for some/all languages: [1]
+5046346,API call failed for some/all languages: [1]
+5046404,API call failed for some/all languages: [1, 2]
+5046428,API call failed for some/all languages: [1]
+5046468,API call failed for some/all languages: [1, 2]
+5046537,API call failed for some/all languages: [1]
+5046548,API call failed for some/all languages: [3]
+5046571,API call failed for some/all languages: [1, 3]
+5046668,API call failed for some/all languages: [1]
+5046709,API call failed for some/all languages: [1]
+5047156,API call failed for some/all languages: [1]
+5047252,API call failed for some/all languages: [1]
+5047656,API call failed for some/all languages: [1]
+5047890,API call failed for some/all languages: [1, 2, 3]
+5048279,API call failed for some/all languages: [1]
+5085149,No question document found
+5085854,API call failed for some/all languages: [1, 2]
+5085872,API call failed for some/all languages: [1, 2]
+5085966,API call failed for some/all languages: [1, 2]
+5085987,API call failed for some/all languages: [1, 2]
+5086009,API call failed for some/all languages: [1]
+5086039,API call failed for some/all languages: [1]
+5086048,API call failed for some/all languages: [1]
+5086123,API call failed for some/all languages: [1]
+5086163,API call failed for some/all languages: [1]
+5086217,API call failed for some/all languages: [1, 3]
+5086275,API call failed for some/all languages: [1]
+5086356,API call failed for some/all languages: [1, 2]
+5086490,API call failed for some/all languages: [1]
+5092551,No question document found
+5119563,No question document found
+5123479,API call failed for some/all languages: [1, 2]
+5123595,API call failed for some/all languages: [1, 2]
+5123671,API call failed for some/all languages: [1]
+5123689,API call failed for some/all languages: [1, 3]
+5123737,API call failed for some/all languages: [1, 2]
+5123753,API call failed for some/all languages: [1, 2]
+5123770,API call failed for some/all languages: [1]
+5123790,API call failed for some/all languages: [1]
+5123831,API call failed for some/all languages: [1, 2]
+5123841,API call failed for some/all languages: [1, 2]
+5123842,API call failed for some/all languages: [1]
+5123863,API call failed for some/all languages: [1]
+5123882,API call failed for some/all languages: [1, 2]
+5123927,API call failed for some/all languages: [1]
+5123949,API call failed for some/all languages: [1]
+5123989,API call failed for some/all languages: [1]
+5124067,API call failed for some/all languages: [1]
+5124224,API call failed for some/all languages: [1, 2]
+5124370,API call failed for some/all languages: [1]
+5124640,API call failed for some/all languages: [1]
+5124821,API call failed for some/all languages: [1]
+5125255,API call failed for some/all languages: [1]
+5128077,No question document found
+5128089,No question document found
+5134152,API call failed for some/all languages: [1]
+5134266,API call failed for some/all languages: [1]
+5139659,API call failed for some/all languages: [1]
+5139854,API call failed for some/all languages: [1]
+5139872,API call failed for some/all languages: [1]
+5140102,API call failed for some/all languages: [1]
+5144349,No question document found
+5161650,API call failed for some/all languages: [1]
+5161753,API call failed for some/all languages: [1]
+5161776,API call failed for some/all languages: [1]
+5161824,API call failed for some/all languages: [1]
+5161849,API call failed for some/all languages: [1]
+5161877,API call failed for some/all languages: [1, 2]
+5161911,API call failed for some/all languages: [1]
+5161925,API call failed for some/all languages: [1]
+5161943,API call failed for some/all languages: [1]
+5161998,API call failed for some/all languages: [1]
+5162061,API call failed for some/all languages: [1]
+5162082,API call failed for some/all languages: [1, 2]
+5162111,API call failed for some/all languages: [1, 2]
+5162113,API call failed for some/all languages: [1]
+5162227,API call failed for some/all languages: [1, 2]
+5174379,API call failed for some/all languages: [1]
+5174458,API call failed for some/all languages: [1]
+5174499,API call failed for some/all languages: [1]
+5174570,API call failed for some/all languages: [1]
+5174695,API call failed for some/all languages: [1, 2]
+5174744,API call failed for some/all languages: [1, 2]
+5174777,API call failed for some/all languages: [1]
+5174784,API call failed for some/all languages: [1]
+5174824,API call failed for some/all languages: [1, 2]
+5174850,API call failed for some/all languages: [1]
+5174863,API call failed for some/all languages: [1]
+5174881,API call failed for some/all languages: [1, 2]
+5174912,API call failed for some/all languages: [1]
+5174951,API call failed for some/all languages: [1]
+5175017,API call failed for some/all languages: [1, 2]
+5175135,API call failed for some/all languages: [1]
+5175239,API call failed for some/all languages: [1, 2]
+5175293,API call failed for some/all languages: [1]
+5175444,API call failed for some/all languages: [1, 2]
+5175520,API call failed for some/all languages: [1]
+5175923,API call failed for some/all languages: [1]
+5176138,API call failed for some/all languages: [1]
+5195008,No question document found
+5208562,No question document found
+5209526,No question document found
+5209530,No question document found
+5212009,API call failed for some/all languages: [1]
+5221913,No question document found
+5222997,API call failed for some/all languages: [1, 3]
+5223053,API call failed for some/all languages: [1]
+5223097,API call failed for some/all languages: [1, 2]
+5223111,API call failed for some/all languages: [1]
+5223165,API call failed for some/all languages: [1, 2]
+5223187,API call failed for some/all languages: [1, 2]
+5223188,API call failed for some/all languages: [1]
+5223228,API call failed for some/all languages: [1]
+5227676,No question document found
+5229060,API call failed for some/all languages: [1]
+5229178,API call failed for some/all languages: [1, 2]
+5229180,API call failed for some/all languages: [1, 2]
+5229196,API call failed for some/all languages: [1]
+5229212,API call failed for some/all languages: [1, 2]
+5229239,API call failed for some/all languages: [1]
+5229339,API call failed for some/all languages: [1]
+5229397,API call failed for some/all languages: [1]
+5229419,API call failed for some/all languages: [1]
+5229440,API call failed for some/all languages: [1]
+5229453,API call failed for some/all languages: [1]
+5229468,API call failed for some/all languages: [1, 2]
+5229500,API call failed for some/all languages: [1]
+5229510,API call failed for some/all languages: [1]
+5229528,API call failed for some/all languages: [1]
+5229544,API call failed for some/all languages: [1]
+5229552,API call failed for some/all languages: [1]
+5229567,API call failed for some/all languages: [1]
+5229586,API call failed for some/all languages: [1]
+5229595,API call failed for some/all languages: [1]
+5229613,API call failed for some/all languages: [1]
+5229620,API call failed for some/all languages: [1]
+5229623,API call failed for some/all languages: [1]
+5229640,API call failed for some/all languages: [1]
+5229642,API call failed for some/all languages: [1]
+5229644,API call failed for some/all languages: [1]
+5229694,API call failed for some/all languages: [1]
+5229706,API call failed for some/all languages: [1]
+5229728,API call failed for some/all languages: [1]
+5229757,API call failed for some/all languages: [1]
+5229769,API call failed for some/all languages: [1]
+5229808,API call failed for some/all languages: [1]
+5229826,API call failed for some/all languages: [1]
+5229845,API call failed for some/all languages: [1, 2]
+5229867,API call failed for some/all languages: [1, 2]
+5229921,API call failed for some/all languages: [1]
+5229945,API call failed for some/all languages: [1]
+5229996,API call failed for some/all languages: [1]
+5230064,API call failed for some/all languages: [1, 2]
+5243576,No question document found
+5245637,No question document found
+5275102,API call failed for some/all languages: [1]
+5290260,API call failed for some/all languages: [1]
+5290278,API call failed for some/all languages: [1, 2]
+5290299,API call failed for some/all languages: [1, 2]
+5290314,API call failed for some/all languages: [1, 2]
+5290320,API call failed for some/all languages: [1]
+5290339,API call failed for some/all languages: [1]
+5290354,API call failed for some/all languages: [1, 2]
+5290377,API call failed for some/all languages: [1]
+5290392,API call failed for some/all languages: [1]
+5290413,API call failed for some/all languages: [1]
+5290415,API call failed for some/all languages: [1]
+5290431,API call failed for some/all languages: [1, 2, 3]
+5290456,API call failed for some/all languages: [1, 2]
+5290468,API call failed for some/all languages: [1]
+5290472,API call failed for some/all languages: [1]
+5290483,API call failed for some/all languages: [1, 2, 3]
+5290504,API call failed for some/all languages: [1, 2, 3]
+5290526,API call failed for some/all languages: [1]
+5290531,API call failed for some/all languages: [1]
+5290543,API call failed for some/all languages: [1]
+5290545,API call failed for some/all languages: [1]
+5290561,API call failed for some/all languages: [1, 2]
+5290587,API call failed for some/all languages: [1, 2, 3]
+5290601,API call failed for some/all languages: [1]
+5290621,API call failed for some/all languages: [1]
+5290638,API call failed for some/all languages: [1, 3]
+5290682,API call failed for some/all languages: [1]
+5290704,API call failed for some/all languages: [1]
+5290780,API call failed for some/all languages: [1, 2]
+5290838,API call failed for some/all languages: [1, 2]
+5291120,API call failed for some/all languages: [1, 3]
+5291515,API call failed for some/all languages: [1]
+5291578,API call failed for some/all languages: [1]
+5292232,No question document found
+5293911,No question document found
+5301323,No question document found
+5301650,No question document found
+5311222,No question document found
+5314659,API call failed for some/all languages: [1]
+5314800,API call failed for some/all languages: [1]
+5314920,API call failed for some/all languages: [1]
+5314976,API call failed for some/all languages: [1, 2, 3]
+5321470,No question document found
+5339295,No question document found
+5363941,No question document found
+5364093,No question document found
+5369419,API call failed for some/all languages: [1]
+5369596,API call failed for some/all languages: [1]
+5369692,API call failed for some/all languages: [1]
+5369715,API call failed for some/all languages: [1, 2]
+5369755,API call failed for some/all languages: [1]
+5369776,API call failed for some/all languages: [1]
+5369830,API call failed for some/all languages: [1]
+5369858,API call failed for some/all languages: [1, 2]
+5369928,API call failed for some/all languages: [1]
+5370074,API call failed for some/all languages: [1, 2]
+5370315,API call failed for some/all languages: [1, 2]
+5370629,API call failed for some/all languages: [1]
+5370812,API call failed for some/all languages: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+5379630,No question document found
+5379962,No question document found
+5384451,API call failed for some/all languages: [1]
+5384591,API call failed for some/all languages: [1]
+5384602,No question document found
+5384619,API call failed for some/all languages: [1]
+5384630,API call failed for some/all languages: [1]
+5384690,API call failed for some/all languages: [1, 2]
+5384709,API call failed for some/all languages: [1]
+5384786,API call failed for some/all languages: [1]
+5384805,API call failed for some/all languages: [1]
+5384841,API call failed for some/all languages: [1, 2]
+5384864,API call failed for some/all languages: [1, 2]
+5384900,API call failed for some/all languages: [1]
+5385215,API call failed for some/all languages: [1]
+5385507,API call failed for some/all languages: [1]
+5385605,API call failed for some/all languages: [1, 2, 3]
+5385877,No question document found
+5386349,API call failed for some/all languages: [1]
+5386486,API call failed for some/all languages: [1, 2]
+5386752,No question document found
+5387184,No question document found
+5389349,No question document found
+5391218,No question document found
+5392734,No question document found
+5395627,No question document found
+5402697,No question document found
+5403146,No question document found
+5403407,No question document found
+5403991,No question document found
+5404665,No question document found
+5404690,No question document found
+5406278,No question document found
+5411298,No question document found
+5411685,No question document found
+5413253,No question document found
+5414214,No question document found
+5414215,No question document found
+5415142,No question document found
+5417935,No question document found
+5420036,No question document found
+5420499,No question document found
+5423799,No question document found
+5426503,No question document found
+5430481,No question document found
+5433159,API call failed for some/all languages: [1]
+5433224,No question document found
+5433279,API call failed for some/all languages: [1]
+5433297,API call failed for some/all languages: [1]
+5433335,API call failed for some/all languages: [1]
+5433337,API call failed for some/all languages: [1]
+5433378,API call failed for some/all languages: [1]
+5433416,API call failed for some/all languages: [1]
+5433432,API call failed for some/all languages: [1]
+5433485,API call failed for some/all languages: [1, 2]
+5433496,API call failed for some/all languages: [1]
+5433510,API call failed for some/all languages: [1]
+5433527,API call failed for some/all languages: [1]
+5433542,API call failed for some/all languages: [1]
+5433611,API call failed for some/all languages: [1]
+5433624,API call failed for some/all languages: [1]
+5433756,API call failed for some/all languages: [1, 2]
+5433776,API call failed for some/all languages: [1, 2]
+5433879,API call failed for some/all languages: [1]
+5433891,API call failed for some/all languages: [1, 2]
+5433911,API call failed for some/all languages: [1, 3]
+5434125,API call failed for some/all languages: [1]
+5434584,API call failed for some/all languages: [1, 2]
+5434706,API call failed for some/all languages: [1, 2]
+5435557,No question document found
+5437762,No question document found
+5439587,No question document found
+5440960,No question document found
+5441427,No question document found
+5445197,No question document found
+5448507,No question document found
+5449113,No question document found
+5449518,No question document found
+5450843,No question document found
+5454132,API call failed for some/all languages: [1]
+5454256,API call failed for some/all languages: [1]
+5454370,API call failed for some/all languages: [1]
+5454421,API call failed for some/all languages: [1]
+5454546,No question document found
+5458139,No question document found
+5459748,No question document found
+5459809,No question document found
+5462663,No question document found
+5463750,No question document found
+5472532,No question document found
+5474269,No question document found
+5474420,API call failed for some/all languages: [1]
+5474478,API call failed for some/all languages: [1]
+5474519,API call failed for some/all languages: [1]
+5474554,API call failed for some/all languages: [1]
+5474573,API call failed for some/all languages: [1, 2]
+5474596,API call failed for some/all languages: [1]
+5474614,API call failed for some/all languages: [1]
+5474676,API call failed for some/all languages: [1, 2]
+5474690,API call failed for some/all languages: [1]
+5474704,API call failed for some/all languages: [1]
+5474727,API call failed for some/all languages: [1]
+5474732,API call failed for some/all languages: [1]
+5474746,API call failed for some/all languages: [1]
+5474769,API call failed for some/all languages: [1]
+5474787,API call failed for some/all languages: [1]
+5474806,API call failed for some/all languages: [1]
+5474825,API call failed for some/all languages: [1, 2]
+5474829,API call failed for some/all languages: [1, 2]
+5474851,API call failed for some/all languages: [1]
+5474861,API call failed for some/all languages: [1]
+5474886,API call failed for some/all languages: [1]
+5474898,API call failed for some/all languages: [1]
+5474911,API call failed for some/all languages: [1]
+5474959,API call failed for some/all languages: [1, 2]
+5474995,API call failed for some/all languages: [1]
+5475041,API call failed for some/all languages: [1]
+5475141,API call failed for some/all languages: [1]
+5475164,API call failed for some/all languages: [1]
+5475247,API call failed for some/all languages: [1]
+5475598,No question document found
+5475827,API call failed for some/all languages: [1]
+5475956,API call failed for some/all languages: [1]
+5476781,No question document found
+5481231,No question document found
+5484997,No question document found
+5487619,No question document found
+5489105,No question document found
+5489187,No question document found
+5495260,No question document found
+5496186,No question document found
