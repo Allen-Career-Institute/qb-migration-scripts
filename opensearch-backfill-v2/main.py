@@ -21,7 +21,6 @@ from pymongo.errors import PyMongoError
 
 
 # Constants
-# MONGO_URI = "mongodb+srv://qb:1xWqW4GP2AzB6IEP@allen-staging-staging-cluster-pl-0.xklzc.mongodb.net"
 MONGO_URI = ""
 MONGO_DB = "qb"
 QUESTIONS_COLL = "questions"

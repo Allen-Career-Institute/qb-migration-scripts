@@ -94,7 +94,7 @@ Each document in the pickle file contains the following fields:
 
 The script uses the following MongoDB configuration (hardcoded):
 
-- URI: `mongodb+srv://qb:1xWqW4GP2AzB6IEP@allen-staging-staging-cluster-pl-0.xklzc.mongodb.net`
+- URI: ``
 - Database: `qb`
 - Collections: `questions`, `questionSolutions`
 
