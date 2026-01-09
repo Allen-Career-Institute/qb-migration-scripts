@@ -8,12 +8,10 @@ Uses async workers with pipeline batching for optimal performance.
 import asyncio
 import argparse
 import logging
-import os
-import ssl
 import time
 from pathlib import Path
 
-import redis.asyncio as redis
+from redis.asyncio.cluster import RedisCluster
 from tqdm import tqdm
 
 # ============================================================================
@@ -88,38 +86,27 @@ def clear_checkpoint() -> None:
 # REDIS CONNECTION
 # ============================================================================
 
-def create_ssl_context() -> ssl.SSLContext:
-    """Create SSL context for TLS connection to AWS ElastiCache."""
-    ssl_context = ssl.create_default_context()
-    ssl_context.check_hostname = True
-    ssl_context.verify_mode = ssl.CERT_REQUIRED
-    return ssl_context
-
-
-async def create_redis_pool() -> redis.Redis:
-    """Create an async Redis connection pool with TLS."""
-    ssl_context = create_ssl_context()
+async def create_redis_pool() -> RedisCluster:
+    """Create an async Redis Cluster connection with TLS."""
     
-    pool = redis.Redis(
+    cluster = RedisCluster(
         host=REDIS_CONFIG["host"],
         port=REDIS_CONFIG["port"],
         username=REDIS_CONFIG["username"],
         password=REDIS_CONFIG["password"],
         decode_responses=REDIS_CONFIG["decode_responses"],
         ssl=True,
-        ssl_ca_certs=None,  # Use system CA certs
-        max_connections=DEFAULT_NUM_WORKERS + 5,
     )
     
     # Test connection
     try:
-        await pool.ping()
+        await cluster.ping()
         logger.info("Successfully connected to Redis cluster")
     except Exception as e:
         logger.error(f"Failed to connect to Redis: {e}")
         raise
     
-    return pool
+    return cluster
 
 
 # ============================================================================
@@ -127,17 +114,17 @@ async def create_redis_pool() -> redis.Redis:
 # ============================================================================
 
 async def delete_batch(
-    redis_client: redis.Redis,
+    redis_client: RedisCluster,
     start_id: int,
     end_id: int,
     dry_run: bool = False,
     pbar: tqdm = None
 ) -> int:
     """
-    Delete a batch of keys using Redis pipeline.
+    Delete a batch of keys using Redis cluster.
     
     Args:
-        redis_client: Async Redis client
+        redis_client: Async Redis Cluster client
         start_id: Starting ID (inclusive)
         end_id: Ending ID (inclusive)
         dry_run: If True, don't actually delete
@@ -155,13 +142,17 @@ async def delete_batch(
         return batch_size
     
     try:
-        # Use pipeline for batch deletion with UNLINK (async, non-blocking)
-        async with redis_client.pipeline(transaction=False) as pipe:
-            for key in keys:
-                pipe.unlink(key)
-            results = await pipe.execute()
+        # Delete keys concurrently using asyncio.gather
+        # Each UNLINK is routed to the correct cluster node automatically
+        tasks = [redis_client.unlink(key) for key in keys]
+        results = await asyncio.gather(*tasks, return_exceptions=True)
         
-        deleted_count = sum(1 for r in results if r == 1)
+        # Count successful deletions (1 = deleted, 0 = key didn't exist)
+        deleted_count = sum(1 for r in results if isinstance(r, int) and r == 1)
+        error_count = sum(1 for r in results if isinstance(r, Exception))
+        
+        if error_count > 0:
+            logger.warning(f"Batch {start_id}-{end_id}: {error_count} errors out of {batch_size}")
         
         if pbar:
             pbar.update(batch_size)
@@ -176,7 +167,7 @@ async def delete_batch(
 async def worker(
     worker_id: int,
     queue: asyncio.Queue,
-    redis_client: redis.Redis,
+    redis_client: RedisCluster,
     dry_run: bool,
     pbar: tqdm,
     results: dict
@@ -284,7 +275,7 @@ async def run_deletion(
     
     finally:
         pbar.close()
-        await redis_client.aclose()
+        await redis_client.close()
     
     # Summary
     elapsed = time.time() - start_time
