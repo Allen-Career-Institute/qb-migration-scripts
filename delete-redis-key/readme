@@ -6,11 +6,11 @@ Deletes 6.2 million Redis keys matching pattern:
 
 Redis Connection Details
 ------------------------
-Host: clustercfg.prod-qb-migration.wmqyle.aps1.cache.amazonaws.com
+Host: 
 Port: 6379
 TLS:  Enabled
-User: default
-Pass: kbUcqZ6fm9SZfQIh
+User: 
+Pass: 
 
 
 Setup
@@ -66,7 +66,7 @@ Output Files
 
 Manual Redis Check
 ------------------
-redis-cli -c -h clustercfg.prod-qb-migration.wmqyle.aps1.cache.amazonaws.com -p 6379 --tls --user default --pass 'kbUcqZ6fm9SZfQIh'
+connect to redis
 
 # Check if a key exists:
 GET qb.mapping.questions.1
