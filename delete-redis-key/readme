@@ -1,0 +1,76 @@
+Redis Key Deletion Script
+==========================
+
+Deletes 6.2 million Redis keys matching pattern:
+    qb.mapping.questions.1 through qb.mapping.questions.6200000
+
+Redis Connection Details
+------------------------
+Host: 
+Port: 6379
+TLS:  Enabled
+User: 
+Pass: 
+
+
+Setup
+-----
+cd delete-redis-key
+pip install -r requirements.txt
+
+
+Usage
+-----
+
+1. DRY RUN (recommended first):
+   python delete_keys.py --start 1 --end 6200000 --dry-run
+
+   This simulates the deletion without actually removing keys.
+
+2. EXECUTE DELETION (full range):
+   python delete_keys.py --start 1 --end 6200000
+
+3. EXECUTE DELETION (custom range):
+   python delete_keys.py --start 1000000 --end 2000000
+
+4. RESUME (if interrupted):
+   python delete_keys.py --start 1 --end 6200000 --resume
+
+5. CUSTOM SETTINGS:
+   python delete_keys.py --start 1 --end 6200000 --batch-size 10000 --workers 20
+
+
+Command-line Options
+--------------------
+--start         Starting oldQuestionId (default: 1)
+--end           Ending oldQuestionId (default: 6200000)
+--batch-size    Keys per batch (default: 5000)
+--workers       Concurrent workers (default: 10)
+--dry-run       Simulate without deleting
+--resume        Resume from last checkpoint
+
+
+Performance Notes
+-----------------
+- Uses UNLINK instead of DEL (async, non-blocking in Redis)
+- Pipelines batches of 5000 keys for efficiency
+- 10 concurrent workers by default
+- Estimated time: 5-15 minutes depending on network latency
+
+
+Output Files
+------------
+- deletion.log   : Full execution log with timestamps
+- checkpoint.txt : Progress checkpoint (auto-deleted on completion)
+
+
+Manual Redis Check
+------------------
+connect to redis
+
+# Check if a key exists:
+GET qb.mapping.questions.1
+
+# Count keys with pattern (slow, use sparingly):
+# KEYS qb.mapping.questions.*
+
